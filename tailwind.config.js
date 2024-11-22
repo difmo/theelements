@@ -8,8 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          200: '#97D5F0',
+          900: '#0C455E',
+        },
+        secondary: {
+          600: '#CF7B41',
+        },
+        neutral: {
+          800: '#494F59',
+        },
+      },
+      colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        mulish: ['Mulish', 'sans-serif'],
+        quattrocento: ['Quattrocento', 'serif'],
       },
     },
   },
