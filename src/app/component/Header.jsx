@@ -67,32 +67,32 @@ const Header = () => {
           </div>
 
           {/* Links for larger screens */}
-          <ul className="hidden sm:flex items-center space-x-6 text-gray-800">
+          <ul className="items-center hidden space-x-6 text-gray-800 sm:flex">
             <li>
               <a href="#solutions" className="hover:text-blue-500">
                 Solutions
               </a>
             </li>
-            <span className="h-5 w-px bg-gray-400 hidden sm:block"></span>
+            <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
             <li>
               <a href="#services" className="hover:text-blue-500">
                 Services
               </a>
             </li>
-            <span className="h-5 w-px bg-gray-400 hidden sm:block"></span>
+            <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
             <li>
               <a href="#about-us" className="hover:text-blue-500">
                 About Us
               </a>
             </li>
-            <span className="h-5 w-px bg-gray-400 hidden sm:block"></span>
+            <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
             <li>
               <a href="#careers" className="hover:text-blue-500">
                 Careers
               </a>
             </li>
             <li className="hidden sm:block">
-              <FiSearch className="text-gray-800 text-lg hover:text-blue-500 cursor-pointer" />
+              <FiSearch className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
             </li>
             <li>
               <a
@@ -116,25 +116,25 @@ const Header = () => {
           <input
             type="text"
             placeholder="Search"
-            className="w-full px-4 mx-1 pl-10 focus:outline-none focus:ring-2 block py-1 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:text-gray-800 "
+            className="block w-full px-4 py-1 pl-10 mx-1 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full focus:outline-none focus:ring-2 hover:text-gray-800 "
           />
           {/* Search Icon */}
-          <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-800 text-lg hover:text-blue-500 cursor-pointer" />
+          <FiSearch className="absolute text-lg text-gray-800 transform -translate-y-1/2 cursor-pointer left-3 top-1/2 hover:text-blue-500" />
         </div>
       </li>
 
-      <li className="flex justify-between items-center">
+      <li className="flex items-center justify-between">
         <a href="#solutions" className="block hover:text-blue-500" onClick={() => setMenuOpen(false)}>
           Solutions
         </a>
-        <FiPlus className="text-gray-800 text-lg hover:text-blue-500 cursor-pointer" />
+        <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
       </li>
 
-      <li className="flex justify-between items-center">
+      <li className="flex items-center justify-between">
         <a href="#services" className="block hover:text-blue-500" onClick={() => setMenuOpen(false)}>
           Services
         </a>
-        <FiPlus className="text-gray-800 text-lg hover:text-blue-500 cursor-pointer" />
+        <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
       </li>
 
       <li>

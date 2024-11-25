@@ -21,7 +21,7 @@ const Ourcustomervoice = () => {
     <div>
       {/* Frame */}
       <div
-        className="relative pt-5 flex justify-center items-center"
+        className="relative flex items-center justify-center pt-5"
         style={{
           background: "#383C44", // Frame background color
           width: "100%", // Full width
@@ -37,7 +37,7 @@ const Ourcustomervoice = () => {
             width={1440} // Explicit width
             height={568} // Explicit height
             priority // Ensures the first image loads faster
-            className="rounded-md transition-opacity duration-1000 opacity-100" // Smooth fade effect
+            className="transition-opacity duration-1000 rounded-md opacity-100" // Smooth fade effect
           />
         </div>
       </div>

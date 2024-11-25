@@ -2,9 +2,9 @@ import React from "react";
 
 const OurServices = () => {
   return (
-    <div className="mt-12 w-full px-4">
+    <div className="w-full px-4 mt-12">
       {/* Section Header */}
-      <div className="flex justify-center items-center mb-8">
+      <div className="flex items-center justify-center mb-8">
         <div
           className="flex justify-center items-center text-center w-[196px] h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
           style={{
@@ -17,12 +17,12 @@ const OurServices = () => {
             textDecorationSkipInk: "none",
           }}
         >
-          Our Solutions
+         Our Solution
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col lg:flex-row justify-between items-center gap-6 w-full mx-auto">
+      <div className="relative flex flex-col items-center justify-between w-full gap-6 mx-auto lg:flex-row">
         {/* Left Frame */}
         <div className="flex flex-col items-start gap-6 w-full lg:w-[360px]">
           {/* Icon */}
@@ -64,7 +64,7 @@ const OurServices = () => {
         <div className="flex flex-col items-start gap-6 w-full lg:w-[380px]">
           {/* Card 1 */}
           <div className="relative w-full h-[120px] lg:h-[164px] bg-white rounded-[200px] flex items-center justify-center">
-            <div className="flex justify-center items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <div className="w-[48px] h-[48px] bg-[#CF7B41]"></div>
               <h4 className="text-[#CF7B41] text-[18px] md:text-[24px] font-bold capitalize">
                 Unleash full potential
@@ -74,7 +74,7 @@ const OurServices = () => {
 
           {/* Card 2 */}
           <div className="relative w-full h-[120px] lg:h-[164px] bg-white rounded-[200px] flex items-center justify-center">
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <div className="w-[48px] h-[48px] bg-[#CF7B41]"></div>
               <h4 className="text-[#CF7B41] text-[18px] md:text-[24px] font-bold capitalize">
                 Elevate care outcomes
@@ -84,7 +84,7 @@ const OurServices = () => {
 
           {/* Card 3 */}
           <div className="relative w-full h-[120px] lg:h-[164px] bg-white rounded-[200px] flex items-center justify-center">
-            <div className="flex justify-center items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
               <div className="w-[48px] h-[48px] bg-[#CF7B41]"></div>
               <h4 className="text-[#CF7B41] text-[18px] md:text-[24px] font-bold capitalize">
                 Build zero touch experiences
