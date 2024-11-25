@@ -1,11 +1,68 @@
-import React from "react";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai"; // Example Icon
-import { MdOutlineScore } from "react-icons/md"; // Example Icon
-import { FaAd, FaHandHoldingMedical, FaRobot } from "react-icons/fa"; // Example Icon
+'use client'
+
+import React, { useState } from "react";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai"; 
+import { MdOutlineScore } from "react-icons/md"; 
+import { FaAd, FaArrowUp, FaHandHoldingMedical, FaLongArrowAltLeft, FaRobot } from "react-icons/fa"; 
 
 const OurServices2 = () => {
+  const [activeTab, setActiveTab] = useState(1); // Default active tab is 1
+  const [tabOrder, setTabOrder] = useState([0, 1, 2, 3]); // Initial tab order (show all tabs)
+  
+  // Left container content for each tab
+  const leftContainerContent = [
+    {
+      icon: <FaRobot size={36} className="text-blue-500" />,
+      title: "Unlock Opportunities",
+      subtitle: "From Healthcare Data With Advanced Analytics",
+      description:
+        "Leverage advanced analytics to unlock new opportunities for improved care delivery, streamline processes, and drive innovation.",
+      buttonText: "Learn More",
+    },
+    {
+      icon: <MdOutlineScore size={36} className="text-blue-500" />,
+      title: "HEDIS Score Cards",
+      subtitle: "Advanced Scorecard Analytics",
+      description:
+        "Monitor and optimize performance across multiple metrics with advanced scorecards to drive better healthcare outcomes.",
+      buttonText: "Learn More",
+    },
+    {
+      icon: <FaAd size={36} className="text-blue-500" />,
+      title: "Predictive Insights",
+      subtitle: "AI-Driven Predictions",
+      description:
+        "Utilize AI to predict future trends and outcomes, ensuring better decision-making and enhanced patient care.",
+      buttonText: "Learn More",
+    },
+    {
+      icon: <FaHandHoldingMedical size={36} className="text-blue-500" />,
+      title: "Retrospective Reporting",
+      subtitle: "Track and Optimize Past Data",
+      description:
+        "Analyze past healthcare data to identify opportunities for improvement, optimize treatment strategies, and enhance patient outcomes.",
+      buttonText: "Learn More",
+    },
+  ];
+
+  // Function to handle tab click
+  const handleTabClick = (clickedTabIndex) => {
+    // Set the clicked tab as the active tab on the left side
+    setActiveTab(clickedTabIndex);
+
+    // Rotate tabs on the right side (moving clicked tab to the end of the order)
+    setTabOrder((prevOrder) => {
+      const updatedOrder = [...prevOrder];
+      const indexToRemove = updatedOrder.indexOf(clickedTabIndex);
+      updatedOrder.splice(indexToRemove, 1); // Remove clicked tab
+      updatedOrder.push(clickedTabIndex); // Add clicked tab to the end of the order
+      return updatedOrder;
+    });
+  };
+
   return (
-    <div className="flex flex-col items-center justify-between gap-2 p-8 lg:flex-row bg-gradient-to-r from-blue-100 via-white to-blue-50">
+    <div className="flex flex-col items-center justify-between gap-10 p-8 lg:flex-row bg-gradient-to-r from-blue-100 via-white to-blue-50">
+      {/* Left Container (Shows Only the Clicked Tab) */}
       <div className="relative  w-full p-8 bg-white rounded-[60px]  ">
         <div className="absolute inset-0 z- 0 opacity-10">
           <svg
@@ -24,19 +81,21 @@ const OurServices2 = () => {
             />
           </svg>
         </div>
-        <div className="z-10 flex flex-col gap-2 md:flex">
-          <div className="">
-            <h2 className="text-2xl font-bold text-orange-600">
-              Unlock Opportunities From Healthcare Data With Advanced Analytics
+        <div className="z-10 flex flex-row gap-36 md:flex">
+          <div className="flex flex-col w-2/4 ">
+          {leftContainerContent[activeTab].icon}
+          <h2 className="text-2xl font-bold">
+              <p className="text-orange-600">{leftContainerContent[activeTab].title}</p>
+              {leftContainerContent[activeTab].subtitle}
             </h2>
-            <p className="mt-4 text-gray-700">
-              Leverage advanced analytics to unlock new opportunities for
-              improved care delivery, streamline processes, and drive
-              innovation.
-            </p>
-            <button className="flex items-center px-6 py-2 mt-6 space-x-2 text-white bg-orange-500 rounded-md hover:bg-orange-600">
+            <p className="mt-4 text-gray-700">{leftContainerContent[activeTab].description}</p>
+
+            <button className="flex items-center px-6 py-2 mt-6 space-x-2 text-white rounded-md ">
+              <div  className="flex gap-6 px-4 py-2 text-black border rounded-full" > 
+
               <span>Learn More</span>
-              <AiOutlineFundProjectionScreen size={20} />
+              <FaLongArrowAltLeft size={20} />
+              </div>
             </button>
           </div>
 
@@ -75,30 +134,19 @@ const OurServices2 = () => {
           </div>
         </div>
       </div>
-      {/* Right Container */}
-      {/* sdfsdlfkj */}
-      <div className="flex flex-col items-center w-full gap-2 lg:w-1/3 ">
-        <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
-          <FaRobot size={36} className="text-orange-500" />
-          <span className="text-lg font-bold text-orange-500">
-            Unleash Full Potential
-          </span>
-        </div>
-
-        <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
-          {" "}
-          <FaHandHoldingMedical size={36} className="text-orange-500" />
-          <span className="text-lg font-bold text-orange-500">
-            Elevate Care Outcomes
-          </span>
-        </div>
-        <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
-          {" "}
-          <FaRobot size={36} className="text-orange-500" />
-          <span className="text-lg font-bold text-orange-500">
-            Build Zero Touch Experiences
-          </span>
-        </div>
+      {/* Right Container (Always show 3 tabs at a time) */}
+      <div className="flex flex-col items-center w-full gap-2 lg:w-1/3">
+        {/* Render three tabs that rotate based on the current tab order */}
+        {tabOrder.slice(0, 3).map((tabIndex) => (
+          <div
+            key={tabIndex}
+            className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full cursor-pointer"
+            onClick={() => handleTabClick(tabIndex)} // Handle tab click
+          >
+            {leftContainerContent[tabIndex].icon}
+            <span className="text-lg font-bold text-orange-500">{leftContainerContent[tabIndex].title}</span>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import React from "react";
 const OurServices = () => {
   return (
     <div className="w-full px-4 mt-12">
-      {/* Section Header */}
       <div className="flex items-center justify-center mb-8">
         <div
           className="flex justify-center items-center text-center w-[196px] h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"

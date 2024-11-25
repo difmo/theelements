@@ -21,11 +21,11 @@ const Ourcustomervoice = () => {
     <div>
       {/* Frame */}
       <div
-        className="relative flex items-center justify-center pt-5"
+        className="relative flex flex-col items-center justify-center pt-5"
         style={{
           background: "#383C44", // Frame background color
           width: "100%", // Full width
-          height: "568px", // Fixed height
+          // height: "568px", // Fixed height
         }}
       >
         {/* Displaying the Active Image with Fade Transition */}

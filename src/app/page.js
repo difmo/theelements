@@ -9,6 +9,7 @@ import WhyPartners from './component/WhyPartners'
 import Footer from './component/Footer'
 import OurSuccessStory from './component/OurSuccessStory'
 import OurServices2 from './component/OurServices2'
+import OurLeadership from './component/OurLeadership'
 
 const page = () => {
   return (
@@ -21,6 +22,7 @@ const page = () => {
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>
+      <OurLeadership/>
       {/* <Footer/> */}
 
        
