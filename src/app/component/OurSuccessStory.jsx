@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 import Image from 'next/image'; // Import Image from Next.js
 import img1 from '../assets/oursuccess1.png';
 import img2 from '../assets/oursuccess2.png';
@@ -52,16 +52,12 @@ const OurSuccessStory = () => {
       <div className="flex items-center justify-center py-8">
         <div className="flex w-full h-full p-4 space-x-4 overflow-x-auto sm:space-x-6 lg:space-x-8">
           {sections.map((section, index) => {
-            // UseSpring Hook: Manage animation for each section
-            const style = useSpring({
-              flex: activeIndex === index ? 3 : 1,
-              config: { tension: 220, friction: 20 },
-            });
-
             return (
-              <animated.div
+              <motion.div
                 key={index}
-                style={style}
+                initial={{ flex: 1 }}
+                animate={{ flex: activeIndex === index ? 3 : 1 }}
+                transition={{ type: "spring", stiffness: 220, damping: 20 }}
                 className="overflow-hidden transition-all bg-white cursor-pointer rounded-3xl"
                 onClick={() => setActiveIndex(index)}
               >
@@ -79,7 +75,7 @@ const OurSuccessStory = () => {
                     </div>
                   )}
                 </div>
-              </animated.div>
+              </motion.div>
             );
           })}
         </div>
