@@ -37,9 +37,9 @@ const Whoweserve = () => {
   ];
 
   return (
-    <div className="relative w-full max-w-[1440px] mt-14 mx-auto">
+    <div className="relative w-full max-w-[1440px] mt-14 mx-auto px-4 sm:px-8 lg:px-16">
       {/* Section Header */}
-      <div className="flex justify-center items-center mb-8">
+      <div className="flex items-center justify-center mb-8">
         <div
           className="flex justify-center items-center text-center w-[196px] h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
           style={{
@@ -56,13 +56,16 @@ const Whoweserve = () => {
         </div>
       </div>
 
-      {/* Payers Section */}
-      <div className="relative z-10 flex flex-col items-center px-4 sm:px-8 lg:px-16">
+      {/* Payers, Providers, and Patients Sections */}
+      <div className="relative z-10 flex flex-col items-center">
         {rows.map((row, index) => (
-          <div key={index} className="relative mx-auto flex justify-between w-full border-b-2 pb-5 border-gray-300 mb-12">
+          <div
+            key={index}
+            className="relative flex flex-col items-center justify-between w-full pb-5 mb-12 border-b-2 border-gray-300 sm:flex-row sm:items-start"
+          >
             {/* Title Section */}
             <div
-              className="text-[24px] font-[Quattrocento] font-bold leading-[26.59px] text-left text-[#CF7B41] w-[20%] h-[266px] mb-4"
+              className="text-[24px] sm:text-[28px] font-[Quattrocento] font-bold leading-[26.59px] text-left text-[#CF7B41] sm:w-[20%] w-full mb-4 sm:mb-0"
               style={{
                 textUnderlinePosition: 'from-font',
                 textDecorationSkipInk: 'none',
@@ -71,11 +74,11 @@ const Whoweserve = () => {
               {row.title}
             </div>
 
-            {/* Image Container */}
-            <div className="relative w-[30%] h-[266px] mb-4">
+            {/* Image Section */}
+            <div className="relative sm:w-[30%] w-full h-[266px] sm:h-[300px] mb-4 sm:mb-0">
               <Image
-                src={row.image} // Dynamic card image
-                alt="image" // Dynamic alt text
+                src={row.image}
+                alt={row.title}
                 layout="fill"
                 objectFit="cover"
                 className="transition-transform rounded-[40px] duration-500 ease-in-out group-hover:scale-105"
@@ -83,11 +86,11 @@ const Whoweserve = () => {
             </div>
 
             {/* List Section */}
-            <div className="w-[50%] px-5">
-              <ul className="list-none pl-5 space-y-2">
+            <div className="w-full sm:w-[50%] px-5 sm:px-0">
+              <ul className="pl-5 space-y-2 list-none">
                 {row.listItems.map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <MdNorthEast className="mr-2" />
+                  <li key={i} className="flex items-start text-sm sm:text-base">
+                    <MdNorthEast className="mr-2 text-[#CF7B41]" />
                     {item}
                   </li>
                 ))}

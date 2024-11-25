@@ -5,8 +5,8 @@ import { FaAd, FaHandHoldingMedical, FaRobot } from "react-icons/fa"; // Example
 
 const OurServices2 = () => {
   return (
-    <div className="flex flex-col items-center justify-between p-8 lg:flex-row bg-gradient-to-r from-blue-100 via-white to-blue-50">
-      <div className="relative w-full p-8 bg-white rounded-[60px]  ">
+    <div className="flex flex-col items-center justify-between gap-2 p-8 lg:flex-row bg-gradient-to-r from-blue-100 via-white to-blue-50">
+      <div className="relative  w-full p-8 bg-white rounded-[60px]  ">
         <div className="absolute inset-0 z- 0 opacity-10">
           <svg
             width="913"
@@ -24,7 +24,7 @@ const OurServices2 = () => {
             />
           </svg>
         </div>
-        <div className="relative z-10 flex">
+        <div className="z-10 flex flex-col gap-2 md:flex">
           <div className="">
             <h2 className="text-2xl font-bold text-orange-600">
               Unlock Opportunities From Healthcare Data With Advanced Analytics
@@ -44,14 +44,14 @@ const OurServices2 = () => {
             <div className="flex flex-col gap-3 mt-8">
               <div className="flex flex-col items-center  justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
                 <MdOutlineScore size={36} className="text-blue-500" />
-                <span className="font-semibold text-gray-800">
+                <span className="text-sm font-semibold text-gray-800 text">
                   HEDIS Score Cards
                 </span>
               </div>
               <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
                 {" "}
                 <FaAd size={36} className="text-blue-500" />
-                <span className="font-semibold text-gray-800">
+                <span className="text-sm font-semibold text-gray-800 text">
                   Predictive Insights
                 </span>
               </div>
@@ -60,14 +60,14 @@ const OurServices2 = () => {
               <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
                 {" "}
                 <FaRobot size={36} className="text-blue-500" />
-                <span className="font-semibold text-gray-800">
+                <span className="text-sm font-semibold text-gray-800 text">
                   Quality Check Dashboards
                 </span>
               </div>
               <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
                 {" "}
                 <FaHandHoldingMedical size={36} className="text-blue-500" />
-                <span className="font-semibold text-gray-800">
+                <span className="text-sm font-semibold text-gray-800 text">
                   Retrospective Reporting
                 </span>
               </div>
@@ -76,7 +76,7 @@ const OurServices2 = () => {
         </div>
       </div>
       {/* Right Container */}
-      <div className="flex flex-col items-center w-full lg:w-1/3 ">
+      <div className="flex flex-col items-center w-full gap-2 lg:w-1/3 ">
         <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
           <FaRobot size={36} className="text-orange-500" />
           <span className="text-lg font-bold text-orange-500">

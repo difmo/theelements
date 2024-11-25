@@ -29,65 +29,61 @@ const OurSuccessStory = () => {
         "An integrated telehealth solution enhanced patient satisfaction by 50%.",
       image: img3,
     },
-
   ];
 
   return (
-    <div className="mx-12"> {/* Centering the whole content */}
-     <div className="flex items-center justify-center w-full mt-12">
+    <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16">
+      {/* Title Section */}
+      <div className="flex items-center justify-center w-full mt-8 sm:mt-12">
         <div
-          className="flex justify-center items-center text-center w-[296px] h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
+          className="flex items-center justify-center gap-3 px-4 py-2 text-center border border-opacity-0 rounded-full"
           style={{
-            fontFamily: "Mulish", // Custom font family
-            fontSize: "20px", // Custom font size
-            fontWeight: 500, // Custom font weight
-            lineHeight: "25.1px", // Custom line height
-            textAlign: "center", // Custom text alignment
-            textUnderlinePosition: "from-font", // Custom text underline position
-            textDecorationSkipInk: "none", // Custom text decoration skip ink
+            fontFamily: "Mulish",
+            fontSize: "1.25rem",
+            fontWeight: 500,
+            lineHeight: "1.5rem",
           }}
         >
-            OUR SUCCESS STORIES
+          OUR SUCCESS STORIES
         </div>
       </div>
-    <div className="flex items-center justify-center h-screen py-8 ">
-      <div className="flex w-full h-full p-4 space-x-4 overflow-x-auto">
-        {sections.map((section, index) => {
-          const isActive = activeIndex === index;
 
-          const style = useSpring({
-            flex: isActive ? 3 : 1,
-            config: { tension: 220, friction: 5 },
-          });
+      {/* Success Stories Section */}
+      <div className="flex items-center justify-center py-8">
+        <div className="flex w-full h-full p-4 space-x-4 overflow-x-auto sm:space-x-6 lg:space-x-8">
+          {sections.map((section, index) => {
+            // UseSpring Hook: Manage animation for each section
+            const style = useSpring({
+              flex: activeIndex === index ? 3 : 1,
+              config: { tension: 220, friction: 20 },
+            });
 
-          return (
-            <animated.div
-              key={index}
-              style={style}
-              className={`rounded-[100px] cursor-pointer bg-white overflow-hidden transition-all`}
-              onClick={() => setActiveIndex(index)}
-            >
-              <div
-                className={`relative w-full h-full ${isActive ? "flex" : "flex w-full items-center justify-center"}`}
+            return (
+              <animated.div
+                key={index}
+                style={style}
+                className="overflow-hidden transition-all bg-white cursor-pointer rounded-3xl"
+                onClick={() => setActiveIndex(index)}
               >
-                <Image
-                  src={section.image}
-                  alt={section.title}
-                  layout="fill"
-                  objectFit="cover" 
-                />
-                {isActive && (
-                  <div className="absolute inset-0 right-0 flex flex-col justify-center p-4 text-white bg-gray-900 bg-opacity-50">
-                    <h3 className="text-lg font-bold">{section.title}</h3>
-                    <p className="mt-2 text-sm">{section.description}</p>
-                  </div>
-                )}
-              </div>
-            </animated.div>
-          );
-        })}
+                <div className={`relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]`}>
+                  <Image
+                    src={section.image}
+                    alt={section.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                  {activeIndex === index && (
+                    <div className="absolute inset-0 right-0 flex flex-col justify-center p-4 text-white bg-gray-900 bg-opacity-50">
+                      <h3 className="text-lg font-bold sm:text-xl md:text-2xl">{section.title}</h3>
+                      <p className="mt-2 text-sm sm:text-base">{section.description}</p>
+                    </div>
+                  )}
+                </div>
+              </animated.div>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
