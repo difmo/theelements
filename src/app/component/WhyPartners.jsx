@@ -28,7 +28,7 @@ const cardData = [
 
 const WhyPartners = () => {
   return (
-    <div className="relative w-full max-w-[1440px] mt-14 mx-auto">
+    <div className="relative w-full max-w-[1440px] mt-14 mx-auto py-8">
       <div className="flex justify-center items-center mb-8 mt-8">
         <div
           className="flex justify-center items-center text-center w-auto h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
