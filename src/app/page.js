@@ -18,7 +18,7 @@ const page = () => {
       {/* <StyledFrame/> */}
       <OurSuccessStory/>
       <OurSolutions/>
-      <OurServices2/>
+      {/* <OurServices2/> */}
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>
