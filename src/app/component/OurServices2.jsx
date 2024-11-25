@@ -1,87 +1,107 @@
-'use client';
+import React from "react";
+import { AiOutlineFundProjectionScreen } from "react-icons/ai"; // Example Icon
+import { MdOutlineScore } from "react-icons/md"; // Example Icon
+import { FaAd, FaHandHoldingMedical, FaRobot } from "react-icons/fa"; // Example Icon
 
-import React, { useState } from "react";
-import { motion } from "framer-motion"; // Import motion from framer-motion
-import Image from 'next/image'; // Import Image from Next.js
-import img1 from '../assets/oursuccess1.png';
-import img2 from '../assets/oursuccess2.png';
-import img3 from '../assets/oursuccess3.png';
-
-const OurSuccessStory = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const sections = [
-    {
-      title: "Improved Patient Outcomes With Predictive Analytics",
-      description:
-        "Using predictive analytics, a leading hospital in Virginia reduced hospital readmissions by 25%.",
-      image: img1,
-    },
-    {
-      title: "Optimized Diagnostics With AI",
-      description:
-        "AI-powered solutions improved diagnostic accuracy by 30% at a healthcare center.",
-      image: img2,
-    },
-    {
-      title: "Enhanced Patient Experience",
-      description:
-        "An integrated telehealth solution enhanced patient satisfaction by 50%.",
-      image: img3,
-    },
-  ];
-
+const OurServices2 = () => {
   return (
-    <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16">
-      {/* Title Section */}
-      <div className="flex items-center justify-center w-full mt-8 sm:mt-12">
-        <div
-          className="flex items-center justify-center gap-3 px-4 py-2 text-center border border-opacity-0 rounded-full"
-          style={{
-            fontFamily: "Mulish",
-            fontSize: "1.25rem",
-            fontWeight: 500,
-            lineHeight: "1.5rem",
-          }}
-        >
-          OUR SUCCESS STORIES
+    <div className="flex flex-col items-center justify-between gap-2 p-8 lg:flex-row bg-gradient-to-r from-blue-100 via-white to-blue-50">
+      <div className="relative  w-full p-8 bg-white rounded-[60px]  ">
+        <div className="absolute inset-0 z- 0 opacity-10">
+          <svg
+            width="913"
+            height="540"
+            viewBox="0 0 913 540"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              opacity="0.4"
+              d="M371.531 294.499C376.225 354.727 401.704 413.635 448.019 459.532C550.224 560.826 714.602 560.398 816.365 458.635C918.338 356.662 918.347 191.374 816.413 89.4402C770.565 43.5922 711.915 18.3714 651.971 13.7643C583.375 8.50599 529.48 -45.6602 524.16 -114.268C519.479 -174.459 494.025 -233.317 447.783 -279.214C345.615 -380.594 181.114 -380.241 79.3265 -278.428C-22.6337 -176.468 -22.6551 -11.1674 79.2787 90.7664C125.114 136.602 183.752 161.81 243.684 166.43C312.304 171.713 366.224 225.879 371.556 294.499L371.531 294.499Z"
+              stroke="#E8F6FC"
+              strokeWidth="40"
+              strokeMiterlimit="10"
+            />
+          </svg>
+        </div>
+        <div className="z-10 flex flex-col gap-2 md:flex">
+          <div className="">
+            <h2 className="text-2xl font-bold text-orange-600">
+              Unlock Opportunities From Healthcare Data With Advanced Analytics
+            </h2>
+            <p className="mt-4 text-gray-700">
+              Leverage advanced analytics to unlock new opportunities for
+              improved care delivery, streamline processes, and drive
+              innovation.
+            </p>
+            <button className="flex items-center px-6 py-2 mt-6 space-x-2 text-white bg-orange-500 rounded-md hover:bg-orange-600">
+              <span>Learn More</span>
+              <AiOutlineFundProjectionScreen size={20} />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="flex flex-col gap-3 mt-8">
+              <div className="flex flex-col items-center  justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                <MdOutlineScore size={36} className="text-blue-500" />
+                <span className="text-sm font-semibold text-gray-800 text">
+                  HEDIS Score Cards
+                </span>
+              </div>
+              <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                {" "}
+                <FaAd size={36} className="text-blue-500" />
+                <span className="text-sm font-semibold text-gray-800 text">
+                  Predictive Insights
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3 ">
+              <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                {" "}
+                <FaRobot size={36} className="text-blue-500" />
+                <span className="text-sm font-semibold text-gray-800 text">
+                  Quality Check Dashboards
+                </span>
+              </div>
+              <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                {" "}
+                <FaHandHoldingMedical size={36} className="text-blue-500" />
+                <span className="text-sm font-semibold text-gray-800 text">
+                  Retrospective Reporting
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      {/* Right Container */}
+      {/* sdfsdlfkj */}
+      <div className="flex flex-col items-center w-full gap-2 lg:w-1/3 ">
+        <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
+          <FaRobot size={36} className="text-orange-500" />
+          <span className="text-lg font-bold text-orange-500">
+            Unleash Full Potential
+          </span>
+        </div>
 
-      {/* Success Stories Section */}
-      <div className="flex items-center justify-center py-8">
-        <div className="flex w-full h-full p-4 space-x-4 overflow-x-auto sm:space-x-6 lg:space-x-8">
-          {sections.map((section, index) => {
-            return (
-              <motion.div
-                key={index}
-                initial={{ flex: 1 }}
-                animate={{ flex: activeIndex === index ? 3 : 1 }}
-                transition={{ type: "spring", stiffness: 220, damping: 20 }}
-                className="overflow-hidden transition-all bg-white cursor-pointer rounded-3xl"
-                onClick={() => setActiveIndex(index)}
-              >
-                <div className={`relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px]`}>
-                  <Image
-                    src={section.image}
-                    alt={section.title}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                  {activeIndex === index && (
-                    <div className="absolute inset-0 right-0 flex flex-col justify-center p-4 text-white bg-gray-900 bg-opacity-50">
-                      <h3 className="text-lg font-bold sm:text-xl md:text-2xl">{section.title}</h3>
-                      <p className="mt-2 text-sm sm:text-base">{section.description}</p>
-                    </div>
-                  )}
-                </div>
-              </motion.div>
-            );
-          })}
+        <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
+          {" "}
+          <FaHandHoldingMedical size={36} className="text-orange-500" />
+          <span className="text-lg font-bold text-orange-500">
+            Elevate Care Outcomes
+          </span>
+        </div>
+        <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
+          {" "}
+          <FaRobot size={36} className="text-orange-500" />
+          <span className="text-lg font-bold text-orange-500">
+            Build Zero Touch Experiences
+          </span>
         </div>
       </div>
     </div>
   );
 };
 
-export default OurSuccessStory;
+export default OurServices2;
