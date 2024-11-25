@@ -76,6 +76,7 @@ const OurServices2 = () => {
         </div>
       </div>
       {/* Right Container */}
+      {/* sdfsdlfkj */}
       <div className="flex flex-col items-center w-full gap-2 lg:w-1/3 ">
         <div className="flex items-center justify-center w-[380px] h-[164px] space-x-4 bg-white rounded-full">
           <FaRobot size={36} className="text-orange-500" />

@@ -9,7 +9,7 @@ import img3 from '../assets/oursuccess3.png';
 
 const OurSuccessStory = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-
+// sdfsdfs
   const sections = [
     {
       title: "Improved Patient Outcomes With Predictive Analytics",
