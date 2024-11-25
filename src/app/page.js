@@ -6,6 +6,7 @@ import OurServices from './component/OurServices'
 import Whoweserve from './component/Whoweserve'
 import Ourcustomervoice from './component/Ourcustomervoice'
 import WhyPartners from './component/WhyPartners'
+import Footer from './component/Footer'
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>
+      {/* <Footer/> */}
 
        
     </div>

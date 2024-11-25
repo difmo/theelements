@@ -2,7 +2,7 @@ import React from 'react';
 
 const MainFrame = () => {
   return (
-    <div className="relative w-full max-w-[1440px]  h-[350px]  md:h-[850px] mt-14 mx-auto ">
+    <div className="relative w-full   h-[350px]  md:h-[850px] mt-14 mx-auto ">
       {/* Video Background */}
       <video className="absolute w-full h-[350px] sm:h-full object-cover" autoPlay loop muted>
         <source src="/-8c96-448f-a957-d5bd7401b68e.mp4" type="video/mp4" />
@@ -16,7 +16,7 @@ const MainFrame = () => {
       </video>
       
       {/* Content */}
-      <div className="absolute w-full max-w-[1255px] h-auto left sm:right-4 sm:px-16 md:px-4  my-5 sm:top-1/2 sm:transform sm:-translate-y-1/2 flex flex-col  sm:items-start gap-[30px] sm:gap-[60px] px-4 ">
+      <div className="absolute w-full container h-auto left sm:right-4 sm:px-16 md:px-4  my-5 sm:top-1/2 sm:transform sm:-translate-y-1/2 flex flex-col  sm:items-start gap-[30px] sm:gap-[60px] px-4 ">
         {/* Heading */}
         <div className="w-full  lg:w-[985px] text-[28px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] text-left capitalize font-quattrocento font-bold  sm:text-left">
           Navigating Healthcare complexity with clear & innovative solutions
