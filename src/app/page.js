@@ -9,6 +9,7 @@ import WhyPartners from './component/WhyPartners'
 import Footer from './component/Footer'
 import OurSuccessStory from './component/OurSuccessStory'
 import OurServices2 from './component/OurServices2'
+import OurServices3 from './component/OurServices3'
 import OurLeadership from './component/OurLeadership'
 
 const page = () => {
@@ -18,7 +19,8 @@ const page = () => {
       {/* <StyledFrame/> */}
       <OurSuccessStory/>
       <OurSolutions/>
-      {/* <OurServices2/> */}
+      {/* <OurServices3/> */}
+      <OurServices2/>
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>
