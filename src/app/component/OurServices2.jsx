@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdOutlineScore } from "react-icons/md";
+
 import {
   FaAd,
   FaArrowUp,
@@ -10,6 +11,10 @@ import {
   FaLongArrowAltLeft,
   FaRobot,
 } from "react-icons/fa";
+import Icon1 from "./Icons/Icon1";
+import Icon2 from "./Icons/Icon2";
+import Icon3 from "./Icons/Icon3";
+import Icon4 from "./Icons/Icon4";
 
 const OurServices2 = () => {
   const [activeTab, setActiveTab] = useState(1); // Default active tab is 1
@@ -17,10 +22,9 @@ const OurServices2 = () => {
   const [animating, setAnimating] = useState(false); // To handle animation state
   const [expandedTab, setExpandedTab] = useState(null); // To manage expanded state on small devices
 
-  // Left container content for each tab
   const leftContainerContent = [
     {
-      icon: <FaRobot size={36} className="text-blue-500" />,
+      icon: <Icon1 />,
       title: "Unlock Opportunities",
       subtitle: "From Healthcare Data With Advanced Analytics",
       description:
@@ -28,7 +32,7 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
-      icon: <MdOutlineScore size={36} className="text-blue-500" />,
+      icon: <Icon2 />,
       title: "HEDIS Score Cards",
       subtitle: "Advanced Scorecard Analytics",
       description:
@@ -36,7 +40,7 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
-      icon: <FaAd size={36} className="text-blue-500" />,
+      icon: <Icon3 />,
       title: "Predictive Insights",
       subtitle: "AI-Driven Predictions",
       description:
@@ -44,7 +48,7 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
-      icon: <FaHandHoldingMedical size={36} className="text-blue-500" />,
+      icon: <Icon4 />,
       title: "Retrospective Reporting",
       subtitle: "Track and Optimize Past Data",
       description:
@@ -101,60 +105,57 @@ const OurServices2 = () => {
           </svg>
         </div>
         <div className="z-10 flex flex-col md:flex-row gap-36">
-          <div className="flex flex-col md:w-2/4">
-            {leftContainerContent[activeTab].icon}
-            <h2 className="text-2xl font-bold">
-              <p className="text-orange-600">
-                {leftContainerContent[activeTab].title}
+          <div className="flex flex-col md:flex-row md:w-full">
+            <div className="w-3/4">
+              {leftContainerContent[activeTab].icon}
+              <h2 className="text-2xl font-bold">
+                <p className="text-orange-600">
+                  {leftContainerContent[activeTab].title}
+                </p>
+                {leftContainerContent[activeTab].subtitle}
+              </h2>
+              <p className="mt-4 text-gray-700">
+                {leftContainerContent[activeTab].description}
               </p>
-              {leftContainerContent[activeTab].subtitle}
-            </h2>
-            <p className="mt-4 text-gray-700">
-              {leftContainerContent[activeTab].description}
-            </p>
 
-            <button className="flex items-center px-6 py-2 mt-6 space-x-2 text-white rounded-md">
-              <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
-                <span>Learn More</span>
-                <FaLongArrowAltLeft size={20} />
-              </div>
-            </button>
-
+              <button className="flex items-center px-6 py-2 mt-6 space-x-2 text-white rounded-md">
+                <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
+                  <span>Learn More</span>
+                  <FaLongArrowAltLeft size={20} />
+                </div>
+              </button>
+            </div>
 
             <div className="grid grid-cols-2 gap-4 mt-8">
-                    <div className="flex flex-col gap-3 mt-8">
-                      <div className="flex flex-col items-center  justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
-                        <MdOutlineScore size={36} className="text-blue-500" />
-                        <span className="text-sm font-semibold text-gray-800 text">
-                          HEDIS Score Cards
-                        </span>
-                      </div>
-                      <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
-                        <FaAd size={36} className="text-blue-500" />
-                        <span className="text-sm font-semibold text-gray-800 text">
-                          Predictive Insights
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex flex-col gap-3 ">
-                      <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
-                        <FaRobot size={36} className="text-blue-500" />
-                        <span className="text-sm font-semibold text-gray-800 text">
-                          Quality Check Dashboards
-                        </span>
-                      </div>
-                      <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
-                        <FaHandHoldingMedical
-                          size={36}
-                          className="text-blue-500"
-                        />
-                        <span className="text-sm font-semibold text-gray-800 text">
-                          Retrospective Reporting
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
+              <div className="flex flex-col gap-3 mt-8">
+                <div className="flex flex-col items-center  justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                  <MdOutlineScore size={36} className="text-blue-500" />
+                  <span className="text-sm font-semibold text-gray-800 text">
+                    HEDIS Score Cards
+                  </span>
+                </div>
+                <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                  <FaAd size={36} className="text-blue-500" />
+                  <span className="text-sm font-semibold text-gray-800 text">
+                    Predictive Insights
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3 ">
+                <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                  <FaRobot size={36} className="text-blue-500" />
+                  <span className="text-sm font-semibold text-gray-800 text">
+                    Quality Check Dashboards
+                  </span>
+                </div>
+                <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
+                  <FaHandHoldingMedical size={36} className="text-blue-500" />
+                  <span className="text-sm font-semibold text-gray-800 text">
+                    Retrospective Reporting
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -206,7 +207,7 @@ const OurServices2 = () => {
               </div>
 
               {expandedTab === tabIndex && (
-                <div className="px-4 bg-white">
+                <div className="px-4 bg-white" style={{ backgroundImage: "" }}>
                   <h3 className="font-semibold">
                     <span className="text-lg font-semibold text-orange-500 md:flex">
                       {leftContainerContent[tabIndex].title}
@@ -221,8 +222,8 @@ const OurServices2 = () => {
                     </div>
                   </button>
 
-                  <div className="grid grid-cols-2 gap-4 mt-8">
-                    <div className="flex flex-col gap-3 mt-8">
+                  <div className="grid grid-cols-2 gap-4 py-8">
+                    <div className="flex flex-col gap-3 md:mt-8">
                       <div className="flex flex-col items-center  justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px] h-[180px]">
                         <MdOutlineScore size={36} className="text-blue-500" />
                         <span className="text-sm font-semibold text-gray-800 text">

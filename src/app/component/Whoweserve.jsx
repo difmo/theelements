@@ -60,12 +60,12 @@ const Whoweserve = () => {
       </div>
 
       {/* Tabs for Mobile View */}
-      <div className="block mb-8 sm:hidden">
+      <div className="flex justify-center w-full mb-8 sm:hidden">
         <div className="flex space-x-4">
           {rows.map((row) => (
             <div
               key={row.title}
-              className={`cursor-pointer text-lg font-bold ${activeTab === row.title ? 'text-[#CF7B41]' : 'text-gray-600'}`}
+              className={`cursor-pointer  text-lg  ${activeTab === row.title ? 'text-[#fff] px-4 py-2 bg-blue-600 rounded-full ' : 'text-black py-2  border px-4 rounded-full border-black '}`}
               onClick={() => setActiveTab(row.title)}
             >
               {row.title}
@@ -82,7 +82,7 @@ const Whoweserve = () => {
             <div key={index} className="flex flex-col items-center justify-between w-full pb-5 mb-12 border-b-2 border-gray-300 sm:flex-row sm:items-start">
               {/* Title Section */}
               <div
-                className="text-[24px] sm:text-[28px] font-[Quattrocento] font-bold leading-[26.59px] text-left text-[#CF7B41] sm:w-[20%] w-full mb-4 sm:mb-0"
+                className="text-[24px] hidden sm:text-[28px] font-[Quattrocento] font-bold leading-[26.59px] text-left text-[#CF7B41] sm:w-[20%] w-full mb-4 sm:mb-0"
                 style={{
                   textUnderlinePosition: 'from-font',
                   textDecorationSkipInk: 'none',
@@ -107,7 +107,7 @@ const Whoweserve = () => {
                 <ul className="pl-5 space-y-2 list-none">
                   {row.listItems.map((item, i) => (
                     <li key={i} className="flex items-start text-sm sm:text-base">
-                      <MdNorthEast className="mr-2 text-[#CF7B41]" />
+                      <MdNorthEast className="mr-2 text-[#000]" />
                       {item}
                     </li>
                   ))}

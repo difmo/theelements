@@ -56,10 +56,10 @@ const OurSolutions = () => {
             {cardData.map((card, index) => (
               <div
                 key={index}
-                className="group relative w-full h-[540px] rounded-[60px] overflow-hidden flex flex-col items-center"
+                className="group relative w-full h-[540px] md:rounded-[60px] overflow-hidden flex flex-col items-center"
               >
                 {/* Card Image */}
-                <div className="relative w-full h-full overflow-hidden transition-shadow duration-300 rounded-lg group-hover:shadow-lg group-hover:shadow-black">
+                <div className="relative w-full h-full overflow-hidden transition-shadow duration-300 md:rounded-lg group-hover:shadow-lg group-hover:shadow-black">
                   <Image
                     src={card.image} // Dynamic card image
                     alt={card.title} // Dynamic alt text
