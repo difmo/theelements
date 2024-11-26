@@ -1,25 +1,29 @@
-"use client"
+"use client";
 import React, { useState } from 'react';
 import 'tailwindcss/tailwind.css';
-import imagees from "../assets/image1.jpg"
+import Image from 'next/image'; // Importing Image component from next/image
+import image1 from "../assets/image1.jpg"; // Correct image import
+
 const SliderFrame = () => {
   const [activeImage, setActiveImage] = useState(0);
+
+  // Define the images with proper src values
   const images = [
     {
-      src: {imagees},
+      src: image1, // Using the correct image import
       alt: 'First Image',
       caption: 'This is the first image',
     },
     {
-      src: {imagees},
+      src: image1, // Repeating image1 for simplicity, you can add different images
       alt: 'Second Image',
       caption: 'This is the second image',
     },
     {
-      src: {imagees},
-      alt: 'Second Image',
-      caption: 'This is the second image',
-    }, 
+      src: image1, // Same here
+      alt: 'Third Image',
+      caption: 'This is the third image',
+    },
   ];
 
   const handleImageClick = (index) => {
@@ -28,13 +32,15 @@ const SliderFrame = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full h-64 overflow-hidden relative">
-        <img
-          src={images[activeImage].src}
+      <div className="relative w-full h-64 overflow-hidden">
+        <Image
+          src={images[activeImage].src} // Correctly use the `src` from the images array
           alt={images[activeImage].alt}
-          className="w-full h-full object-cover transition-transform duration-500"
+          className="object-cover w-full h-full transition-transform duration-500"
+          width={600} // Specify width for Image component (next/image requires width and height)
+          height={256} // Specify height
         />
-        <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-2 w-full text-center">
+        <div className="absolute bottom-0 left-0 w-full p-2 text-center text-white bg-black bg-opacity-50">
           {images[activeImage].caption}
         </div>
       </div>
