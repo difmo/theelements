@@ -19,6 +19,7 @@ const page = () => {
       <Ourcustomervoice/>
       <WhyPartners/>
       <OurLeadership/>
+      {/* asfgc */}
 
        
     </div>
