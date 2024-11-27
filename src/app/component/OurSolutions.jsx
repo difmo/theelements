@@ -4,6 +4,8 @@ import ourimage from "../assets/image2.jpg";
 import ourimage2 from "../assets/oursolution.png";
 import ourimage3 from "../assets/oursolution2.png";
 import { MdNorthEast } from "react-icons/md"; // Import Material Design icon
+import Header from "./Header";
+import Heading from "./Heading";
 
 const cardData = [
   {
@@ -29,36 +31,17 @@ const cardData = [
 const OurSolutions = () => {
   return (
     <div>
-      {/* Centering "Our Solutions" */}
-      <div className="flex items-center justify-center w-full mt-12">
-        <div
-          className="flex justify-center items-center text-center w-[196px] h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
-          style={{
-            fontFamily: "Mulish", // Custom font family
-            fontSize: "20px", // Custom font size
-            fontWeight: 500, // Custom font weight
-            lineHeight: "25.1px", // Custom line height
-            textAlign: "center", // Custom text alignment
-            textUnderlinePosition: "from-font", // Custom text underline position
-            textDecorationSkipInk: "none", // Custom text decoration skip ink
-          }}
-        >
-          Our Solutions
-        </div>
-      </div>
+
+      <Heading title={"OUR SOLUTIONS"}/>
 
       <div className="relative w-full max-w-[1440px] mt-14 mx-auto">
-        {/* Content Section */}
         <div className="relative z-10 flex flex-col items-center px-4 sm:px-8 lg:px-16">
-          {/* Grid Container */}
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Map through cardData array to create each card */}
             {cardData.map((card, index) => (
               <div
                 key={index}
                 className="group relative w-full h-[540px] md:rounded-[60px] overflow-hidden flex flex-col items-center"
               >
-                {/* Card Image */}
                 <div className="relative w-full h-full overflow-hidden transition-shadow duration-300 md:rounded-lg group-hover:shadow-lg group-hover:shadow-black">
                   <Image
                     src={card.image} // Dynamic card image
@@ -69,7 +52,6 @@ const OurSolutions = () => {
                   />
                 </div>
 
-                {/* Overlay Layer with Custom Radial Gradient */}
                 <div
                   className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
                   style={{
@@ -77,7 +59,6 @@ const OurSolutions = () => {
                       "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
                   }}
                 >
-                  {/* Card Title */}
                   <h3
                     className="text-[24px] font-bold mb-2 text-[#E99F6C]"
                     style={{

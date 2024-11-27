@@ -5,8 +5,9 @@ import Whoweserve from './component/Whoweserve'
 import Ourcustomervoice from './component/Ourcustomervoice'
 import WhyPartners from './component/WhyPartners'
 import OurSuccessStory from './component/OurSuccessStory'
-import OurServices2 from './component/OurServices2'
+import OurServices from './component/OurServices'
 import OurLeadership from './component/OurLeadership'
+import AnimatedMenu from './component/Dummy'
 
 const page = () => {
   return (
@@ -14,12 +15,12 @@ const page = () => {
       <MainFrame/>
       <OurSuccessStory/>
       <OurSolutions/>
-      <OurServices2/>
+      <OurServices/>
+      {/* <AnimatedMenu/> */}
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>
       <OurLeadership/>
-      {/* asfgc */}
 
        
     </div>

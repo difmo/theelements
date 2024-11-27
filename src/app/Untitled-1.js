@@ -1,50 +1,46 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import images1 from "../assets/health-insurance1.png";
-import images2 from "../assets/health-insurance2.png";
-import images3 from "../assets/health-insurance3.png";
-import images4 from "../assets/health-insurance4.png";
-import { FaPlus, FaMinus } from "react-icons/fa"; 
-import Heading from "./Heading";
+import images from "../assets/health-insurance1.png";
+import { FaPlus, FaMinus } from "react-icons/fa"; // Importing the plus and minus icons
 
 const cardData = [
   {
     title: "Healthcare-Only Focus",
     description:
       "Our exclusive focus on healthcare ensures deep expertise and solutions that address unique challenges.",
-    image: images1,
-    backgroundImage: "url('cardsvg1.svg')", 
+    image: images,
+    backgroundImage: "url('cardsvg1.svg')", // SVG for this card
   },
   {
-    title: "Problem- Solving Expertise",
+    title: "Healthcare-Only Focus",
     description:
-      "We excel at solving complex healthcare challenges, proving tailored and effective solutions.",
-    image: images2,
-    backgroundImage: "url('cardsvg3.svg')", 
+      "Our exclusive focus on healthcare ensures deep expertise and solutions that address unique challenges.",
+    image: images,
+    backgroundImage: "url('cardsvg3.svg')", // SVG for this card
   },
   {
-    title: "Customer Centric Approach",
+    title: "Healthcare-Only Focus",
     description:
-      "We deliver maximum value with our 90-days framework, ensuring impactful results.",
-    image: images3,
-    backgroundImage: "url('cardsvg2.svg')", 
+      "Our exclusive focus on healthcare ensures deep expertise and solutions that address unique challenges.",
+    image: images,
+    backgroundImage: "url('cardsvg2.svg')", // SVG for this card
   },
   {
-    title: "Top Talent & Excellence",
+    title: "Healthcare-Only Focus",
     description:
-      "We bring together the best talent to deliver precise and high-quality services.",
-    image: images4,
-    backgroundImage: "url('cardsvg4.svg')", 
+      "Our exclusive focus on healthcare ensures deep expertise and solutions that address unique challenges.",
+    image: images,
+    backgroundImage: "url('cardsvg4.svg')", // SVG for this card
   },
 ];
 
 const WhyPartners = () => {
   const [expandedIndex, setExpandedIndex] = useState(null);
-  const [isClient, setIsClient] = useState(false); 
+  const [isClient, setIsClient] = useState(false); // State to track if it's client-side
 
   useEffect(() => {
-    setIsClient(true); 
+    setIsClient(true); // Set to true after component mounts (client-side)
   }, []);
 
   const toggleContent = (index) => {
@@ -52,10 +48,24 @@ const WhyPartners = () => {
   };
 
   return (
-    <>
-    <Heading title={"WHY PARTNERS WITH US"} />
     <div className="relative px-2 w-full max-w-[1440px] mt-14 mx-auto py-8">
-     
+      <div className="flex items-center justify-center mt-8 mb-8">
+        <div
+          className="flex justify-center items-center text-center w-auto h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
+          style={{
+            fontFamily: "Mulish",
+            fontSize: "20px",
+            fontWeight: 500,
+            lineHeight: "25.1px",
+            textAlign: "center",
+            textUnderlinePosition: "from-font",
+            textDecorationSkipInk: "none",
+          }}
+        >
+          WHY PARTNERS WITH US
+        </div>
+      </div>
+
       <div className="grid justify-center grid-cols-1 gap-3 px-2 md:px-10 md:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
         {cardData.map((card, index) => (
           <div
@@ -88,7 +98,7 @@ const WhyPartners = () => {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-medium text-[#CF7B41] ">{card.title}</h3>
+                <h3 className="text-lg font-medium">{card.title}</h3>
               </div>
               <div className="text-xl text-gray-400">
                 {expandedIndex === index ? "" : <FaPlus />}
@@ -120,7 +130,7 @@ const WhyPartners = () => {
                 />
               </div>
               <div className="mb-4">
-                <h3 className="font-quattrocento text-[#CF7B41] text-2xl font-bold leading-[26.59px] text-left opacity-100">
+                <h3 className="font-quattrocento text-2xl font-bold leading-[26.59px] text-left opacity-100">
                   {card.title}
                 </h3>
               </div>
@@ -132,7 +142,6 @@ const WhyPartners = () => {
         ))}
       </div>
     </div>
-    </>
   );
 };
 

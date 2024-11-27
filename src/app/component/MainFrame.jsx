@@ -77,7 +77,7 @@ const MainFrame = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-transparent to-transparent opacity-60"></div>
         <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 my-5 sm:px-16 md:px-16">
           <div
-            className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento font-semibold capitalize transition-opacity duration-1000 ease-in-out ${
+            className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento  capitalize transition-opacity duration-1000 ease-in-out ${
               fadeInText ? "opacity-100" : "opacity-0"
             }`}
           >

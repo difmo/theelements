@@ -6,6 +6,7 @@ import Image from "next/image"; // Import Image from Next.js
 import img1 from "../assets/oursuccess1.png";
 import img2 from "../assets/oursuccess2.png";
 import img3 from "../assets/oursuccess3.png";
+import Heading from "./Heading";
 
 const OurSuccessStory = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,23 +18,24 @@ const OurSuccessStory = () => {
       title: "Improved Patient Outcomes With Predictive Analytics",
       description:
         "Using predictive analytics, a leading hospital in Virginia reduced hospital readmissions by 25%.",
-      image: img1,
-    },
-    {
-      title: "Optimized Diagnostics With AI",
-      description:
-        "AI-powered solutions improved diagnostic accuracy by 30% at a healthcare center.",
       image: img2,
     },
     {
-      title: "Enhanced Patient Experience",
+      title: "Enhanced Operational Efficiency through Data Integration",
+
       description:
-        "An integrated telehealth solution enhanced patient satisfaction by 50%.",
+        "A provider reduced administrative costs by 30% and boosted patient throughput by 20% with streamlined data integration.",
+      image: img1,
+    },
+    {
+      title: "Optimized Resource Allocation with Real-Time Analytics",
+
+      description:
+        "A healthcare network used real-time data to cut wait times by 15% and boost patient satisfaction by 10%.",
       image: img3,
     },
   ];
 
-  // Function to automatically scroll to the next section
   const autoScroll = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
@@ -42,7 +44,6 @@ const OurSuccessStory = () => {
 
       const nextScroll = currentScroll + sectionWidth;
 
-      // If we've reached the end, reset to the beginning
       if (nextScroll >= container.scrollWidth) {
         container.scrollLeft = 0;
       } else {
@@ -59,24 +60,9 @@ const OurSuccessStory = () => {
 
   return (
     <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16">
-      {/* Title */}
-      <div className="flex items-center justify-center w-full mt-8 sm:mt-12">
-        <div
-          className="flex items-center justify-center gap-3 px-4 py-2 text-center border border-opacity-0 rounded-full"
-          style={{
-            fontFamily: "Mulish",
-            fontSize: "1.25rem",
-            fontWeight: 500,
-            lineHeight: "1.5rem",
-          }}
-        >
-          OUR SUCCESS STORIES
-        </div>
-      </div>
+      <Heading title={" OUR SUCCESS STORIES"} />
 
-      {/* Responsive Section */}
       <div className="flex items-center justify-center py-8">
-        {/* For Larger Screens - Animated Layout */}
         <div className="hidden w-full h-full p-4 space-x-4 overflow-x-auto lg:flex">
           {sections.map((section, index) => {
             return (
@@ -90,12 +76,12 @@ const OurSuccessStory = () => {
                 } bg-white cursor-pointer`}
                 onClick={() => setActiveIndex(index)}
               >
-                <div className={`flex items-center w-full h-screen`}>
-                  {/* Image */}
+                <div className={`flex w-full h-[500px]`}>
                   <div
                     className={`relative w-full h-full ${
                       activeIndex === index ? "opacity-100" : ""
                     } transition-all duration-300`}
+                    style={{ zIndex: 1 }} 
                   >
                     <Image
                       src={section.image}
@@ -106,13 +92,13 @@ const OurSuccessStory = () => {
                   </div>
 
                   {activeIndex !== index && (
-                    <div className="absolute inset-0 "></div>
+                    <div className="absolute inset-0 opacity-50 z-10rounded-t-lg sm:rounded-l-lg sm:rounded-t-none" />
                   )}
 
                   {/* Text Content */}
                   {activeIndex === index && (
-                    <div className="flex flex-col justify-center w-[800px] px-6 py-4 text-left bg-white">
-                      <h3 className="text-lg font-bold sm:text-xl md:text-2xl">
+                    <div className="flex flex-col mb-24 justify-end w-[500px] px-6 py-4 text-left bg-white">
+                      <h3 className="text-lg text-[#CF7B41] font-bold sm:text-xl md:text-2xl">
                         {section.title}
                       </h3>
                       <p className="mt-2 text-sm sm:text-base">
