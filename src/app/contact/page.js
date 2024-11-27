@@ -84,6 +84,7 @@ const Contact = () => {
           Contact Us
         </h1>
         <form onSubmit={handleSubmit}>
+        {/* jfhe */}
           {[
             { id: "name", label: "Name", type: "text", placeholder: "Your Name", required: true },
             { id: "email", label: "Email", type: "email", placeholder: "Your Email", required: true },
