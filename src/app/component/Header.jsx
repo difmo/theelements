@@ -87,7 +87,7 @@ const Header = () => {
             </li>
             <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
             <li>
-              <a href="#careers" className="hover:text-blue-500">
+              <a href="career" className="hover:text-blue-500">
                 Careers
               </a>
             </li>
@@ -96,7 +96,7 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#contact-us"
+                href="contact"
                 className="px-4 py-1 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:bg-blue-500 hover:text-white"
               >
                 Contact Us
