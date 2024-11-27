@@ -4,6 +4,7 @@ import { FiSearch, FiPlus } from "react-icons/fi"; // Importing icons from React
 import Image from "next/image"; // Importing Next.js Image component
 import logo from "../assets/8E_logo-A 1.svg";
 import { motion } from "framer-motion"; // Import motion from framer-motion
+import { Link } from "react-scroll"; // Import Link from react-scroll
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // To handle the mobile menu toggle
@@ -15,7 +16,6 @@ const Header = () => {
   return (
     <header className="absolute top-0 left-0 w-full bg-[#E8F6FC] shadow-md z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">
-        {/* Logo Section */}
         <div className="flex items-center h-full">
           <Image
             src={logo}
@@ -28,7 +28,7 @@ const Header = () => {
 
         <div className="flex items-center justify-center">
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center justify-center h-full sm:hidden">
+          <div className="flex items-center justify-center h-full md:hidden">
             <button onClick={toggleMenu} className="text-gray-800">
               {menuOpen ? (
                 <svg
@@ -41,7 +41,6 @@ const Header = () => {
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    // strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
@@ -65,124 +64,143 @@ const Header = () => {
           </div>
 
           {/* Links for larger screens */}
-          <ul className="items-center hidden space-x-6 text-gray-800 sm:flex">
+          <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
             <li>
-              <a href="#solutions" className="hover:text-blue-500">
+              <Link
+                to="solutions" // Match with the section id
+                smooth={true}
+                duration={500}
+                className="hover:text-blue-500"
+              >
                 Solutions
-              </a>
+              </Link>
             </li>
-            <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
+            <span className="hidden w-px h-5 bg-gray-400 md:block"></span>
             <li>
-              <a href="#services" className="hover:text-blue-500">
+              <Link
+                to="services" 
+                smooth={true}
+                duration={500}
+                className="hover:text-blue-500 hover:cursor-pointer"
+              >
                 Services
-              </a>
+              </Link>
             </li>
-            <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
+            <span className="hidden w-px h-5 bg-gray-400 md:block"></span>
             <li>
-              <a href="#about-us" className="hover:text-blue-500">
+              <Link
+                to="about-us" // Match with the section id
+                smooth={true}
+                duration={500}
+                className="hover:text-blue-500"
+              >
                 About Us
-              </a>
+              </Link>
             </li>
-            <span className="hidden w-px h-5 bg-gray-400 sm:block"></span>
+            <span className="hidden w-px h-5 bg-gray-400 md:block"></span>
             <li>
-              <a href="career" className="hover:text-blue-500">
+              <Link
+                to="careers" // Match with the section id
+                smooth={true}
+                duration={500}
+                className="hover:text-blue-500"
+              >
                 Careers
-              </a>
+              </Link>
             </li>
-            <li className="hidden sm:block">
+            <li className="hidden md:block">
               <FiSearch className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
             </li>
             <li>
-              <a
-                href="contact"
-                className="px-4 py-1 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:bg-blue-500 hover:text-white"
+              <Link
+                to="contact-us" // Match with the section id
+                smooth={true}
+                duration={500}
+                className="px-4 py-2 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:bg-blue-500 hover:text-white"
               >
                 Contact Us
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
       </nav>
 
       <motion.div
-        className="md:hidden left-0 w-full bg-[#E8F6FC]   overflow-hidden"
-        initial={{ height: 0, scaleY: 0.8 }} 
+        className="md:hidden left-0 w-full bg-[#E8F6FC] overflow-hidden"
+        initial={{ height: 0, scaleY: 0.8 }}
         animate={{
           height: menuOpen ? "auto" : 0,
           scaleY: menuOpen ? 1 : 0.8,
-          opacity: menuOpen ? 1 : 0, 
+          opacity: menuOpen ? 1 : 0,
         }}
         exit={{
-          height: 0, 
+          height: 0,
           scaleY: 0.8,
-          opacity: 0, 
+          opacity: 0,
         }}
         transition={{ duration: 0.4 }}
       >
         <ul className="p-4 space-y-4">
-          <li>
-            <div className="relative w-full">
-              {/* Input Field */}
-              <input
-                type="text"
-                placeholder="Search"
-                className="block w-full px-4 py-1 pl-10 mx-1 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full focus:outline-none focus:ring-2 hover:text-gray-800"
-              />
-              {/* Search Icon */}
-              <FiSearch className="absolute text-lg text-gray-800 transform -translate-y-1/2 cursor-pointer left-3 top-1/2 hover:text-blue-500" />
-            </div>
-          </li>
-
           <li className="flex items-center justify-between">
-            <a
-              href="#solutions"
-              className="block hover:text-blue-500"
+            <Link
+              to="solutions" // Match with the section id
+              smooth={true}
+              duration={500}
+              className="block hover:cursor-pointer hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Solutions
-            </a>
+            </Link>
             <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
           </li>
 
           <li className="flex items-center justify-between">
-            <a
-              href="#services"
+            <Link
+              to="services" // Match with the section id
+              smooth={true}
+              duration={500}
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Services
-            </a>
+            </Link>
             <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
           </li>
 
           <li>
-            <a
-              href="#about-us"
+            <Link
+              to="about-us" // Match with the section id
+              smooth={true}
+              duration={500}
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               About Us
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="#careers"
+            <Link
+              to="careers" // Match with the section id
+              smooth={true}
+              duration={500}
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Careers
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="#contact-us"
-              className="block p-1 mx-1 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:bg-blue-500 hover:text-white"
+            <Link
+              to="contact-us" // Match with the section id
+              smooth={true}
+              duration={500}
+              className="block p-3 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:border-none hover:bg-blue-500 hover:text-white"
               onClick={() => setMenuOpen(false)}
             >
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
       </motion.div>

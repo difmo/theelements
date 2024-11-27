@@ -65,7 +65,7 @@ const OurCustomerVoice = () => {
             </div>
           </div>
           <div className="md:ml-6">
-            <h2 className="text-xl font-semibold md:text-3xl lg:text-4xl">
+            <h2 className="text-xl font-semibold font-quattrocento text-[#F7DAC6] md:text-3xl lg:text-4xl">
               {testimonials[activeTestimonial].text}
             </h2>
             <p className="my-4 text-sm font-light md:text-lg">

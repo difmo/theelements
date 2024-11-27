@@ -88,7 +88,7 @@ const WhyPartners = () => {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-medium text-[#CF7B41] ">{card.title}</h3>
+                <h3 className="text-lg font-medium font-quattrocento text-[#CF7B41] ">{card.title}</h3>
               </div>
               <div className="text-xl text-gray-400">
                 {expandedIndex === index ? "" : <FaPlus />}

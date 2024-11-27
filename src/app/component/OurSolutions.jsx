@@ -30,7 +30,7 @@ const cardData = [
 
 const OurSolutions = () => {
   return (
-    <div>
+    <div id="solutions">
 
       <Heading title={"OUR SOLUTIONS"}/>
 

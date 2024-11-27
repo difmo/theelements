@@ -47,7 +47,7 @@ const OurLeadership = () => {
                     />
                   </div>
                 </div>
-                <h3 className="mt-8 font-medium text-center text-gray-800 md:text-2xl">
+                <h3 className="mt-8 w-1/2 font-quattrocento font-semibold text-center text-[#CF7B41] md:text-2xl">
                   {leader.name}
                 </h3>
               </div>
@@ -71,7 +71,7 @@ const OurLeadership = () => {
                     />
                   </div>
                 </div>
-                <h3 className="mt-8 font-medium text-center text-gray-800 md:text-2xl">
+                <h3 className="mt-8 w-1/2 font-quattrocento font-semibold  text-center text-[#CF7B41] md:text-2xl">
                   {leader.name}
                 </h3>
               </div>

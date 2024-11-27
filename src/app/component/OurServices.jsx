@@ -151,7 +151,7 @@ const OurServices2 = () => {
   };
 
   return (
-    <div>
+    <div id="services">
       <Heading title={"OUR SERVICES"} />
       <div className="flex flex-col items-center justify-between gap-10 p-8 lg:flex-row">
         <div className="absolute inset-0 z-0 opacity-10">
