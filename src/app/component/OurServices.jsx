@@ -154,7 +154,7 @@ const OurServices2 = () => {
     <div id="services">
       <Heading title={"OUR SERVICES"} />
       <div className="flex flex-col items-center justify-between gap-10 p-8 lg:flex-row">
-        <div className="absolute inset-0 z-0 opacity-10">
+        {/* <div className="inset-0 z-0 opacity-10">
           <svg
             viewBox="0 0 913 540"
             fill="none"
@@ -168,7 +168,7 @@ const OurServices2 = () => {
               strokeMiterlimit="10"
             />
           </svg>
-        </div>
+        </div> */}
 
         {/* Left Container (Shows Only the Clicked Tab) */}
         <div

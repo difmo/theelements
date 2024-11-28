@@ -3,6 +3,7 @@ import Image from "next/image";
 import img1 from "../assets/image1.jpg";
 import img2 from "../assets/image2.jpg";
 import React, { useEffect, useState } from "react";
+import { SlideIndicatorLeft, SlideIndicatorRight } from "../assets/Icons/Icon1";
 
 const headerdata = [
   {
@@ -42,7 +43,7 @@ const MainFrame = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[350px] md:h-[850px] mt-14 mx-auto">
+    <div className="relative w-full h-[350px] md:h-[850px]  mx-auto">
       <video
         key={currentIndex}
         className="absolute hidden object-cover w-full h-full md:block"
@@ -129,47 +130,9 @@ const MainFrame = () => {
       transition-colors duration-300`}
         >
           {currentIndex === 0 ? (
-            <svg
-              width="28"
-              height="14"
-              viewBox="0 0 28 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.8346 11.5612C10.7371 12.4636 9.31055 13.0068 7.7517 13C4.3116 12.9852 1.54004 10.3072 1.54004 6.99995C1.54004 3.68595 4.33406 0.999955 7.78041 0.999955C9.33052 0.999955 10.7483 1.54315 11.8396 2.44235C13.0881 3.47155 14.9148 3.46715 16.1646 2.43875C17.2612 1.53675 18.6865 0.993955 20.2441 0.999555C23.685 1.01235 26.4599 3.69116 26.4595 6.99955C26.4595 10.3132 23.6655 12.9996 20.2191 12.9996C18.6694 12.9996 17.252 12.4564 16.1608 11.5576C14.9115 10.5284 13.0843 10.5324 11.8342 11.5608L11.8346 11.5612Z"
-                stroke="#FCF3ED"
-                strokeMiterlimit="10"
-              />
-              <circle cx="20.5" cy="7" r="4" fill="#FCF3ED" />
-            </svg>
+           <SlideIndicatorLeft/>
           ) : (
-            <svg
-              width="28"
-              height="14"
-              viewBox="0 0 28 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_2322_684)">
-                <path
-                  d="M11.8346 11.5616C10.7371 12.464 9.31055 13.0072 7.7517 13.0004C4.3116 12.9856 1.54004 10.3076 1.54004 7.00044C1.54004 3.68644 4.33406 1.00044 7.78041 1.00044C9.33052 1.00044 10.7483 1.54364 11.8396 2.44284C13.0881 3.47204 14.9148 3.46764 16.1646 2.43924C17.2612 1.53724 18.6865 0.994443 20.2441 1.00004C23.685 1.01284 26.4599 3.69164 26.4595 7.00004C26.4595 10.3136 23.6655 13 20.2191 13C18.6694 13 17.252 12.4568 16.1608 11.558C14.9115 10.5288 13.0843 10.5328 11.8342 11.5612L11.8346 11.5616Z"
-                  stroke="#FCF3ED"
-                  strokeMiterlimit="10"
-                />
-                <circle cx="7.5" cy="7.00049" r="4" fill="#FCF3ED" />
-              </g>
-              <defs>
-                <clipPath id="clip0_2322_684">
-                  <rect
-                    width="27"
-                    height="14"
-                    fill="white"
-                    transform="translate(0.5 0.000488281)"
-                  />
-                </clipPath>
-              </defs>
-            </svg>
+           <SlideIndicatorRight/>
           )}
         </div>
       </div>

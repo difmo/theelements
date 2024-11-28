@@ -21,14 +21,17 @@ const Contact = () => {
     switch (field) {
       case "name":
         if (!value.trim()) error = "Name is required.";
-        else if (!/^[a-zA-Z\s]+$/.test(value)) error = "Name can only contain letters and spaces.";
+        else if (!/^[a-zA-Z\s]+$/.test(value))
+          error = "Name can only contain letters and spaces.";
         break;
       case "email":
         if (!value.trim()) error = "Email is required.";
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = "Enter a valid email address.";
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value))
+          error = "Enter a valid email address.";
         break;
       case "phone":
-        if (value && !/^\d{10}$/.test(value)) error = "Phone number must be 10 digits.";
+        if (value && !/^\d{10}$/.test(value))
+          error = "Phone number must be 10 digits.";
         break;
       case "message":
         if (!value.trim()) error = "Message is required.";
@@ -42,7 +45,10 @@ const Contact = () => {
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
-    setValidationErrors((prev) => ({ ...prev, [id]: validateField(id, value) }));
+    setValidationErrors((prev) => ({
+      ...prev,
+      [id]: validateField(id, value),
+    }));
   };
 
   const isFormValid = () => {
@@ -78,20 +84,66 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 flex items-center py-20 justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full transition transform   duration-300">
-        <h1 className="text-2xl font-bold mb-6 text-center text-gray-800">
-          Contact Us
-        </h1>
+    <div
+    className="flex items-center justify-center min-h-screen bg-[#E8F6FC]"
+    style={{
+      backgroundImage: `url('ring.svg')`,
+      backgroundSize: "cover",
+      backgroundPosition: "bottom",
+      backgroundSize: "1300px",
+    }}
+  >
+    <div className="container flex flex-col space-y-8 md:p-6 md:flex-row md:space-y-0 md:space-x-8">
+      {/* Left Section */}
+      <section className="p-6 rounded-lg md:w-1/2">
+        <div className="flex flex-col space-y-4">
+          <h1 className="text-3xl font-semibold text-red-500 font-quattrocento">Contact Us</h1>
+          <p className="text-base text-gray-700 md:text-xl font-mulish">
+            Jowl salami leberkas turkey pork brisket meatball turducken flank bilto
+            porke belly ball tip. pork belly frankf urtane bilto.
+          </p>
+          <p className="text-base text-gray-700 font-mulish">
+            Address: Via Venezia 118 San Giacomo, D Cosenza 87040, TAX: 2423888323
+          </p>
+          <div className="space-y-2">
+            <h2 className="text-xl font-semibold font-quattrocento">Submit Form or Call</h2>
+            <span className="text-gray-700 font-mulish">91+123456784567</span>
+            <span className="text-gray-700 font-mulish ">91+123456784567</span>
+          </div>
+        </div>
+      </section>
+  
+      {/* Right Section - Form */}
+      <div className="p-8 transition duration-300 transform border border-blue-100 rounded-lg md:w-1/2">
         <form onSubmit={handleSubmit}>
-        {/* jfhe */}
+          {/* Form Fields */}
           {[
-            { id: "name", label: "Name", type: "text", placeholder: "Your Name", required: true },
-            { id: "email", label: "Email", type: "email", placeholder: "Your Email", required: true },
-            { id: "phone", label: "Phone Number", type: "tel", placeholder: "Your Phone Number" },
+            {
+              id: "name",
+              label: "Name",
+              type: "text",
+              placeholder: "Your Name",
+              required: true,
+            },
+            {
+              id: "email",
+              label: "Email",
+              type: "email",
+              placeholder: "Your Email",
+              required: true,
+            },
+            {
+              id: "phone",
+              label: "Phone Number",
+              type: "tel",
+              placeholder: "Your Phone Number",
+            },
           ].map(({ id, label, type, placeholder, required }) => (
-            <div key={id} className="mb-4">
-              <label htmlFor={id} className="block text-sm font-medium text-gray-700">
+            <div key={id} className="mb-2">
+              <label
+                htmlFor={id}
+                className="block text-sm font-medium text-gray-700"
+              >
                 {label}
               </label>
               <input
@@ -100,17 +152,21 @@ const Contact = () => {
                 value={formData[id]}
                 onChange={handleChange}
                 placeholder={placeholder}
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full p-2 border border-white rounded-md focus:outline-none focus:border-blue-500"
                 required={required}
               />
               {validationErrors[id] && (
-                <p className="text-red-500 text-sm mt-2">{validationErrors[id]}</p>
+                <p className="text-sm text-red-500 ">{validationErrors[id]}</p>
               )}
             </div>
           ))}
-
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+  
+          {/* Message Field */}
+          <div className="mb-6">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700"
+            >
               Message
             </label>
             <textarea
@@ -119,35 +175,39 @@ const Contact = () => {
               onChange={handleChange}
               rows="5"
               placeholder="Your Message"
-              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="block w-full p-3 mt-1 border border-white rounded-md focus:outline-none focus:border-blue-500"
               required
             ></textarea>
             {validationErrors.message && (
-              <p className="text-red-500 text-sm mt-2">{validationErrors.message}</p>
+              <p className="mt-1 text-sm text-red-500">{validationErrors.message}</p>
             )}
           </div>
-
+  
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-200"
+            className="w-full py-3 text-white transition duration-200 bg-blue-400 rounded-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>
-
+  
+        {/* Success/Error Messages */}
         {success && (
-          <p className="mt-4 text-green-500 text-center font-semibold">
+          <p className="mt-4 font-semibold text-center text-green-500">
             Thank you for contacting us! We will get back to you soon.
           </p>
         )}
         {error && (
-          <p className="mt-4 text-red-500 text-center font-semibold">
+          <p className="mt-4 font-semibold text-center text-red-500">
             There was an error submitting your message. Please try again.
           </p>
         )}
       </div>
     </div>
+  </div>
+  
   );
 };
 

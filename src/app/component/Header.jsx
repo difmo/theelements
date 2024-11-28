@@ -4,7 +4,8 @@ import { FiSearch, FiPlus } from "react-icons/fi"; // Importing icons from React
 import Image from "next/image"; // Importing Next.js Image component
 import logo from "../assets/8E_logo-A 1.svg";
 import { motion } from "framer-motion"; // Import motion from framer-motion
-import { Link } from "react-scroll"; // Import Link from react-scroll
+import Link from "next/link"; // Import Link from next/link for page navigation
+import { Link as ScrollLink } from "react-scroll"; // Import Link from react-scroll for in-page navigation
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // To handle the mobile menu toggle
@@ -14,7 +15,7 @@ const Header = () => {
   };
 
   return (
-    <header className="absolute top-0 left-0 w-full bg-[#E8F6FC] shadow-md z-50">
+    <header className="sticky top-0 left-0 w-full bg-[#E8F6FC]  z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">
         <div className="flex items-center h-full">
           <Image
@@ -66,57 +67,52 @@ const Header = () => {
           {/* Links for larger screens */}
           <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
             <li>
-              <Link
+              <ScrollLink
                 to="solutions" // Match with the section id
-                smooth={true}
-                duration={500}
-                className="hover:text-blue-500"
-              >
-                Solutions
-              </Link>
-            </li>
-            <span className="hidden w-px h-5 bg-gray-400 md:block"></span>
-            <li>
-              <Link
-                to="services" 
                 smooth={true}
                 duration={500}
                 className="hover:text-blue-500 hover:cursor-pointer"
               >
-                Services
-              </Link>
+                Solutions
+              </ScrollLink>
             </li>
-            <span className="hidden w-px h-5 bg-gray-400 md:block"></span>
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
-              <Link
+              <ScrollLink
+                to="services"
+                smooth={true}
+                duration={500}
+                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+              >
+                Services
+              </ScrollLink>
+            </li>
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
+            <li>
+              <ScrollLink
                 to="about-us" // Match with the section id
                 smooth={true}
                 duration={500}
-                className="hover:text-blue-500"
+                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
               >
                 About Us
-              </Link>
+              </ScrollLink>
             </li>
-            <span className="hidden w-px h-5 bg-gray-400 md:block"></span>
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link
-                to="careers" // Match with the section id
-                smooth={true}
-                duration={500}
-                className="hover:text-blue-500"
+                href="/career" // Navigate to the careers page
+                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
               >
                 Careers
               </Link>
             </li>
-            <li className="hidden md:block">
-              <FiSearch className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
-            </li>
+
+            {/* Link to contact page */}
             <li>
               <Link
-                to="contact-us" // Match with the section id
-                smooth={true}
-                duration={500}
-                className="px-4 py-2 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:bg-blue-500 hover:text-white"
+                href="/contact"
+                className="px-4 py-2 text-sm text-gray-800 transition-all duration-300 border border-gray-400 rounded-full hover:cursor-pointer hover:bg-blue-500 hover:border-none hover:text-white"
               >
                 Contact Us
               </Link>
@@ -125,6 +121,7 @@ const Header = () => {
         </div>
       </nav>
 
+      {/* Mobile Menu for smaller screens */}
       <motion.div
         className="md:hidden left-0 w-full bg-[#E8F6FC] overflow-hidden"
         initial={{ height: 0, scaleY: 0.8 }}
@@ -142,60 +139,58 @@ const Header = () => {
       >
         <ul className="p-4 space-y-4">
           <li className="flex items-center justify-between">
-            <Link
-              to="solutions" // Match with the section id
+            <ScrollLink
+              to="solutions"
               smooth={true}
               duration={500}
               className="block hover:cursor-pointer hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Solutions
-            </Link>
+            </ScrollLink>
             <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
           </li>
 
           <li className="flex items-center justify-between">
-            <Link
-              to="services" // Match with the section id
+            <ScrollLink
+              to="services"
               smooth={true}
               duration={500}
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Services
-            </Link>
+            </ScrollLink>
             <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
           </li>
 
           <li>
-            <Link
-              to="about-us" // Match with the section id
+            <ScrollLink
+              to="about-us"
               smooth={true}
               duration={500}
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               About Us
-            </Link>
+            </ScrollLink>
           </li>
 
           <li>
-            <Link
-              to="careers" // Match with the section id
+            <ScrollLink
+              to="career"
               smooth={true}
               duration={500}
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Careers
-            </Link>
+            </ScrollLink>
           </li>
 
           <li>
             <Link
-              to="contact-us" // Match with the section id
-              smooth={true}
-              duration={500}
+              href="/contact"
               className="block p-3 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:border-none hover:bg-blue-500 hover:text-white"
               onClick={() => setMenuOpen(false)}
             >

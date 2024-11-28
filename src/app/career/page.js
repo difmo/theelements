@@ -2,6 +2,7 @@
 
 import { sanityClient } from "@/sanity";
 import React, { useState } from "react";
+import { FaUser, FaEnvelope, FaPhoneAlt, FaBriefcase, FaFileAlt } from 'react-icons/fa'; 
 
 const page = () => {
   const [formData, setFormData] = useState({
@@ -92,54 +93,90 @@ const page = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 flex items-center py-20 justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full transition transform duration-300">
-        <h1 className="text-3xl font-extrabold mb-6 text-center text-gray-800">
+
+    <div
+      className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
+      style={{
+        backgroundImage: `url('ring.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "bottom",
+        backgroundSize: "1800px",
+      }}
+    >
+      <div className="w-full max-w-2xl p-8 transition duration-300 transform border rounded-lg ">
+        <h1 className="mb-6 text-3xl font-extrabold text-center text-gray-800">
           Join Our Team
         </h1>
         <form onSubmit={handleSubmit}>
-          {[
-            { id: "name", label: "Full Name", type: "text", placeholder: "Your Name", required: true },
-            { id: "email", label: "Email Address", type: "email", placeholder: "Your Email", required: true },
-            { id: "phone", label: "Phone Number", type: "tel", placeholder: "Your Phone Number" },
-            { id: "position", label: "Position", type: "text", placeholder: "Position You Are Applying For", required: true },
-          ].map(({ id, label, type, placeholder, required }) => (
-            <div key={id} className="mb-6">
-              <label htmlFor={id} className="block text-sm font-semibold text-gray-700">
-                {label}
-              </label>
-              <input
-                type={type}
-                id={id}
-                value={formData[id]}
-                onChange={handleChange}
-                placeholder={placeholder}
-                className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-300"
-                required={required}
-              />
-              {validationErrors[id] && (
-                <p className="text-red-500 text-sm mt-2">{validationErrors[id]}</p>
-              )}
-            </div>
-          ))}
-
+          {/* First Row: Full Name and Email Address */}
+          <div className="flex flex-col mb-6 space-y-6 sm:flex-row sm:space-x-4 sm:space-y-0">
+            {[{ id: "name", label: "Full Name", type: "text", placeholder: "Your Name", required: true, icon: <FaUser /> },
+              { id: "email", label: "Email Address", type: "email", placeholder: "Your Email", required: true, icon: <FaEnvelope /> }
+            ].map(({ id, label, type, placeholder, required, icon }) => (
+              <div key={id} className="w-full sm:w-1/2">
+                <label htmlFor={id} className="flex items-center block text-sm font-semibold text-gray-700">
+                  {icon && <span className="mr-2 text-gray-600">{icon}</span>} {label}
+                </label>
+                <input
+                  type={type}
+                  id={id}
+                  value={formData[id]}
+                  onChange={handleChange}
+                  placeholder={placeholder}
+                  className="block w-full p-3 mt-2 transition duration-300 border-white rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  required={required}
+                />
+                {validationErrors[id] && (
+                  <p className="mt-2 text-sm text-red-500">{validationErrors[id]}</p>
+                )}
+              </div>
+            ))}
+          </div>
+    
+          {/* Second Row: Phone Number and Position */}
+          <div className="flex flex-col mb-6 space-y-6 sm:flex-row sm:space-x-4 sm:space-y-0">
+            {[{ id: "phone", label: "Phone Number", type: "tel", placeholder: "Your Phone Number", icon: <FaPhoneAlt /> },
+              { id: "position", label: "Position", type: "text", placeholder: "Position You Are Applying For", required: true, icon: <FaBriefcase /> }
+            ].map(({ id, label, type, placeholder, required, icon }) => (
+              <div key={id} className="w-full sm:w-1/2">
+                <label htmlFor={id} className="flex items-center block text-sm font-semibold text-gray-700">
+                  {icon && <span className="mr-2 text-gray-600">{icon}</span>} {label}
+                </label>
+                <input
+                  type={type}
+                  id={id}
+                  value={formData[id]}
+                  onChange={handleChange}
+                  placeholder={placeholder}
+                  className="block w-full p-3 mt-2 transition duration-300 border-white rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  required={required}
+                />
+                {validationErrors[id] && (
+                  <p className="mt-2 text-sm text-red-500">{validationErrors[id]}</p>
+                )}
+              </div>
+            ))}
+          </div>
+    
+          {/* Third Row: Resume Upload and Cover Letter */}
           <div className="mb-6">
-            <label htmlFor="resume" className="block text-sm font-semibold text-gray-700">
+            <label htmlFor="resume" className="flex items-center text-sm font-semibold text-gray-700">
+              <FaFileAlt className="mr-2 text-gray-600" />
               Upload Resume (PDF, DOC, etc.)
             </label>
             <input
               type="file"
               id="resume"
               onChange={handleFileChange}
-              className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              className="block w-full p-3 mt-2 transition duration-300 border border-none rounded-lg focus:ring-blue-500 focus:border-blue-500"
               accept=".pdf,.doc,.docx"
               required
             />
             {validationErrors.resume && (
-              <p className="text-red-500 text-sm mt-2">{validationErrors.resume}</p>
+              <p className="mt-2 text-sm text-red-500">{validationErrors.resume}</p>
             )}
           </div>
-
+    
           <div className="mb-6">
             <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
               Cover Letter / Message
@@ -150,31 +187,35 @@ const page = () => {
               onChange={handleChange}
               rows="5"
               placeholder="Tell us why you're the best fit for this position"
-              className="mt-2 block w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-300"
+              className="block w-full p-3 mt-2 transition duration-300 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
             ></textarea>
           </div>
-
+    
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-4 rounded-lg font-semibold text-lg shadow-md hover:opacity-90 transition-opacity duration-200"
+            className="w-full px-4 py-3 text-lg font-semibold text-white transition-opacity duration-200 rounded-lg shadow-md bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit Application"}
           </button>
         </form>
-
+    
+        {/* Success/Error Messages */}
         {success && (
-          <p className="mt-6 text-green-600 text-center font-semibold">
+          <p className="mt-6 font-semibold text-center text-green-600">
             Thank you for applying! We will get back to you soon.
           </p>
         )}
         {error && (
-          <p className="mt-6 text-red-600 text-center font-semibold">
+          <p className="mt-6 font-semibold text-center text-red-600">
             There was an error submitting your application. Please try again.
           </p>
         )}
       </div>
     </div>
+    
+  
   );
 };
 
