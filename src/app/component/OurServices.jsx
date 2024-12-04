@@ -210,7 +210,7 @@ const OurServices2 = () => {
 
               <div className="grid grid-cols-2  mt-8 w-full max-w-[960px] mx-auto">
                 <div className="flex flex-col w-full gap-2 mt-8">
-                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
+                  <div  className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
                     {leftContainerContent[activeTab].leftIcon[0]}
                     <span className="text-sm text-[#0C455E]">
                       {leftContainerContent[activeTab].leftIconTitle[0]}
