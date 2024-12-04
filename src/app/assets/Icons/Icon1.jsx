@@ -2,7 +2,7 @@ import React from "react";
 
 const BuildZero = ({ size }) => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         // width={size}
         // height={size}
@@ -23,7 +23,7 @@ const BuildZero = ({ size }) => {
 
 const Elevate = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg viewBox="0 0 78 70" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -38,7 +38,7 @@ const Elevate = () => {
 
 const Unleash = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg viewBox="0 0 57 72" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -53,7 +53,7 @@ const Unleash = () => {
 
 const Unlock = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg viewBox="0 0 76 74" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -70,7 +70,7 @@ const Unlock = () => {
 
 const UnLockIcon1 = () => {
   return (
-    <div  className="w-10 md:w-20">
+    <div  className="w-10 md:w-14">
       <svg viewBox="0 0 64 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
