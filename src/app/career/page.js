@@ -1,6 +1,5 @@
 "use client";
 
-import { sanityClient } from "@/sanity";
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt, FaBriefcase, FaFileAlt } from 'react-icons/fa'; 
 
@@ -77,10 +76,8 @@ const page = () => {
     setError(false);
 
     try {
-      await sanityClient.create({
-        _type: "career",
-        ...formData,
-      });
+      // Simulating a successful submission
+      console.log("Form submitted successfully!", formData);
       setSuccess(true);
       setFormData({ name: "", email: "", phone: "", position: "", resume: "", message: "" });
       setValidationErrors({});
@@ -93,7 +90,6 @@ const page = () => {
   };
 
   return (
-
     <div
       className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
       style={{
@@ -214,8 +210,6 @@ const page = () => {
         )}
       </div>
     </div>
-    
-  
   );
 };
 

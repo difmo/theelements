@@ -1,6 +1,5 @@
 "use client";
 
-import { sanityClient } from "@/sanity";
 import React, { useState } from "react";
 
 const Contact = () => {
@@ -68,10 +67,10 @@ const Contact = () => {
     setError(false);
 
     try {
-      await sanityClient.create({
-        _type: "contact",
-        ...formData,
-      });
+      // Simulating form submission (you can replace this with your own logic)
+      console.log("Form submitted successfully", formData);
+
+      // Reset form on success
       setSuccess(true);
       setFormData({ name: "", email: "", phone: "", message: "" });
       setValidationErrors({});
@@ -85,129 +84,133 @@ const Contact = () => {
 
   return (
     <div
-    className="flex items-center justify-center min-h-screen bg-[#E8F6FC]"
-    style={{
-      backgroundImage: `url('ring.svg')`,
-      backgroundSize: "cover",
-      backgroundPosition: "bottom",
-      backgroundSize: "1300px",
-    }}
-  >
-    <div className="container flex flex-col space-y-8 md:p-6 md:flex-row md:space-y-0 md:space-x-8">
-      {/* Left Section */}
-      <section className="p-6 rounded-lg md:w-1/2">
-        <div className="flex flex-col space-y-4">
-          <h1 className="text-3xl font-semibold text-red-500 font-quattrocento">Contact Us</h1>
-          <p className="text-base text-gray-700 md:text-xl font-mulish">
-            Jowl salami leberkas turkey pork brisket meatball turducken flank bilto
-            porke belly ball tip. pork belly frankf urtane bilto.
-          </p>
-          <p className="text-base text-gray-700 font-mulish">
-            Address: Via Venezia 118 San Giacomo, D Cosenza 87040, TAX: 2423888323
-          </p>
-          <div className="space-y-2">
-            <h2 className="text-xl font-semibold font-quattrocento">Submit Form or Call</h2>
-            <span className="text-gray-700 font-mulish">91+123456784567</span>
-            <span className="text-gray-700 font-mulish ">91+123456784567</span>
+      className="flex items-center justify-center min-h-screen bg-[#E8F6FC]"
+      style={{
+        backgroundImage: `url('ring.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "bottom",
+        backgroundSize: "1300px",
+      }}
+    >
+      <div className="container flex flex-col space-y-8 md:p-6 md:flex-row md:space-y-0 md:space-x-8">
+        {/* Left Section */}
+        <section className="p-6 rounded-lg md:w-1/2">
+          <div className="flex flex-col space-y-4">
+            <h1 className="text-3xl font-semibold text-red-500 font-quattrocento">
+              Contact Us
+            </h1>
+            <p className="text-base text-gray-700 md:text-xl font-mulish">
+              Jowl salami leberkas turkey pork brisket meatball turducken flank
+              bilto pork belly ball tip. pork belly frankf urtane bilto.
+            </p>
+            <p className="text-base text-gray-700 font-mulish">
+              Address: Via Venezia 118 San Giacomo, D Cosenza 87040, TAX:
+              2423888323
+            </p>
+            <div className="space-y-2">
+              <h2 className="text-xl font-semibold font-quattrocento">
+                Submit Form or Call
+              </h2>
+              <span className="text-gray-700 font-mulish">91+123456784567</span>
+              <span className="text-gray-700 font-mulish ">91+123456784567</span>
+            </div>
           </div>
-        </div>
-      </section>
-  
-      {/* Right Section - Form */}
-      <div className="p-8 transition duration-300 transform border border-blue-100 rounded-lg md:w-1/2">
-        <form onSubmit={handleSubmit}>
-          {/* Form Fields */}
-          {[
-            {
-              id: "name",
-              label: "Name",
-              type: "text",
-              placeholder: "Your Name",
-              required: true,
-            },
-            {
-              id: "email",
-              label: "Email",
-              type: "email",
-              placeholder: "Your Email",
-              required: true,
-            },
-            {
-              id: "phone",
-              label: "Phone Number",
-              type: "tel",
-              placeholder: "Your Phone Number",
-            },
-          ].map(({ id, label, type, placeholder, required }) => (
-            <div key={id} className="mb-2">
+        </section>
+
+        {/* Right Section - Form */}
+        <div className="p-8 transition duration-300 transform border border-blue-100 rounded-lg md:w-1/2">
+          <form onSubmit={handleSubmit}>
+            {/* Form Fields */}
+            {[
+              {
+                id: "name",
+                label: "Name",
+                type: "text",
+                placeholder: "Your Name",
+                required: true,
+              },
+              {
+                id: "email",
+                label: "Email",
+                type: "email",
+                placeholder: "Your Email",
+                required: true,
+              },
+              {
+                id: "phone",
+                label: "Phone Number",
+                type: "tel",
+                placeholder: "Your Phone Number",
+              },
+            ].map(({ id, label, type, placeholder, required }) => (
+              <div key={id} className="mb-2">
+                <label
+                  htmlFor={id}
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  {label}
+                </label>
+                <input
+                  type={type}
+                  id={id}
+                  value={formData[id]}
+                  onChange={handleChange}
+                  placeholder={placeholder}
+                  className="block w-full p-2 border border-white rounded-md focus:outline-none focus:border-blue-500"
+                  required={required}
+                />
+                {validationErrors[id] && (
+                  <p className="text-sm text-red-500 ">{validationErrors[id]}</p>
+                )}
+              </div>
+            ))}
+
+            {/* Message Field */}
+            <div className="mb-6">
               <label
-                htmlFor={id}
+                htmlFor="message"
                 className="block text-sm font-medium text-gray-700"
               >
-                {label}
+                Message
               </label>
-              <input
-                type={type}
-                id={id}
-                value={formData[id]}
+              <textarea
+                id="message"
+                value={formData.message}
                 onChange={handleChange}
-                placeholder={placeholder}
-                className="block w-full p-2 border border-white rounded-md focus:outline-none focus:border-blue-500"
-                required={required}
-              />
-              {validationErrors[id] && (
-                <p className="text-sm text-red-500 ">{validationErrors[id]}</p>
+                rows="5"
+                placeholder="Your Message"
+                className="block w-full p-3 mt-1 border border-white rounded-md focus:outline-none focus:border-blue-500"
+                required
+              ></textarea>
+              {validationErrors.message && (
+                <p className="mt-1 text-sm text-red-500">{validationErrors.message}</p>
               )}
             </div>
-          ))}
-  
-          {/* Message Field */}
-          <div className="mb-6">
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700"
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full py-3 text-white transition duration-200 bg-blue-400 rounded-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isSubmitting}
             >
-              Message
-            </label>
-            <textarea
-              id="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="5"
-              placeholder="Your Message"
-              className="block w-full p-3 mt-1 border border-white rounded-md focus:outline-none focus:border-blue-500"
-              required
-            ></textarea>
-            {validationErrors.message && (
-              <p className="mt-1 text-sm text-red-500">{validationErrors.message}</p>
-            )}
-          </div>
-  
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3 text-white transition duration-200 bg-blue-400 rounded-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? "Submitting..." : "Submit"}
-          </button>
-        </form>
-  
-        {/* Success/Error Messages */}
-        {success && (
-          <p className="mt-4 font-semibold text-center text-green-500">
-            Thank you for contacting us! We will get back to you soon.
-          </p>
-        )}
-        {error && (
-          <p className="mt-4 font-semibold text-center text-red-500">
-            There was an error submitting your message. Please try again.
-          </p>
-        )}
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </button>
+          </form>
+
+          {/* Success/Error Messages */}
+          {success && (
+            <p className="mt-4 font-semibold text-center text-green-500">
+              Thank you for contacting us! We will get back to you soon.
+            </p>
+          )}
+          {error && (
+            <p className="mt-4 font-semibold text-center text-red-500">
+              There was an error submitting your message. Please try again.
+            </p>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-  
   );
 };
 
