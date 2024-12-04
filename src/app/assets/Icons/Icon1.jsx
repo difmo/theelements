@@ -70,7 +70,7 @@ const Unlock = () => {
 
 const UnLockIcon1 = () => {
   return (
-    <div  className="w-10 md:w-14">
+    <div  className="w-10 md:w-12">
       <svg viewBox="0 0 64 44" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -84,7 +84,7 @@ const UnLockIcon1 = () => {
 };
 const UnLockIcon2 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg viewBox="0 0 64 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -98,7 +98,7 @@ const UnLockIcon2 = () => {
 };
 const UnLockIcon3 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -112,7 +112,7 @@ const UnLockIcon3 = () => {
 };
 const UnLockIcon4 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg viewBox="0 0 66 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"
@@ -129,7 +129,7 @@ const UnLockIcon4 = () => {
 
 const UnleashIcon1 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="56"
         height="64"
@@ -150,7 +150,7 @@ const UnleashIcon1 = () => {
 
 const UnleashIcon2 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="46"
         height="64"
@@ -171,7 +171,7 @@ const UnleashIcon2 = () => {
 
 const UnleashIcon3 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="66"
         height="66"
@@ -192,7 +192,7 @@ const UnleashIcon3 = () => {
 
 const UnleashIcon4 = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="66"
         height="46"
@@ -215,7 +215,7 @@ const UnleashIcon4 = () => {
 
 const Elevate1Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="56"
         height="64"
@@ -236,7 +236,7 @@ const Elevate1Icon = () => {
 
 const Elevate2Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="64"
         height="64"
@@ -256,7 +256,7 @@ const Elevate2Icon = () => {
 };
 const Elevate3Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="62"
         height="54"
@@ -276,7 +276,7 @@ const Elevate3Icon = () => {
 };
 const Elevate4Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="66"
         height="58"
@@ -299,7 +299,7 @@ const Elevate4Icon = () => {
 
 const Buildzero1Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="48"
         height="62"
@@ -319,7 +319,7 @@ const Buildzero1Icon = () => {
 };
 const Buildzero2Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="64"
         height="64"
@@ -339,7 +339,7 @@ const Buildzero2Icon = () => {
 };
 const Buildzero3Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="64"
         height="64"
@@ -359,7 +359,7 @@ const Buildzero3Icon = () => {
 };
 const Buildzero4Icon = () => {
   return (
-    <div className="w-10 md:w-20">
+    <div className="w-10 md:w-12">
       <svg
         width="60"
         height="62"

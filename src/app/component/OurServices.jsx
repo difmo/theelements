@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import React, { useState } from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
@@ -33,13 +33,11 @@ import {
   UnleashIcon3,
   UnleashIcon4,
 } from "../assets/Icons/Icon1";
-// import Icon2 from "../assets/Icons/Icon2";
 import Heading from "./Heading";
 
 const OurServices2 = () => {
   const [activeTab, setActiveTab] = useState(1); // Default active tab is 1
   const [tabOrder, setTabOrder] = useState([0, 1, 2, 3]); // Initial tab order (show all tabs)
-  const [animating, setAnimating] = useState(false); // To handle animation state
   const [expandedTab, setExpandedTab] = useState(null); // To manage expanded state on small devices
 
   const leftContainerContent = [
@@ -136,21 +134,7 @@ const OurServices2 = () => {
   ];
 
   const handleTabClick = (clickedTabIndex) => {
-    if (animating) return;
-    setAnimating(true);
     setActiveTab(clickedTabIndex);
-
-    setTabOrder((prevOrder) => {
-      const updatedOrder = [...prevOrder];
-      const indexToRemove = updatedOrder.indexOf(clickedTabIndex);
-      updatedOrder.splice(indexToRemove, 1); // Move clicked tab to the end of the order
-      updatedOrder.push(clickedTabIndex); // Ensure clicked tab goes to the end
-      return updatedOrder;
-    });
-
-    setTimeout(() => {
-      setAnimating(false);
-    }, 500); // Match animation duration with setTimeout delay
   };
 
   const handleExpandTab = (tabIndex) => {
@@ -161,22 +145,6 @@ const OurServices2 = () => {
     <div id="services">
       <Heading title={"OUR SERVICES"} />
       <div className="flex flex-col items-center justify-between gap-10 p-8 lg:flex-row">
-        {/* <div className="inset-0 z-0 opacity-10">
-          <svg
-            viewBox="0 0 913 540"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              opacity="0.4"
-              d="M371.531 294.499C376.225 354.727 401.704 413.635 448.019 459.532C550.224 560.826 714.602 560.398 816.365 458.635C918.338 356.662 918.347 191.374 816.413 89.4402C770.565 43.5922 711.915 18.3714 651.971 13.7643C583.375 8.50599 529.48 -45.6602 524.16 -114.268C519.479 -174.459 494.025 -233.317 447.783 -279.214C345.615 -380.594 181.114 -380.241 79.3265 -278.428C-22.6337 -176.468 -22.6551 -11.1674 79.2787 90.7664C125.114 136.602 183.752 161.81 243.684 166.43C312.304 171.713 366.224 225.879 371.556 294.499L371.531 294.499Z"
-              stroke="#000"
-              strokeWidth="40"
-              strokeMiterlimit="10"
-            />
-          </svg>
-        </div> */}
-
         {/* Left Container (Shows Only the Clicked Tab) */}
         <div
           className="relative hidden md:flex w-full p-8 bg-white rounded-[60px] bg-gradient-to-r from-blue-100 via-white to-blue-50"
@@ -208,7 +176,7 @@ const OurServices2 = () => {
                 </button>
               </div>
 
-              <div className="flex flex-col gap-4 mt-8 md:flex-row "> {/* Reduced gap here */}
+              <div className="flex flex-col gap-4 mt-8 md:flex-row ">
                 <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
                   <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
                     {leftContainerContent[activeTab].leftIcon[0]}
@@ -251,25 +219,20 @@ const OurServices2 = () => {
         {/* Right Menu */}
         <div className="flex flex-col items-center w-full gap-4 lg:w-1/3">
           <div className="hidden lg:block">
-            <div
-              className={`transition-transform duration-500 ease-in-out transform ${animating ? "translate-x-[-10%]" : "translate-x-0"
-                }`}
-            >
-              {tabOrder.slice(0, 3).map((tabIndex) => (
-                <div
-                  key={tabIndex}
-                  className="flex items-center mb-2 justify-center md:w-[380px] md:h-[164px] space-x-4 bg-white rounded-full cursor-pointer"
-                  onClick={() => handleTabClick(tabIndex)}
-                >
-                  <div >
-                    {leftContainerContent[tabIndex].icon}
-                  </div>
-                  <span className="text-lg font-bold text-[#CF7B41]">
-                    {leftContainerContent[tabIndex].title}
-                  </span>
+            {tabOrder.map((tabIndex) => (
+              <div
+                key={tabIndex}
+                className={`flex items-center mb-2 justify-center md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${activeTab === tabIndex ? "bg-[#fff6f0]" : "bg-white"}`}
+                onClick={() => handleTabClick(tabIndex)}
+              >
+                <div >
+                  {leftContainerContent[tabIndex].icon}
                 </div>
-              ))}
-            </div>
+                <span className={`text-lg font-bold ${activeTab === tabIndex ? "text-[#CF7B41]" : "text-[#CF7B41]"}`}>
+                  {leftContainerContent[tabIndex].title}
+                </span>
+              </div>
+            ))}
           </div>
 
           <div className="w-full lg:hidden">

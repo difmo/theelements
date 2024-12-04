@@ -70,8 +70,8 @@ const OurSuccessStory = () => {
                 key={index}
                 initial={{ flex: 1 }}
                 animate={{ flex: activeIndex === index ? 5 : 1 }}
-                transition={{ type: "spring", stiffness: 180, damping: 10 }}
-                className={`overflow-hidden transition-all ${
+                // transition={{ type: "spring", stiffness: 180, damping: 10 }}
+                className={`overflow-hidden  ${
                   activeIndex === index ? "rounded-[100px]" : "rounded-full"
                 } bg-white cursor-pointer`}
                 onClick={() => setActiveIndex(index)}

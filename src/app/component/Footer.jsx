@@ -26,12 +26,13 @@ const Footer = () => {
               <br />
               Hyderabad - 500032, India
             </p>
-            <p className="flex items-center justify-center mt-4 sm:justify-start">
-              <span className="inline-block w-4 h-4 mr-2">
+            <p className="flex items-center justify-start space-x-2">
+              <span className="w-2 h-2 mb-1">
                 <FontAwesomeIcon icon={faLocationPin} />
               </span>
-              20 Eliott Dr, Monroe, NJ 08831
+              <span>20 Eliott Dr, Monroe, NJ 08831</span>
             </p>
+
           </div>
 
           {/* Company Links */}
@@ -63,7 +64,7 @@ const Footer = () => {
             </div>
 
             {/* Contact Links */}
-            <div className="mb-6 text-center md:w-1/2 sm:w-1/4 lg:w-1/6 sm:text-left">
+            <div className="mb-6 ">
               <h2 className="mb-4 text-lg font-bold">Contact</h2>
               <ul className="space-y-2">
                 <li>
@@ -80,6 +81,8 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* <span className="inline-block w-4 mr-2">&#x2709;</span> */}
+
           {/* Contact Info */}
           <div className="w-full mb-6 text-center sm:w-1/2 lg:w-1/3 sm:text-left">
             <h2 className="mb-4 text-lg font-bold">Get in Touch</h2>
@@ -88,7 +91,7 @@ const Footer = () => {
               +1 (470) 286-5319, +91 98481 26864
             </p>
             <p className="flex items-center justify-center mt-4 sm:justify-start">
-              <span className="inline-block w-4 h-4 mr-2">&#x2709;</span>
+              <span className="inline-block w-6 mr-2">&#x2709;</span>
               info@8thelement.ai
             </p>
           </div>

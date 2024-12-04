@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { FiSearch, FiPlus } from "react-icons/fi"; // Importing icons from React Icons
-import Image from "next/image"; // Importing Next.js Image component
+import { FiSearch, FiPlus } from "react-icons/fi";
+import Image from "next/image";
 import logo from "../assets/8E_logo-A 1.svg";
-import { motion } from "framer-motion"; // Import motion from framer-motion
-import Link from "next/link"; // Import Link from next/link for page navigation
-import { Link as ScrollLink } from "react-scroll"; // Import Link from react-scroll for in-page navigation
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false); // To handle the mobile menu toggle
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -17,17 +17,17 @@ const Header = () => {
   return (
     <header className="sticky top-0 left-0 w-full bg-[#E8F6FC]  z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">
-      <div className="flex items-center h-full">
-  <Link href="/" passHref>
-    <Image
-      src={logo}
-      alt="Difmo Logo"
-      width={200}
-      height={64}
-      className="h-[30px] w-[126px]"
-    />
-  </Link>
-</div>
+        <div className="flex items-center h-full">
+          <Link href="/" passHref>
+            <Image
+              src={logo}
+              alt="Difmo Logo"
+              width={200}
+              height={64}
+              className="h-[30px] w-[126px]"
+            />
+          </Link>
+        </div>
 
         <div className="flex items-center justify-center">
           {/* Mobile Menu Toggle */}
@@ -66,11 +66,10 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Links for larger screens */}
           <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
             <li>
               <ScrollLink
-                to="solutions" // Match with the section id
+                to="solutions"
                 smooth={true}
                 duration={500}
                 className="hover:text-blue-500 hover:cursor-pointer"
@@ -92,7 +91,7 @@ const Header = () => {
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <ScrollLink
-                to="about-us" // Match with the section id
+                to="about-us"
                 smooth={true}
                 duration={500}
                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
@@ -103,7 +102,7 @@ const Header = () => {
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link
-                href="/career" // Navigate to the careers page
+                href="/career"
                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
               >
                 Careers
