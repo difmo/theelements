@@ -38,3 +38,30 @@ body {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+
+
+/* App.css */
+
+/* Light Mode */
+:root {
+  --text-color-light: black;
+  --bg-color-light: white;
+}
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --text-color-dark: white;
+  --bg-color-dark: #333;
+}
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Dark mode styles */
+[data-theme='dark'] {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}

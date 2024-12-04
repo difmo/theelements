@@ -48,7 +48,7 @@ const OurServices2 = () => {
       icon: <Unlock />,
       leftIcon: [
         <UnLockIcon1 key={generateRandomString()} />,
-        <UnLockIcon2  key={generateRandomString()}/>,
+        <UnLockIcon2 key={generateRandomString()} />,
         <UnLockIcon3 key={generateRandomString()} />,
         <UnLockIcon4 key={generateRandomString()} />,
       ],
@@ -208,15 +208,15 @@ const OurServices2 = () => {
                 </button>
               </div>
 
-              <div className="grid grid-cols-2  mt-8 w-full max-w-[960px] mx-auto">
-                <div className="flex flex-col w-full gap-2 mt-8">
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
+              <div className="flex flex-col gap-4 mt-8 md:flex-row "> {/* Reduced gap here */}
+                <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
                     {leftContainerContent[activeTab].leftIcon[0]}
                     <span key={0} className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[0]}
                     </span>
                   </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
                     {leftContainerContent[activeTab].leftIcon[1]}
                     <span className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[1]}
@@ -224,24 +224,26 @@ const OurServices2 = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col w-full gap-3">
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    {leftContainerContent[activeTab].leftIcon[1]}
-                    <span className="px-4 text-sm text-center text-gray-800">
-                      {leftContainerContent[activeTab].leftIconTitle[1]}
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    <div className="flex items-center justify-center">
+                <div className="flex flex-col items-center justify-center w-full gap-3">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
+                    <div className="flex items-center justify-center w-full">
                       {leftContainerContent[activeTab].leftIcon[2]}
-                    </div>
+                    </div>                    
                     <span className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[2]}
                     </span>
                   </div>
-
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
+                    <div className="flex items-center justify-center w-full">
+                      {leftContainerContent[activeTab].leftIcon[3]}
+                    </div>
+                    <span className="px-4 text-sm text-center text-gray-800">
+                      {leftContainerContent[activeTab].leftIconTitle[3]}
+                    </span>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -259,7 +261,9 @@ const OurServices2 = () => {
                   className="flex items-center mb-2 justify-center md:w-[380px] md:h-[164px] space-x-4 bg-white rounded-full cursor-pointer"
                   onClick={() => handleTabClick(tabIndex)}
                 >
-                  {leftContainerContent[tabIndex].icon}
+                  <div >
+                    {leftContainerContent[tabIndex].icon}
+                  </div>
                   <span className="text-lg font-bold text-[#CF7B41]">
                     {leftContainerContent[tabIndex].title}
                   </span>
