@@ -18,14 +18,14 @@ const headerdata = [
     video: "video2.mp4",
     heading: "Navigating Healthcare complexity with clear & innovative solutions",
     description:
-      "We provide end-to-end healthcare data solutions, enabling clients to fully harness their data for impactful and measurable improvements.",
+      "We provide end-to-end healthcare data solutions, enabling clients to fully harness their data for impactful and measureable improvements.",
   },
 ];
 
 const MainFrame = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fadeIn, setFadeIn] = useState(true); // Initially set to true so content is visible on load
-  const [fadeInText, setFadeInText] = useState(true); // Initially set to true so text is visible on load
+  const [fadeIn, setFadeIn] = useState(false);
+  const [fadeInText, setFadeInText] = useState(false);
 
   useEffect(() => {
     const cycleContent = setInterval(() => {
@@ -36,14 +36,14 @@ const MainFrame = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % headerdata.length);
         setFadeIn(true);
         setFadeInText(true);
-      }, 500); // Timing to let fade-out happen before changing content
-    }, 5000); // Change content every 5 seconds
+      }, 500);
+    }, 5000);
 
     return () => clearInterval(cycleContent);
   }, []);
 
   return (
-    <div className="relative w-full h-[350px] md:h-[850px] mx-auto">
+    <div className="relative w-full h-[350px] md:h-[850px]  mx-auto">
       <video
         key={currentIndex}
         className="absolute hidden object-cover w-full h-full md:block"
@@ -78,7 +78,7 @@ const MainFrame = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-transparent to-transparent opacity-60"></div>
         <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 my-5 sm:px-16 md:px-16">
           <div
-            className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento capitalize transition-opacity duration-1000 ease-in-out ${
+            className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento  capitalize transition-opacity duration-1000 ease-in-out ${
               fadeInText ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -130,9 +130,9 @@ const MainFrame = () => {
       transition-colors duration-300`}
         >
           {currentIndex === 0 ? (
-            <SlideIndicatorLeft />
+           <SlideIndicatorLeft/>
           ) : (
-            <SlideIndicatorRight />
+           <SlideIndicatorRight/>
           )}
         </div>
       </div>
