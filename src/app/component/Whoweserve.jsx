@@ -30,7 +30,7 @@ const Whoweserve = () => {
       ]
     },
     {
-      title: 'Patients',
+      title: 'Help Tech',
       image: weserve3,
       listItems: [
         'Enhance insights with AI in existing solutions.',
