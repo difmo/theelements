@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdOutlineScore } from "react-icons/md";
-
+import { generateRandomString } from './utils/random_string';
 import {
   FaAd,
   FaArrowUp,
@@ -47,10 +47,10 @@ const OurServices2 = () => {
       key: "1",
       icon: <Unlock />,
       leftIcon: [
-        <UnLockIcon1 />,
-        <UnLockIcon2 />,
-        <UnLockIcon3 />,
-        <UnLockIcon4 />,
+        <UnLockIcon1 key={generateRandomString()} />,
+        <UnLockIcon2  key={generateRandomString()}/>,
+        <UnLockIcon3 key={generateRandomString()} />,
+        <UnLockIcon4 key={generateRandomString()} />,
       ],
       leftIconTitle: [
         "HEDIS Score Cards",
@@ -71,10 +71,10 @@ const OurServices2 = () => {
       icon: <Unleash />,
       title: "Unleash full potential",
       leftIcon: [
-        <UnleashIcon1 />,
-        <UnleashIcon2 />,
-        <UnleashIcon3 />,
-        <UnleashIcon4 />,
+        <UnleashIcon1 key={generateRandomString()} />,
+        <UnleashIcon2 key={generateRandomString()} />,
+        <UnleashIcon3 key={generateRandomString()} />,
+        <UnleashIcon4 key={generateRandomString()} />,
       ],
       leftIconTitle: [
         "Healthcare Master Data management",
@@ -93,10 +93,10 @@ const OurServices2 = () => {
       icon: <Elevate />,
       title: "Elevate care outcomes ",
       leftIcon: [
-        <Elevate1Icon />,
-        <Elevate2Icon />,
-        <Elevate3Icon />,
-        <Elevate4Icon />,
+        <Elevate1Icon key={generateRandomString()} />,
+        <Elevate2Icon key={generateRandomString()} />,
+        <Elevate3Icon key={generateRandomString()} />,
+        <Elevate4Icon key={generateRandomString()} />,
       ],
       leftIconTitle: [
         "Virtual Healthcare Portal",
@@ -115,10 +115,10 @@ const OurServices2 = () => {
 
       icon: <BuildZero />,
       leftIcon: [
-        <Buildzero1Icon />,
-        <Buildzero2Icon />,
-        <Buildzero3Icon />,
-        <Buildzero4Icon />,
+        <Buildzero1Icon key={generateRandomString()} />,
+        <Buildzero2Icon key={generateRandomString()} />,
+        <Buildzero3Icon key={generateRandomString()} />,
+        <Buildzero4Icon key={generateRandomString()} />,
       ],
       leftIconTitle: [
         "Electronic health records",
@@ -210,32 +210,32 @@ const OurServices2 = () => {
 
               <div className="grid grid-cols-2  mt-8 w-full max-w-[960px] mx-auto">
                 <div className="flex flex-col w-full gap-2 mt-8">
-                  <div key={0} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
                     {leftContainerContent[activeTab].leftIcon[0]}
                     <span key={0} className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[0]}
                     </span>
                   </div>
-                  <div  key={0} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
                     {leftContainerContent[activeTab].leftIcon[1]}
-                    <span  key={0} className="px-4 text-sm text-center text-gray-800">
+                    <span className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[1]}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex flex-col w-full gap-3">
-                  <div  key={1} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
+                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
                     {leftContainerContent[activeTab].leftIcon[1]}
-                    <span  key={1} className="px-4 text-sm text-center text-gray-800">
+                    <span className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[1]}
                     </span>
                   </div>
                   <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    <div  key={2} className="flex items-center justify-center">
+                    <div className="flex items-center justify-center">
                       {leftContainerContent[activeTab].leftIcon[2]}
                     </div>
-                    <span  key={2} className="px-4 text-sm text-center text-gray-800">
+                    <span className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[2]}
                     </span>
                   </div>
@@ -308,29 +308,29 @@ const OurServices2 = () => {
 
                     <div className="grid grid-cols-2 gap-4 pb-10 mt-8">
                       <div className="flex flex-col gap-3 md:mt-8">
-                        <div  key={0} className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
                           {leftContainerContent[activeTab].leftIcon[0]}
-                          <span  key={0} className="text-sm text-[#0C455E] w-1/2">
+                          <span className="text-sm text-[#0C455E] w-1/2">
                             {leftContainerContent[activeTab].leftIconTitle[0]}
                           </span>
                         </div>
-                        <div  key={1} className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
                           {leftContainerContent[activeTab].leftIcon[1]}
-                          <span key={1} className="text-sm text-[#0C455E] w-1/2">
+                          <span className="text-sm text-[#0C455E] w-1/2">
                             {leftContainerContent[activeTab].leftIconTitle[1]}
                           </span>
                         </div>
                       </div>
                       <div className="flex flex-col gap-3 ">
-                        <div key={2} className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
                           {leftContainerContent[activeTab].leftIcon[2]}
-                          <span key={2} className="text-sm text-[#0C455E] w-1/2">
+                          <span className="text-sm text-[#0C455E] w-1/2">
                             {leftContainerContent[activeTab].leftIconTitle[2]}
                           </span>
                         </div>
-                        <div key={3} className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
                           {leftContainerContent[activeTab].leftIcon[3]}
-                          <span key={3} className="text-sm text-[#0C455E] text-center w-1/2">
+                          <span className="text-sm text-[#0C455E] text-center w-1/2">
                             {leftContainerContent[activeTab].leftIconTitle[3]}
                           </span>
                         </div>
