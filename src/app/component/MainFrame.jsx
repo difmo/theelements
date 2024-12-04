@@ -76,7 +76,7 @@ const MainFrame = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-blue-800 via-transparent to-transparent opacity-60"></div>
-        <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 my-5 sm:px-16 md:px-16">
+        {/* <div className="absolute flex flex-col items-start justify-center w-full h-full px-4 my-5 sm:px-16 md:px-16">
           <div
             className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento  capitalize transition-opacity duration-1000 ease-in-out ${
               fadeInText ? "opacity-100" : "opacity-0"
@@ -96,7 +96,32 @@ const MainFrame = () => {
               Contact Us
             </button>
           </div>
-        </div>
+        </div> */}
+
+<div className="absolute flex flex-col items-start justify-center w-full h-full px-4 my-5 sm:px-16 md:px-16">
+  <div
+    className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento capitalize transition-opacity duration-1000 ease-in-out ${
+      fadeInText ? "opacity-100" : "opacity-0"
+    } text-center sm:text-left`}
+  >
+    {headerdata[currentIndex].heading}
+  </div>
+  <div
+    className={`w-full text-[16px] sm:text-[20px] md:text-[28px] lg:text-[36px] leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[50px] text-[#F3F4F6] font-medium capitalize transition-opacity duration-1000 ease-in-out ${
+      fadeInText ? "opacity-100" : "opacity-0"
+    } text-center sm:text-left`}
+  >
+    {headerdata[currentIndex].description}
+  </div>
+  <div className="w-full mt-6 sm:mt-8 flex justify-center sm:justify-start">
+  <button className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3">
+    Contact Us
+  </button>
+</div>
+
+
+</div>
+
       </div>
 
       <div className="absolute flex flex-col items-center justify-center hidden w-full h-full md:block">
