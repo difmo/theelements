@@ -7,7 +7,8 @@ import WhyPartners from './component/WhyPartners'
 import OurSuccessStory from './component/OurSuccessStory'
 import OurServices from './component/OurServices'
 import OurLeadership from './component/OurLeadership'
-import AnimatedMenu from './component/Dummy'
+
+import DummyLast from './component/DumyLast'
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <OurSolutions/>
       <OurServices/>
       {/* <AnimatedMenu/> */}
+      <DummyLast/>
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>

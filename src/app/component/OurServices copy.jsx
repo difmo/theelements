@@ -44,7 +44,7 @@ const OurServices2 = () => {
 
   const leftContainerContent = [
     {
-      icon: <Unlock />,
+      icon: <Unlock  />,
       leftIcon: [
         <UnLockIcon1 />,
         <UnLockIcon2 />,
@@ -106,7 +106,7 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
-      icon: <BuildZero />,
+      icon: <BuildZero  />,
       leftIcon: [
         <Buildzero1Icon />,
         <Buildzero2Icon />,
@@ -201,44 +201,33 @@ const OurServices2 = () => {
                 </button>
               </div>
 
-              <div className="grid grid-cols-2  mt-8 w-full max-w-[960px] mx-auto">
-                <div className="flex flex-col w-full gap-2 mt-8">
-                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    <div className="flex flex-col items-center justify-center">
-                      {leftContainerContent[activeTab].leftIcon[3]}
-                      <span className="text-sm text-gray-800">
-                        {leftContainerContent[activeTab].leftIconTitle[3]}
-                      </span>
-                    </div>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                <div className="flex flex-col gap-3 mt-8">
+                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                    {leftContainerContent[activeTab].leftIcon[0]}
+                    <span className="text-sm text-[#0C455E]">
+                      {leftContainerContent[activeTab].leftIconTitle[0]}
+                    </span>
                   </div>
-
-                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    <div className="flex flex-col items-center justify-center">
-                      {leftContainerContent[activeTab].leftIcon[3]}
-                      <span className="text-sm text-gray-800">
-                        {leftContainerContent[activeTab].leftIconTitle[3]}
-                      </span>
-                    </div>
+                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                    {leftContainerContent[activeTab].leftIcon[1]}
+                    <span className="text-sm text-[#0C455E]">
+                      {leftContainerContent[activeTab].leftIconTitle[1]}
+                    </span>
                   </div>
                 </div>
-
-                <div className="flex flex-col w-full gap-3">
-                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    <div className="flex flex-col items-center justify-center">
-                      {leftContainerContent[activeTab].leftIcon[3]}
-                      <span className="text-sm text-gray-800">
-                        {leftContainerContent[activeTab].leftIconTitle[3]}
-                      </span>
-                    </div>
+                <div className="flex flex-col gap-3 ">
+                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                    {leftContainerContent[activeTab].leftIcon[2]}
+                    <span className="text-sm text-[#0C455E]">
+                      {leftContainerContent[activeTab].leftIconTitle[2]}
+                    </span>
                   </div>
-
-                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-[180px] h-[180px] mx-auto">
-                    <div className="flex flex-col items-center justify-center">
-                      {leftContainerContent[activeTab].leftIcon[3]}
-                      <span className="text-sm text-gray-800">
-                        {leftContainerContent[activeTab].leftIconTitle[3]}
-                      </span>
-                    </div>
+                  <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
+                    {leftContainerContent[activeTab].leftIcon[3]}
+                    <span className="text-sm text-gray-800">
+                      {leftContainerContent[activeTab].leftIconTitle[3]}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -277,8 +266,8 @@ const OurServices2 = () => {
                   className="flex items-center justify-between w-full p-4 bg-white cursor-pointer"
                 >
                   <div className="flex items-center space-x-4">
-                    <div> {leftContainerContent[tabIndex].icon}</div>
-
+                      <div> {leftContainerContent[tabIndex].icon}</div>
+                     
                     <span
                       className={`text-lg font-semibold text-[#CF7B41] md:flex ${
                         expandedTab === tabIndex ? "hidden" : "flex"

@@ -17,15 +17,17 @@ const Header = () => {
   return (
     <header className="sticky top-0 left-0 w-full bg-[#E8F6FC]  z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">
-        <div className="flex items-center h-full">
-          <Image
-            src={logo}
-            alt="Difmo Logo"
-            width={200}
-            height={64}
-            className="h-[30px] w-[126px]"
-          />
-        </div>
+      <div className="flex items-center h-full">
+  <Link href="/" passHref>
+    <Image
+      src={logo}
+      alt="Difmo Logo"
+      width={200}
+      height={64}
+      className="h-[30px] w-[126px]"
+    />
+  </Link>
+</div>
 
         <div className="flex items-center justify-center">
           {/* Mobile Menu Toggle */}
