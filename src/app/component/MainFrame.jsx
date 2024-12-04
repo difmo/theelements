@@ -103,7 +103,7 @@ const MainFrame = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute flex flex-col items-center justify-center w-full h-full px-4 sm:px-16 md:px-16">
           <div
-            className={`w-full text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento font-semibold capitalize transition-opacity duration-1000 ease-in-out ${
+            className={`w-full md:w-[80%] text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento font-semibold capitalize transition-opacity duration-1000 ease-in-out ${
               fadeInText ? "opacity-100" : "opacity-0"
             }`}
           >
