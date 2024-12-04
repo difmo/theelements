@@ -9,9 +9,9 @@ import Heading from "./Heading";
 
 const cardData = [
   {
-    title: "Social Determinant of Health (SDOH)",
+    title: "Social Determinant of Health",
     description:
-      "Description of solution 1 that highlights its benefits and unique features. This solution is tailored to provide the best outcomes for your needs.",
+      "Description of solution 1 that highlights its benefits and unique features.",
     image: ourimage,
   },
   {
