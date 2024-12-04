@@ -44,7 +44,7 @@ const OurServices2 = () => {
 
   const leftContainerContent = [
     {
-      key:1,
+      key:"1",
       icon: <Unlock />,
       leftIcon: [
         <UnLockIcon1 />,
@@ -66,6 +66,8 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
+      key:"2",
+
       icon: <Unleash />,
       title: "Unleash full potential",
       leftIcon: [
@@ -86,6 +88,8 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
+      key:"3",
+
       icon: <Elevate />,
       title: "Elevate care outcomes ",
       leftIcon: [
@@ -107,6 +111,8 @@ const OurServices2 = () => {
       buttonText: "Learn More",
     },
     {
+      key:"4",
+
       icon: <BuildZero />,
       leftIcon: [
         <Buildzero1Icon />,

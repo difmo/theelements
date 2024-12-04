@@ -8,8 +8,7 @@ import OurSuccessStory from './component/OurSuccessStory'
 import OurServices from './component/OurServices'
 import OurLeadership from './component/OurLeadership'
 
-import DummyLast from './component/DumyLast'
-
+// efosijdfkla
 const page = () => {
   return (
     <div className='bg-[#E8F6FC]'>
@@ -17,8 +16,6 @@ const page = () => {
       <OurSuccessStory/>
       <OurSolutions/>
       <OurServices/>
-      {/* <AnimatedMenu/> */}
-      <DummyLast/>
       <Whoweserve/>
       <Ourcustomervoice/>
       <WhyPartners/>
