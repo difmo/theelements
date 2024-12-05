@@ -80,7 +80,7 @@ const OurServices2 = () => {
         "Data Quality Management",
         "Real-time data Streaming",
       ],
-      subtitle: "Advanced Scorecard Analytics",
+      subtitle: "Unlock opportunities from healthcare data with advanced analytics ",
       description:
         "Monitor and optimize performance across multiple metrics with advanced scorecards to drive better healthcare outcomes.",
       buttonText: "Learn More",
@@ -175,7 +175,7 @@ const OurServices2 = () => {
                   </div>
                 </button>
               </div>
-
+              <div>
               <div className="flex flex-col gap-4 mt-8 md:flex-row ">
                 <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
                   <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
@@ -196,7 +196,7 @@ const OurServices2 = () => {
                   <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
                     <div className="flex items-center justify-center w-full">
                       {leftContainerContent[activeTab].leftIcon[2]}
-                    </div>                    
+                    </div>
                     <span className="px-4 text-sm text-center text-gray-800">
                       {leftContainerContent[activeTab].leftIconTitle[2]}
                     </span>
@@ -212,6 +212,9 @@ const OurServices2 = () => {
                 </div>
               </div>
 
+              </div>
+
+
             </div>
           </div>
         </div>
@@ -222,18 +225,23 @@ const OurServices2 = () => {
             {tabOrder.map((tabIndex) => (
               <div
                 key={tabIndex}
-                className={`flex items-center mb-2 justify-center md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${activeTab === tabIndex ? "bg-[#fff6f0]" : "bg-white"}`}
+                className={`flex items-center mb-2 justify-between px-10 md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${activeTab === tabIndex ? "bg-[#fff2ea]" : "bg-white"}`}
                 onClick={() => handleTabClick(tabIndex)}
               >
-                <div >
+                {/* Icon Section */}
+                <div className="mr-11"> {/* Add margin right to space out the icon and text */}
                   {leftContainerContent[tabIndex].icon}
                 </div>
+
+                {/* Title Section */}
                 <span className={`text-lg font-bold ${activeTab === tabIndex ? "text-[#CF7B41]" : "text-[#CF7B41]"}`}>
                   {leftContainerContent[tabIndex].title}
                 </span>
               </div>
             ))}
           </div>
+
+
 
           <div className="w-full lg:hidden">
             {tabOrder.map((tabIndex) => (
