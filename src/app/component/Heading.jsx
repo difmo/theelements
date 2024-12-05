@@ -6,7 +6,7 @@ const Heading = ({title}) => {
     <div
       className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
       style={{
-        fontFamily: "Mulish",
+        fontFamily: "Lato",
         fontSize: "1.25rem",
         fontWeight: 500,
         lineHeight: "1.5rem",

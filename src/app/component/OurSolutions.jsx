@@ -62,7 +62,7 @@ const OurSolutions = () => {
                   <h3
                     className="text-[24px] font-bold mb-2 text-[#E99F6C]"
                     style={{
-                      fontFamily: "Quattrocento", // Custom font family
+                      fontFamily: "Lato", // Custom font family
                       fontWeight: 700, // Custom font weight
                       lineHeight: "26.59px", // Custom line height
                       textAlign: "left", // Custom text alignment
@@ -79,7 +79,7 @@ const OurSolutions = () => {
                   <p
                     className="text-lg mb-6 mt-2 text-[#F3F4F6]"
                     style={{
-                      fontFamily: "Mulish", // Custom font family
+                      fontFamily: "Lato", // Custom font family
                       fontSize: "16px", // Custom font size
                       fontWeight: 400, // Custom font weight
                       lineHeight: "20.08px", // Custom line height

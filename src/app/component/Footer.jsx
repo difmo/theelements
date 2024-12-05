@@ -3,6 +3,7 @@ import Image from "next/image"; // Import Image from Next.js
 import logo from "../assets/8E_logo-A 1 copy.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationPin } from "@fortawesome/free-solid-svg-icons";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -86,12 +87,12 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="w-full mb-6 text-center sm:w-1/2 lg:w-1/3 sm:text-left">
             <h2 className="mb-4 text-lg font-bold">Get in Touch</h2>
-            <p className="flex items-center justify-center sm:justify-start">
+            <p className="flex  items-center justify-center sm:justify-start">
               <span className="inline-block w-4 h-4 mr-2">&#x260E;</span>
               +1 (470) 286-5319, +91 98481 26864
             </p>
             <p className="flex items-center justify-center mt-4 sm:justify-start">
-              <span className="inline-block w-6 mr-2">&#x2709;</span>
+            <MdEmail className="inline-block w-6 mr-2" />
               info@8thelement.ai
             </p>
           </div>

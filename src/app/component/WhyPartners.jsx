@@ -102,7 +102,7 @@ const WhyPartners = () => {
                   : "opacity-0 scale-95 max-h-0 overflow-hidden"
               }`}
             >
-              <p className="font-mulish text-base font-normal leading-[20.08px] text-left opacity-100">
+              <p className="font-lato text-base font-normal leading-[20.08px] text-left opacity-100">
                 {card.description}
               </p>
             </div>
@@ -124,7 +124,7 @@ const WhyPartners = () => {
                   {card.title}
                 </h3>
               </div>
-              <p className="font-mulish text-base font-normal leading-[20.08px] text-left opacity-100">
+              <p className="font-lato text-base font-normal leading-[20.08px] text-left opacity-100">
                 {card.description}
               </p>
             </div>

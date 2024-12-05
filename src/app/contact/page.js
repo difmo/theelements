@@ -99,11 +99,11 @@ const Contact = () => {
             <h1 className="text-3xl font-semibold text-red-500 font-quattrocento">
               Contact Us
             </h1>
-            <p className="text-base text-gray-700 md:text-xl font-mulish">
+            <p className="text-base text-gray-700 md:text-xl font-lato">
               Jowl salami leberkas turkey pork brisket meatball turducken flank
               bilto pork belly ball tip. pork belly frankf urtane bilto.
             </p>
-            <p className="text-base text-gray-700 font-mulish">
+            <p className="text-base text-gray-700 font-lato">
               Address: Via Venezia 118 San Giacomo, D Cosenza 87040, TAX:
               2423888323
             </p>
@@ -111,8 +111,8 @@ const Contact = () => {
               <h2 className="text-xl font-semibold font-quattrocento">
                 Submit Form or Call
               </h2>
-              <span className="text-gray-700 font-mulish">91+123456784567</span>
-              <span className="text-gray-700 font-mulish ">91+123456784567</span>
+              <span className="text-gray-700 font-lato">91+123456784567</span>
+              <span className="text-gray-700 font-lato ">91+123456784567</span>
             </div>
           </div>
         </section>

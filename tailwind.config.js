@@ -24,7 +24,7 @@ module.exports = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        mulish: ['Mulish', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
         quattrocento: ['Quattrocento', 'serif'],
       },
     },

@@ -11,7 +11,7 @@ import OurLeadership from './component/OurLeadership'
 // efosijdfkla
 const page = () => {
   return (
-    <div className='bg-[#E8F6FC]'>
+    <div className='bg-[#E8F6FC] font-lato'>
       <MainFrame/>
       <OurSuccessStory/>
       <OurSolutions/>

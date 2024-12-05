@@ -53,7 +53,7 @@ const WhyPartners = () => {
         <div
           className="flex justify-center items-center text-center w-auto h-[33px] px-4 py-1 gap-3 rounded-[60px] border border-opacity-0"
           style={{
-            fontFamily: "Mulish",
+            fontFamily: "Lato",
             fontSize: "20px",
             fontWeight: 500,
             lineHeight: "25.1px",
@@ -112,7 +112,7 @@ const WhyPartners = () => {
                   : "opacity-0 scale-95 max-h-0 overflow-hidden"
               }`}
             >
-              <p className="font-mulish text-base font-normal leading-[20.08px] text-left opacity-100">
+              <p className="font-lato text-base font-normal leading-[20.08px] text-left opacity-100">
                 {card.description}
               </p>
             </div>
@@ -134,7 +134,7 @@ const WhyPartners = () => {
                   {card.title}
                 </h3>
               </div>
-              <p className="font-mulish text-base font-normal leading-[20.08px] text-left opacity-100">
+              <p className="font-lato text-base font-normal leading-[20.08px] text-left opacity-100">
                 {card.description}
               </p>
             </div>
