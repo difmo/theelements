@@ -9,22 +9,22 @@ import Heading from "./Heading";
 
 const cardData = [
   {
-    title: "Social Determinant of Health",
+    title: "Prospective HEDIS Analysis",
     description:
-      "Description of solution 1 that highlights its benefits and unique features.",
-    image: ourimage,
-  },
-  {
-    title: "Health Equity Solutions",
-    description:
-      "Description of solution 2 that addresses health disparities and promotes equitable care for all.",
+    "Boost your HEDIS performance with forward-looking analytics that identify improvement areas and drive higher scores.",
     image: ourimage2,
   },
   {
-    title: "Community Health Outreach",
+    title: "360° View of your Customer Data",
     description:
-      "Description of solution 3 aimed at improving community health and access to resources.",
+    "Gain a comprehensive, unified view of your customer data to better understand patient needs and improve engagement.",
     image: ourimage3,
+  },
+  {
+    title: "Social Determinant of Health (SDOH)",
+    description:
+      "Address health disparities by integrating SDOH insights to create more personalized and effective care strategies.",
+    image: ourimage,
   },
 ];
 

@@ -17,18 +17,18 @@ const cardData = [
     backgroundImage: "url('cardsvg1.svg')", 
   },
   {
-    title: "Problem- Solving Expertise",
-    description:
-      "We excel at solving complex healthcare challenges, proving tailored and effective solutions.",
-    image: images2,
-    backgroundImage: "url('cardsvg3.svg')", 
-  },
-  {
     title: "Customer Centric Approach",
     description:
       "We deliver maximum value with our 90-days framework, ensuring impactful results.",
-    image: images3,
+    image: images2,
     backgroundImage: "url('cardsvg2.svg')", 
+  },
+  {
+    title: "Problem- Solving Expertise",
+    description:
+      "We excel at solving complex healthcare challenges, proving tailored and effective solutions.",
+    image: images3,
+    backgroundImage: "url('cardsvg3.svg')", 
   },
   {
     title: "Top Talent & Excellence",

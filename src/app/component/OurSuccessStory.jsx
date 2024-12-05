@@ -134,7 +134,7 @@ const OurSuccessStory = () => {
                   </div>
 
                   <div className="flex flex-col justify-center w-full p-4 bg-white">
-                    <h3 className="text-lg font-bold sm:text-xl">
+                    <h3 className="text-lg text-[#CF7B41] font-bold sm:text-xl">
                       {section.title}
                     </h3>
                     <p className="mt-2 text-sm sm:text-base">

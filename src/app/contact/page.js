@@ -92,27 +92,27 @@ const Contact = () => {
         backgroundSize: "1300px",
       }}
     >
-      <div className="container flex flex-col space-y-8 md:p-6 md:flex-row md:space-y-0 md:space-x-8">
+      <div className="container flex flex-col space-y-8 bg-[#f0f7fa]  md:p-6 md:flex-row md:space-y-0 md:space-x-8">
         {/* Left Section */}
         <section className="p-6 rounded-lg md:w-1/2">
           <div className="flex flex-col space-y-4">
-            <h1 className="text-3xl font-semibold text-red-500 font-quattrocento">
+            <h1 className="text-3xl font-semibold text-gray-700 font-quattrocento">
               Contact Us
             </h1>
             <p className="text-base text-gray-700 md:text-xl font-lato">
-              Jowl salami leberkas turkey pork brisket meatball turducken flank
-              bilto pork belly ball tip. pork belly frankf urtane bilto.
+              Welcome to our contact page
             </p>
             <p className="text-base text-gray-700 font-lato">
-              Address: Via Venezia 118 San Giacomo, D Cosenza 87040, TAX:
-              2423888323
+              11th Floor, Sri Harsha Icon, Nanakramguda Service Rd, Financial
+              District, Hyderabad - 500032, India
             </p>
             <div className="space-y-2">
               <h2 className="text-xl font-semibold font-quattrocento">
                 Submit Form or Call
               </h2>
-              <span className="text-gray-700 font-lato">91+123456784567</span>
-              <span className="text-gray-700 font-lato ">91+123456784567</span>
+              
+              <span className="text-gray-700 font-lato">+1 (470) 286-5319</span>
+              <span className="text-gray-700 font-lato ">+91 98481 26864</span>
             </div>
           </div>
         </section>
@@ -156,11 +156,13 @@ const Contact = () => {
                   value={formData[id]}
                   onChange={handleChange}
                   placeholder={placeholder}
-                  className="block w-full p-2 border border-white rounded-md focus:outline-none focus:border-blue-500"
+                  className="block w-full p-2 mt-1 border border-white rounded-md focus:outline-none focus:border-blue-500"
                   required={required}
                 />
                 {validationErrors[id] && (
-                  <p className="text-sm text-red-500 ">{validationErrors[id]}</p>
+                  <p className="text-sm text-red-500 ">
+                    {validationErrors[id]}
+                  </p>
                 )}
               </div>
             ))}
@@ -183,14 +185,16 @@ const Contact = () => {
                 required
               ></textarea>
               {validationErrors.message && (
-                <p className="mt-1 text-sm text-red-500">{validationErrors.message}</p>
+                <p className="mt-1 text-sm text-red-500">
+                  {validationErrors.message}
+                </p>
               )}
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3 text-white transition duration-200 bg-blue-400 rounded-md hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full py-3 text-black transition duration-200 bg-blue-200 rounded-md hover:bg-blue-200 focus:outline-none focus:ring-2 "
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit"}

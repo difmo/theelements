@@ -102,7 +102,7 @@ const Header = () => {
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link
-                href="/career"
+                href="career"
                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
               >
                 Careers

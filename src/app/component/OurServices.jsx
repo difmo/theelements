@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { MdOutlineScore } from "react-icons/md";
-import { generateRandomString } from './utils/random_string';
+import { MdNorthEast, MdOutlineScore } from "react-icons/md";
+import { generateRandomString } from "./utils/random_string";
 import {
   FaAd,
   FaArrowUp,
@@ -32,6 +32,10 @@ import {
   UnleashIcon2,
   UnleashIcon3,
   UnleashIcon4,
+  Unlock2,
+  Unleash2,
+  BuildZero2,
+  Elevate2,
 } from "../assets/Icons/Icon1";
 import Heading from "./Heading";
 
@@ -43,7 +47,9 @@ const OurServices2 = () => {
   const leftContainerContent = [
     {
       key: "1",
+      icon2: <Unlock2 />,
       icon: <Unlock />,
+
       leftIcon: [
         <UnLockIcon1 key={generateRandomString()} />,
         <UnLockIcon2 key={generateRandomString()} />,
@@ -66,8 +72,9 @@ const OurServices2 = () => {
     {
       key: "2",
 
+      icon2: <Unleash2 />,
       icon: <Unleash />,
-      title: "Unleash full potential",
+      title: "Unleash Full Potential",
       leftIcon: [
         <UnleashIcon1 key={generateRandomString()} />,
         <UnleashIcon2 key={generateRandomString()} />,
@@ -80,16 +87,17 @@ const OurServices2 = () => {
         "Data Quality Management",
         "Real-time data Streaming",
       ],
-      subtitle: "Unlock opportunities from healthcare data with advanced analytics ",
+      subtitle: "Of Your Healthcare Data",
       description:
-        "Monitor and optimize performance across multiple metrics with advanced scorecards to drive better healthcare outcomes.",
+        "Our solution transforms healthcare data into actionable insights, integrating analytics and real-time reporting to enhance outcomes.",
       buttonText: "Learn More",
     },
     {
       key: "3",
 
+      icon2: <Elevate2 />,
       icon: <Elevate />,
-      title: "Elevate care outcomes ",
+      title: "Elevate Care Outcomes ",
       leftIcon: [
         <Elevate1Icon key={generateRandomString()} />,
         <Elevate2Icon key={generateRandomString()} />,
@@ -103,14 +111,15 @@ const OurServices2 = () => {
         "Cloud Migration",
       ],
 
-      subtitle: "AI-Driven Predictions",
+      subtitle: " With AI-Driven Solutions",
       description:
-        "Utilize AI to predict future trends and outcomes, ensuring better decision-making and enhanced patient care.",
+        "We integrate AI to enhance diagnoses, optimize resources, and drive innovation and excellence in healthcare.",
       buttonText: "Learn More",
     },
     {
       key: "4",
 
+      icon2: <BuildZero2 />,
       icon: <BuildZero />,
       leftIcon: [
         <Buildzero1Icon key={generateRandomString()} />,
@@ -126,9 +135,9 @@ const OurServices2 = () => {
       ],
 
       title: "Build Zero Touch Experiences ",
-      subtitle: "Track and Optimize Past Data",
+      subtitle: "For Patients & Members With Automation",
       description:
-        "Analyze past healthcare data to identify opportunities for improvement, optimize treatment strategies, and enhance patient outcomes.",
+        "By reducing manual interventions, streamline operations, improve efficiency, and focus on providing an effortless experience for every patient and member.",
       buttonText: "Learn More",
     },
   ];
@@ -157,7 +166,7 @@ const OurServices2 = () => {
           <div className="z-10 flex flex-col md:flex-row gap-36">
             <div className="flex flex-col md:flex-row md:w-full">
               <div className="w-3/4 pr-10">
-                {leftContainerContent[activeTab].icon}
+                {leftContainerContent[activeTab].icon2}
                 <h2 className="pt-8 text-2xl font-bold">
                   <p className="text-[#CF7B41]">
                     {leftContainerContent[activeTab].title}
@@ -168,53 +177,60 @@ const OurServices2 = () => {
                   {leftContainerContent[activeTab].description}
                 </p>
 
-                <button className="flex items-center px-6 py-2 mt-6 space-x-2 text-white rounded-md">
-                  <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
+                <button className="flex items-center px-6 py-3 mt-6 space-x-2 text-white rounded-md">
+                  <div className="flex gap-6 px-4 py-2 hover:text-white hover:bg-[#383c44]  text-black border rounded-full">
                     <span>Learn More</span>
-                    <FaLongArrowAltLeft size={20} />
+                    {/* <FaLongArrowAltLeft size={20} /> */}
+                    <MdNorthEast size={20} />
                   </div>
                 </button>
               </div>
               <div>
-              <div className="flex flex-col gap-4 mt-8 md:flex-row ">
-                <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
-                    {leftContainerContent[activeTab].leftIcon[0]}
-                    <span key={0} className="px-4 text-sm text-center text-gray-800">
-                      {leftContainerContent[activeTab].leftIconTitle[0]}
-                    </span>
+                <div className="flex flex-col gap-4 mt-8 md:flex-row ">
+                  <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                      <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                        {/* {leftContainerContent[activeTab].leftIcon[2]} */}
+                        {leftContainerContent[activeTab].leftIcon[0]}
+                      </div>
+                      <span
+                        key={0}
+                        className="px-4 text-center text-gray-800 sm:text-sm"
+                      >
+                        {leftContainerContent[activeTab].leftIconTitle[0]}
+                      </span>
+                    </div>
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                      <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                        {/* {leftContainerContent[activeTab].leftIcon[2]} */}
+                        {leftContainerContent[activeTab].leftIcon[1]}
+                      </div>
+                      <span className="text-sm text-center text-gray-800 sm:px-4">
+                        {leftContainerContent[activeTab].leftIconTitle[1]}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
-                    {leftContainerContent[activeTab].leftIcon[1]}
-                    <span className="px-4 text-sm text-center text-gray-800">
-                      {leftContainerContent[activeTab].leftIconTitle[1]}
-                    </span>
-                  </div>
-                </div>
 
-                <div className="flex flex-col items-center justify-center w-full gap-3">
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
-                    <div className="flex items-center justify-center w-full">
-                      {leftContainerContent[activeTab].leftIcon[2]}
+                  <div className="flex flex-col items-center justify-center w-full gap-3">
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                      <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                        {leftContainerContent[activeTab].leftIcon[2]}
+                      </div>
+                      <span className="px-4 text-sm text-center text-gray-800">
+                        {leftContainerContent[activeTab].leftIconTitle[2]}
+                      </span>
                     </div>
-                    <span className="px-4 text-sm text-center text-gray-800">
-                      {leftContainerContent[activeTab].leftIconTitle[2]}
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[40px] w-[180px] h-[180px]">
-                    <div className="flex items-center justify-center w-full">
-                      {leftContainerContent[activeTab].leftIcon[3]}
+                    <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                      <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                        {leftContainerContent[activeTab].leftIcon[3]}
+                      </div>
+                      <span className="px-4 text-sm text-center text-gray-800">
+                        {leftContainerContent[activeTab].leftIconTitle[3]}
+                      </span>
                     </div>
-                    <span className="px-4 text-sm text-center text-gray-800">
-                      {leftContainerContent[activeTab].leftIconTitle[3]}
-                    </span>
                   </div>
                 </div>
               </div>
-
-              </div>
-
-
             </div>
           </div>
         </div>
@@ -225,23 +241,29 @@ const OurServices2 = () => {
             {tabOrder.map((tabIndex) => (
               <div
                 key={tabIndex}
-                className={`flex items-center mb-2 justify-between px-10 md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${activeTab === tabIndex ? "bg-[#fff2ea]" : "bg-white"}`}
+                className={`flex items-center mb-2  gap-2  px-10 md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${
+                  activeTab === tabIndex ? "bg-[#fdecdf]" : "bg-white"
+                }`}
                 onClick={() => handleTabClick(tabIndex)}
               >
                 {/* Icon Section */}
-                <div className="mr-11"> {/* Add margin right to space out the icon and text */}
+                <div className="">
+                  {" "}
+                  {/* Add margin right to space out the icon and text */}
                   {leftContainerContent[tabIndex].icon}
                 </div>
 
                 {/* Title Section */}
-                <span className={`text-lg font-bold ${activeTab === tabIndex ? "text-[#CF7B41]" : "text-[#CF7B41]"}`}>
+                <span
+                  className={`text-lg font-bold ${
+                    activeTab === tabIndex ? "text-[#CF7B41]" : "text-[#CF7B41]"
+                  }`}
+                >
                   {leftContainerContent[tabIndex].title}
                 </span>
               </div>
             ))}
           </div>
-
-
 
           <div className="w-full lg:hidden">
             {tabOrder.map((tabIndex) => (
@@ -254,8 +276,9 @@ const OurServices2 = () => {
                     <div> {leftContainerContent[tabIndex].icon}</div>
 
                     <span
-                      className={`text-lg font-semibold text-[#CF7B41] md:flex ${expandedTab === tabIndex ? "hidden" : "flex"
-                        }`}
+                      className={`text-lg font-semibold text-[#CF7B41] md:flex ${
+                        expandedTab === tabIndex ? "hidden" : "flex"
+                      }`}
                     >
                       {leftContainerContent[tabIndex].title}
                     </span>
@@ -268,7 +291,7 @@ const OurServices2 = () => {
                 {expandedTab === tabIndex && (
                   <div className="px-4 bg-white">
                     <h3 className="font-semibold">
-                      <span className="text-lg font-semibold text-orange-500 md:flex">
+                      <span className="text-lg font-semibold text-[#CF7B41] md:flex">
                         {leftContainerContent[tabIndex].title}
                       </span>
                       <span> {leftContainerContent[tabIndex].subtitle}</span>
@@ -277,35 +300,45 @@ const OurServices2 = () => {
                     <button className="flex items-center mt-4 space-x-2 text-white rounded-md">
                       <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
                         <span>Learn More</span>
-                        <FaLongArrowAltLeft size={20} />
-                      </div>
+                        <MdNorthEast size={20} />
+                        </div>
                     </button>
 
                     <div className="grid grid-cols-2 gap-4 pb-10 mt-8">
                       <div className="flex flex-col gap-3 md:mt-8">
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
-                          {leftContainerContent[activeTab].leftIcon[0]}
-                          <span className="text-sm text-[#0C455E] w-1/2">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
+                        <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                            {leftContainerContent[activeTab].leftIcon[0]}
+                          </div>
+                          <span className="px-4 text-sm text-center text-gray-800">
                             {leftContainerContent[activeTab].leftIconTitle[0]}
                           </span>
                         </div>
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
-                          {leftContainerContent[activeTab].leftIcon[1]}
-                          <span className="text-sm text-[#0C455E] w-1/2">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
+                        <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                            {leftContainerContent[activeTab].leftIcon[1]}
+                          </div>
+                          <span className="px-4 text-sm text-center text-gray-800">
                             {leftContainerContent[activeTab].leftIconTitle[1]}
                           </span>
                         </div>
                       </div>
                       <div className="flex flex-col gap-3 ">
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
-                          {leftContainerContent[activeTab].leftIcon[2]}
-                          <span className="text-sm text-[#0C455E] w-1/2">
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
+                        <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
+                            {leftContainerContent[activeTab].leftIcon[2]}
+                          </div>
+                          <span className="px-4 text-sm text-center text-gray-800">
                             {leftContainerContent[activeTab].leftIconTitle[2]}
                           </span>
                         </div>
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[40px] w-180px h-[180px]">
-                          {leftContainerContent[activeTab].leftIcon[3]}
-                          <span className="text-sm text-[#0C455E] text-center w-1/2">
+
+
+                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
+                        <div className="flex items-center h-[72px] w-[72px]  justify-center  ">
+                            {leftContainerContent[activeTab].leftIcon[3]}
+                          </div>
+                          <span className="px-4 text-sm text-center text-gray-800">
                             {leftContainerContent[activeTab].leftIconTitle[3]}
                           </span>
                         </div>
