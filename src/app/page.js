@@ -12,6 +12,8 @@ import OurLeadership from './component/OurLeadership'
 const page = () => {
   return (
     <div className='bg-[#E8F6FC] font-lato'>
+      <div className="">
+
       <MainFrame/>
       <OurSuccessStory/>
       <OurSolutions/>
@@ -20,6 +22,7 @@ const page = () => {
       <Ourcustomervoice/>
       <WhyPartners/>
       <OurLeadership/>
+      </div>
 
        
     </div>
