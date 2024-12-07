@@ -178,20 +178,20 @@ const Header = () => {
           </li>
 
           <li>
-            <ScrollLink
-              to="career"
-              smooth={true}
-              duration={500}
-              className="block hover:text-blue-500"
-              onClick={() => setMenuOpen(false)}
-            >
-              Careers
-            </ScrollLink>
-          </li>
+  <Link
+    href="/career"
+    scroll={false}
+    className="block hover:text-blue-500"
+    onClick={() => setMenuOpen(false)}
+  >
+    Careers
+  </Link>
+</li>
+
 
           <li>
-            <Link
-              href="/contact"
+            <Link 
+               href="/contact"
               className="block p-3 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:border-none hover:bg-blue-500 hover:text-white"
               onClick={() => setMenuOpen(false)}
             >

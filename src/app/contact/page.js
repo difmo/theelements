@@ -80,8 +80,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen py-20 bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
-      <div className="w-full max-w-2xl p-8 transition duration-300 transform bg-white rounded-lg shadow-xl">
+    <div className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
+    style={{
+      backgroundImage: `url('ring.svg')`,
+      backgroundSize: "cover",
+      backgroundPosition: "bottom",
+      backgroundSize: "1800px",
+    }}>
+      <div className="w-full  sm:max-w-2xl p-8 transition bg-[#f0f7fa]  duration-300 transform border rounded-lg ">
       <h1 className="mb-6 text-3xl font-extrabold text-center text-gray-800">
       Contact Us
         </h1>
