@@ -1,9 +1,9 @@
-
-
 "use client";
 
 import { sanityClient } from "@/sanity";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,8 +15,6 @@ const Contact = () => {
 
   const [validationErrors, setValidationErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
 
   const validateField = (field, value) => {
     let error = "";
@@ -61,45 +59,47 @@ const Contact = () => {
     if (!isFormValid()) return;
 
     setIsSubmitting(true);
-    setError(false);
 
     try {
       await sanityClient.create({
         _type: "contact",
         ...formData,
       });
-      setSuccess(true);
+      toast.success("Thank you for contacting us! We will get back to you soon.");
       setFormData({ name: "", email: "", phone: "", message: "" });
       setValidationErrors({});
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
     } catch (error) {
       console.error("Error submitting contact form: ", error);
-      setError(true);
+      toast.error("There was an error submitting your message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
-    style={{
-      backgroundImage: `url('ring.svg')`,
-      backgroundSize: "cover",
-      backgroundPosition: "bottom",
-      backgroundSize: "1800px",
-    }}>
-      <div className="w-full  sm:max-w-2xl p-8 transition bg-[#f0f7fa]  duration-300 transform border rounded-lg ">
-      <h1 className="mb-6 text-3xl font-extrabold text-center text-gray-800">
-      Contact Us
-        </h1>
+    <div
+      className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
+      style={{
+        backgroundImage: `url('ring.svg')`,
+        backgroundSize: "cover",
+        backgroundPosition: "bottom",
+        backgroundSize: "1800px",
+      }}
+    >
+      <div className="w-full sm:max-w-2xl p-8 transition bg-[#f0f7fa] duration-300 transform border rounded-lg">
+        <h1 className="mb-6 text-3xl font-extrabold text-center text-gray-800">Contact Us</h1>
         <form onSubmit={handleSubmit}>
-        {/* jfhe */}
           {[
             { id: "name", label: "Name", type: "text", placeholder: "Your Name", required: true },
             { id: "email", label: "Email", type: "email", placeholder: "Your Email", required: true },
             { id: "phone", label: "Phone Number", type: "tel", placeholder: "Your Phone Number" },
           ].map(({ id, label, type, placeholder, required }) => (
             <div key={id} className="mb-4">
-              <label htmlFor={id} className="block text-sm font-medium text-gray-700">
+              <label htmlFor={id} className="block text-sm font-semibold text-gray-700">
                 {label}
               </label>
               <input
@@ -108,7 +108,7 @@ const Contact = () => {
                 value={formData[id]}
                 onChange={handleChange}
                 placeholder={placeholder}
-                className="block w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full p-3 mt-2 transition duration-300 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
                 required={required}
               />
               {validationErrors[id] && (
@@ -118,7 +118,7 @@ const Contact = () => {
           ))}
 
           <div className="mb-4">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
               Message
             </label>
             <textarea
@@ -127,7 +127,7 @@ const Contact = () => {
               onChange={handleChange}
               rows="5"
               placeholder="Your Message"
-              className="block w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="block w-full p-3 mt-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
               required
             ></textarea>
             {validationErrors.message && (
@@ -137,23 +137,13 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full px-4 py-2 text-white transition duration-200 bg-blue-500 rounded-md hover:bg-blue-600"
+            className="w-full px-4 py-3 text-lg font-semibold text-white transition-opacity duration-200 rounded-lg shadow-md bg-gradient-to-r from-[#1da4df] to-[#1da4df] hover:opacity-90"
             disabled={isSubmitting}
           >
             {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>
-
-        {success && (
-          <p className="mt-4 font-semibold text-center text-green-500">
-            Thank you for contacting us! We will get back to you soon.
-          </p>
-        )}
-        {error && (
-          <p className="mt-4 font-semibold text-center text-red-500">
-            There was an error submitting your message. Please try again.
-          </p>
-        )}
+        <ToastContainer />
       </div>
     </div>
   );
