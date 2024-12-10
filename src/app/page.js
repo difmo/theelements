@@ -12,16 +12,16 @@ import OurLeadership from './component/OurLeadership'
 const page = () => {
   return (
     <div className='bg-[#E8F6FC] font-lato'>
-      <div className="">
+      <div className=""> 
 
-      <MainFrame/>
-      <OurSuccessStory/>
-      <OurSolutions/>
-      <OurServices/>
-      <Whoweserve/>
-      <Ourcustomervoice/>
-      <WhyPartners/>
-      <OurLeadership/>
+      <MainFrame  className="font-lato"/>
+      <OurSuccessStory  className="font-lato"/>
+      <OurSolutions  className="font-lato"/>
+      <OurServices  className="font-lato"/>
+      <Whoweserve  className="font-lato"/>
+      <Ourcustomervoice  className="font-lato"/>
+      <WhyPartners  className="font-lato"/>
+      <OurLeadership  className="font-lato"/>
       </div>
 
        

@@ -1,11 +1,10 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import { FiSearch, FiPlus } from "react-icons/fi";
 import Image from "next/image";
 import logo from "../assets/8E_logo-A 1.svg";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +14,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 left-0 w-full bg-[#E8F6FC]  z-50">
+    <header className="sticky top-0 left-0 w-full bg-[#E8F6FC] z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">
         <div className="flex items-center h-full">
           <Link href="/" passHref>
@@ -68,41 +67,35 @@ const Header = () => {
 
           <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
             <li>
-              <ScrollLink
-                to="solutions"
-                smooth={true}
-                duration={500}
+              <Link
+                href="/"
                 className="hover:text-blue-500 hover:cursor-pointer"
               >
                 Solutions
-              </ScrollLink>
-            </li>
-            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
-            <li>
-              <ScrollLink
-                to="services"
-                smooth={true}
-                duration={500}
-                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
-              >
-                Services
-              </ScrollLink>
-            </li>
-            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
-            <li>
-              <ScrollLink
-                to="about-us"
-                smooth={true}
-                duration={500}
-                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
-              >
-                About Us
-              </ScrollLink>
+              </Link>
             </li>
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link
-                href="career"
+                href="/"
+                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+              >
+                Services
+              </Link>
+            </li>
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
+            <li>
+              <Link
+                href="/"
+                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+              >
+                About Us
+              </Link>
+            </li>
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
+            <li>
+              <Link
+                href="/career"
                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
               >
                 Careers
@@ -140,58 +133,50 @@ const Header = () => {
       >
         <ul className="p-4 space-y-4">
           <li className="flex items-center justify-between">
-            <ScrollLink
-              to="solutions"
-              smooth={true}
-              duration={500}
+            <Link
+              href="/"
               className="block hover:cursor-pointer hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Solutions
-            </ScrollLink>
+            </Link>
             <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
           </li>
 
           <li className="flex items-center justify-between">
-            <ScrollLink
-              to="services"
-              smooth={true}
-              duration={500}
+            <Link
+              href="/"
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               Services
-            </ScrollLink>
+            </Link>
             <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
           </li>
 
           <li>
-            <ScrollLink
-              to="about-us"
-              smooth={true}
-              duration={500}
+            <Link
+              href="/"
               className="block hover:text-blue-500"
               onClick={() => setMenuOpen(false)}
             >
               About Us
-            </ScrollLink>
+            </Link>
           </li>
 
           <li>
-  <Link
-    href="/career"
-    scroll={false}
-    className="block hover:text-blue-500"
-    onClick={() => setMenuOpen(false)}
-  >
-    Careers
-  </Link>
-</li>
-
+            <Link
+              href="/career"
+              className="block hover:text-blue-500"
+              onClick={() => setMenuOpen(false)}
+            >
+              Careers
+            </Link>
+          </li>
 
           <li>
-            <Link 
-               href="/contact"
+            <Link
+              href="/contact"
               className="block p-3 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:border-none hover:bg-blue-500 hover:text-white"
               onClick={() => setMenuOpen(false)}
             >
