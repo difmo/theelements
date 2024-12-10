@@ -105,15 +105,34 @@ const Page = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    // Validate form
     if (!isFormValid()) return;
-
+  
     setIsSubmitting(true);
-
+  
     try {
+      // Step 1: Upload the resume to Sanity
+      let resumeUrl = "";
+      if (formData.resume) {
+        const resumeFile = formData.resume;
+        const fileAsset = await sanityClient.assets.upload("file", resumeFile, {
+          filename: resumeFile.name,
+        });
+        resumeUrl = fileAsset.url;  // URL of the uploaded file
+      }
+  
+      // Step 2: Create the career document with file reference
       await sanityClient.create({
         _type: "career",
-        ...formData,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        position: formData.position,
+        resume: resumeUrl,  // Include the file URL or reference
+        message: formData.message,
       });
+  
       toast.success("Thank you for applying! We will get back to you soon.");
       setFormData({
         name: "",
@@ -127,7 +146,7 @@ const Page = () => {
       window.scrollTo({
         top: 0,
         behavior: "smooth",
-    });
+      });
     } catch (error) {
       console.error("Error submitting application: ", error);
       toast.error("There was an error submitting your application. Please try again.");
@@ -135,6 +154,40 @@ const Page = () => {
       setIsSubmitting(false);
     }
   };
+  
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!isFormValid()) return;
+
+  //   setIsSubmitting(true);
+
+  //   try {
+  //     await sanityClient.create({
+  //       _type: "career",
+  //       ...formData,
+  //     });
+  //     toast.success("Thank you for applying! We will get back to you soon.");
+  //     setFormData({
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       position: "",
+  //       resume: "",
+  //       message: "",
+  //     });
+  //     setValidationErrors({});
+  //     window.scrollTo({
+  //       top: 0,
+  //       behavior: "smooth",
+  //   });
+  //   } catch (error) {
+  //     console.error("Error submitting application: ", error);
+  //     toast.error("There was an error submitting your application. Please try again.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <div
