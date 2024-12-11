@@ -225,31 +225,29 @@ const OurServices2 = () => {
         {/* Right Menu */}
         <div className="flex flex-col items-center w-full gap-4 lg:w-1/3">
           <div className="hidden lg:block">
-            {tabOrder.map((tabIndex) => (
-              <div
-                key={tabIndex}
-                className={`flex items-center mb-2  gap-2  px-10 md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${
-                  activeTab === tabIndex ? "bg-blue-300" : "bg-white"
-                }`}
-                onClick={() => handleTabClick(tabIndex)}
-              >
-                {/* Icon Section */}  
-                <div className="">
-                  {" "}
-                  {/* Add margin right to space out the icon and text */}
-                  {leftContainerContent[tabIndex].icon}
-                </div>
+          {tabOrder.map((tabIndex) => (
+  <div
+    key={tabIndex}
+    className={`flex items-center mb-2 gap-2 px-10 md:w-[380px] md:h-[124px] rounded-full cursor-pointer 
+      ${activeTab === tabIndex ? "bg-[#dbeafe] text-white" : "bg-white text-black"}`}
+    onClick={() => handleTabClick(tabIndex)}
+  >
+    {/* Icon Section */}
+    <div>
+      {leftContainerContent[tabIndex].icon}
+    </div>
 
-                {/* Title Section */}
-                <span
-                  className={`text-lg font-bold ${
-                    activeTab === tabIndex ? "text-[#CF7B41]" : "text-[#CF7B41]"
-                  }`}
-                >
-                  {leftContainerContent[tabIndex].title}
-                </span>
-              </div>
-            ))}
+    {/* Title Section */}
+    <span
+      className={`text-lg font-bold ${
+        activeTab === tabIndex ? "text-[#cf7b41]" : "text-[#CF7B41]"
+      }`}
+    >
+      {leftContainerContent[tabIndex].title}
+    </span>
+  </div>
+))}
+
           </div>
 
           <div className="w-full lg:hidden">
