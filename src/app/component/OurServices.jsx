@@ -5,13 +5,6 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { MdNorthEast, MdOutlineScore } from "react-icons/md";
 import { generateRandomString } from "./utils/random_string";
 import {
-  FaAd,
-  FaArrowUp,
-  FaHandHoldingMedical,
-  FaLongArrowAltLeft,
-  FaRobot,
-} from "react-icons/fa";
-import {
   Unleash,
   Unlock,
   Elevate,
@@ -43,13 +36,11 @@ const OurServices2 = () => {
   const [activeTab, setActiveTab] = useState(1); // Default active tab is 1
   const [tabOrder, setTabOrder] = useState([0, 1, 2, 3]); // Initial tab order (show all tabs)
   const [expandedTab, setExpandedTab] = useState(null); // To manage expanded state on small devices
-
   const leftContainerContent = [
     {
       key: "1",
       icon2: <Unlock2 />,
       icon: <Unlock />,
-
       leftIcon: [
         <UnLockIcon1 key={generateRandomString()} />,
         <UnLockIcon2 key={generateRandomString()} />,
@@ -62,7 +53,6 @@ const OurServices2 = () => {
         "Retrospective Reporting",
         "Predictive Insights",
       ],
-
       title: "Unlock Opportunities",
       subtitle: "From Healthcare Data With Advanced Analytics",
       description:
@@ -71,7 +61,6 @@ const OurServices2 = () => {
     },
     {
       key: "2",
-
       icon2: <Unleash2 />,
       icon: <Unleash />,
       title: "Unleash Full Potential",
@@ -82,10 +71,10 @@ const OurServices2 = () => {
         <UnleashIcon4 key={generateRandomString()} />,
       ],
       leftIconTitle: [
-        "Healthcare Master Data management",
+        "Healthcare Master Data Management",
         "Data Integration & Interoperability",
         "Data Quality Management",
-        "Real-time data Streaming",
+        "Real-Time Data Streaming",
       ],
       subtitle: "Of Your Healthcare Data",
       description:
@@ -94,10 +83,9 @@ const OurServices2 = () => {
     },
     {
       key: "3",
-
       icon2: <Elevate2 />,
       icon: <Elevate />,
-      title: "Elevate Care Outcomes ",
+      title: "Elevate Care Outcomes",
       leftIcon: [
         <Elevate1Icon key={generateRandomString()} />,
         <Elevate2Icon key={generateRandomString()} />,
@@ -107,18 +95,16 @@ const OurServices2 = () => {
       leftIconTitle: [
         "Virtual Healthcare Portal",
         "Resource Management",
-        "Robust AI & ML models",
+        "Robust AI & ML Models",
         "Cloud Migration",
       ],
-
-      subtitle: " With AI-Driven Solutions",
+      subtitle: "With AI-Driven Solutions",
       description:
         "We integrate AI to enhance diagnoses, optimize resources, and drive innovation and excellence in healthcare.",
       buttonText: "Learn More",
     },
     {
       key: "4",
-
       icon2: <BuildZero2 />,
       icon: <BuildZero />,
       leftIcon: [
@@ -128,20 +114,21 @@ const OurServices2 = () => {
         <Buildzero4Icon key={generateRandomString()} />,
       ],
       leftIconTitle: [
-        "Electronic health records",
-        "Patient communication",
-        "claim & billing processing",
-        "Telehealth & remote monitoring",
+        "Electronic Health Records",
+        "Patient Communication",
+        "Claim & Billing Processing",
+        "Telehealth & Remote Monitoring",
       ],
-
-      title: "Build Zero Touch Experiences ",
+      title: "Build Zero Touch Experiences",
       subtitle: "For Patients & Members With Automation",
       description:
         "By reducing manual interventions, streamline operations, improve efficiency, and focus on providing an effortless experience for every patient and member.",
       buttonText: "Learn More",
     },
   ];
+  
 
+ 
   const handleTabClick = (clickedTabIndex) => {
     setActiveTab(clickedTabIndex);
   };
@@ -242,7 +229,7 @@ const OurServices2 = () => {
               <div
                 key={tabIndex}
                 className={`flex items-center mb-2  gap-2  px-10 md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${
-                  activeTab === tabIndex ? "bg-[#fdecdf]" : "bg-white"
+                  activeTab === tabIndex ? "bg-[#dae9fd]" : "bg-white"
                 }`}
                 onClick={() => handleTabClick(tabIndex)}
               >
