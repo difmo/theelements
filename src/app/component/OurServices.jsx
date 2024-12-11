@@ -229,11 +229,11 @@ const OurServices2 = () => {
               <div
                 key={tabIndex}
                 className={`flex items-center mb-2  gap-2  px-10 md:w-[380px] md:h-[124px] space-x-4 bg-white rounded-full cursor-pointer ${
-                  activeTab === tabIndex ? "bg-[#dae9fd]" : "bg-white"
+                  activeTab === tabIndex ? "bg-blue-300" : "bg-white"
                 }`}
                 onClick={() => handleTabClick(tabIndex)}
               >
-                {/* Icon Section */}
+                {/* Icon Section */}  
                 <div className="">
                   {" "}
                   {/* Add margin right to space out the icon and text */}
