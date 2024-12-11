@@ -58,9 +58,10 @@ const Whoweserve = () => {
                     className="transition-transform duration-500 ease-in-out rounded-lg group-hover:scale-105"
                   />
                 </div>
+                <div className="bg-red-600">
 
                 <div
-                  className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
+                  className="absolute bg-red-600 inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
                   style={{
                     background:
                       "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
@@ -94,6 +95,7 @@ const Whoweserve = () => {
                   </div>
 
                    
+                </div>
                 </div>
               </div>
             ))}
