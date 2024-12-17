@@ -12,8 +12,8 @@ const OurLeadership = () => {
     { name: "Prashanth Kasturi", image: img1 },
     { name: "Matt Whitnack", image: img2 },
     // { name: "Matt Whitnack", image: img3 },
-    { name: "Deepak Bharadwaj", image: img5 },
-    { name: "Shravan Dantu", image: img4 },
+    // { name: "Deepak Bharadwaj", image: img5 },
+    // { name: "Shravan Dantu", image: img4 },
   ];
 
 

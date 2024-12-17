@@ -8,7 +8,7 @@ import OurSuccessStory from './component/OurSuccessStory'
 import OurServices from './component/OurServices'
 import OurLeadership from './component/OurLeadership'
 
-// efosijdfkla
+ 
 const page = () => {
   return (
     <div className='bg-[#E8F6FC] font-lato'>

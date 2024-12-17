@@ -138,8 +138,24 @@ const OurServices2 = () => {
   };
 
   return (
-    <div id="services">
-      <Heading title={"OUR SERVICES"} />
+    <div id="services" className="bg-[#E8F6FC] font-lato">
+      {/* <Heading title={"OUR SERVICES"} className='bg-[#E8F6FC] font-lato' /> */}
+      <div className='bg-[#E8F6FC] font-lato'>
+
+  <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
+    <div
+      className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
+      style={{
+        fontFamily: "Lato",
+        fontSize: "1.25rem",
+        fontWeight: 500,
+        lineHeight: "1.5rem",
+      }}
+    >
+      OUR SERVICES
+    </div>
+  </div>
+  </div>
       <div className="flex flex-col items-center justify-between gap-10 p-8 lg:flex-row">
         {/* Left Container (Shows Only the Clicked Tab) */}
         <div

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Heading = ({title}) => {
+const Heading2 = ({title}) => {
   return (
-  <div className='  font-lato'>
+  <div className='bg-[#E8F6FC] font-lato'>
 
-  <div className="flex items-center justify-center w-full  mt-8 sm:mt-12">
+  <div className="flex items-center justify-center w-full  ">
     <div
       className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
       style={{
@@ -21,4 +21,4 @@ const Heading = ({title}) => {
   )
 }
 
-export default Heading
+export default Heading2
