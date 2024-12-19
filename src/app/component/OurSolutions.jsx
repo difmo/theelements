@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ourimage from "../assets/image2.jpg";
 import ourimage2 from "../assets/oursolution.png";
@@ -6,7 +7,7 @@ import ourimage3 from "../assets/oursolution2.png";
 import { MdNorthEast } from "react-icons/md"; // Import Material Design icon
 import Header from "./Header";
 import Heading from "./Heading";
-
+import { sanityClient } from "@/sanity";
 const cardData = [
   {
     title: "Prospective HEDIS Analysis",
@@ -29,6 +30,30 @@ const cardData = [
 ];
 
 const OurSolutions = () => {
+  const [error, setError] = useState(null); // Error state to display an error message if data fails to load
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [solutions, setSolutions] = useState([]);
+  // Fetch solutions from Sanity
+  useEffect(() => {
+    const fetchSolutions = async () => {
+      try {
+        const result = await sanityClient.fetch(
+          `*[_type == "solution"]{
+            title,
+            "icon": icon.asset->url,
+            description
+          }`
+        );
+        setSolutions(result);
+      } catch (err) {
+        console.error("Failed to fetch solutions:", err);
+        setError("Failed to load data. Please try again later.");
+      }
+    };
+
+    fetchSolutions();
+  }, []);
+  // console.log(solutions, "solutions");
   return (
     <div id="solutions">
 
@@ -54,14 +79,18 @@ const OurSolutions = () => {
       <div className="relative w-full max-w-[1440px] mt-14 mx-auto">
         <div className="relative z-10 flex flex-col items-center px-4 sm:px-8 lg:px-16">
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {cardData.map((card, index) => (
+            {/* {solutions.map((card, index) => ( */}
+            {solutions.map((card, index) => (
+              // <div key={index}>
+              //  {card.title}
+              // </div>
               <div
                 key={index}
                 className="group relative w-full h-[540px] md:rounded-[60px] overflow-hidden flex flex-col items-center"
               >
                 <div className="relative w-full h-full overflow-hidden transition-shadow duration-300 md:rounded-lg group-hover:shadow-lg group-hover:shadow-black">
                   <Image
-                    src={card.image} // Dynamic card image
+                    src={card.icon} // Dynamic card image
                     alt={card.title} // Dynamic alt text
                     layout="fill"
                     objectFit="cover"
@@ -79,39 +108,38 @@ const OurSolutions = () => {
                   <h3
                     className="text-[24px] font-bold mb-2 text-[#E99F6C]"
                     style={{
-                      fontFamily: "Lato", // Custom font family
-                      fontWeight: 700, // Custom font weight
-                      lineHeight: "26.59px", // Custom line height
-                      textAlign: "left", // Custom text alignment
-                      textUnderlinePosition: "from-font", // Custom text underline position
-                      textDecorationSkipInk: "none", // Custom text decoration skip ink
+                      fontFamily: "Lato",
+                      fontWeight: 700,  
+                      lineHeight: "26.59px",  
+                      textAlign: "left",  
+                      textUnderlinePosition: "from-font",  
+                      textDecorationSkipInk: "none", 
                     }}
                   >
-                  {card.title} {/* Dynamic title */}
+                  {card.title}  
                   </h3>
 
                   <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
 
-                  {/* Card Description */}
+                  
                   <p
                     className="text-lg mb-6 mt-2 text-[#F3F4F6]"
                     style={{
-                      fontFamily: "Lato", // Custom font family
-                      fontSize: "16px", // Custom font size
-                      fontWeight: 400, // Custom font weight
-                      lineHeight: "20.08px", // Custom line height
-                      textAlign: "left", // Custom text alignment
-                      textUnderlinePosition: "from-font", // Custom text underline position
-                      textDecorationSkipInk: "none", // Custom text decoration skip ink
+                      fontFamily: "Lato",  
+                      fontSize: "16px",  
+                      fontWeight: 400, 
+                      lineHeight: "20.08px",  
+                      textAlign: "left", 
+                      textUnderlinePosition: "from-font", 
+                      textDecorationSkipInk: "none", 
                     }}
                   >
-                    {card.description} {/* Dynamic description */}
+                    {card.description}  
                   </p>
-
-                  {/* Button */}
+ 
                   <button className="px-6 py-2 text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
-                    <span>Learn More</span> {/* Text */}
-                    <MdNorthEast /> {/* North-East Icon */}
+                    <span>Learn More</span>  
+                    <MdNorthEast /> 
                   </button>
                 </div>
               </div>

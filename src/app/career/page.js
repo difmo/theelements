@@ -156,39 +156,7 @@ const Page = () => {
   };
   
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (!isFormValid()) return;
-
-  //   setIsSubmitting(true);
-
-  //   try {
-  //     await sanityClient.create({
-  //       _type: "career",
-  //       ...formData,
-  //     });
-  //     toast.success("Thank you for applying! We will get back to you soon.");
-  //     setFormData({
-  //       name: "",
-  //       email: "",
-  //       phone: "",
-  //       position: "",
-  //       resume: "",
-  //       message: "",
-  //     });
-  //     setValidationErrors({});
-  //     window.scrollTo({
-  //       top: 0,
-  //       behavior: "smooth",
-  //   });
-  //   } catch (error) {
-  //     console.error("Error submitting application: ", error);
-  //     toast.error("There was an error submitting your application. Please try again.");
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
-
+ 
   return (
     <div
       className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"

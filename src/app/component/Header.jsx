@@ -280,7 +280,7 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+// console.log(solutions, "solu");
   return (
     <header className="sticky top-0 left-0 w-full bg-[#E8F6FC] z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">

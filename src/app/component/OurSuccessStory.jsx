@@ -7,10 +7,13 @@ import img1 from "../assets/oursuccess1.png";
 import img2 from "../assets/oursuccess2.png";
 import img3 from "../assets/oursuccess3.png";
 import Heading from "./Heading";
+import { sanityClient } from "@/sanity";
 
 const OurSuccessStory = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const [error, setError] = useState(null);  
+  const [success, setSuccess] = useState([]);
   const scrollContainerRef = useRef(null); // Ref for the scroll container
 
   const sections = [
@@ -35,6 +38,30 @@ const OurSuccessStory = () => {
       image: img3,
     },
   ];
+
+
+   
+    useEffect(() => {
+      const fetchSuccessStory = async () => {
+        try {
+          const result = await sanityClient.fetch(
+            `*[_type == "successStory"]{
+              title,
+              "image": image.asset->url,
+              description
+            }`
+          );
+          setSuccess(result);
+        } catch (err) {
+          console.error("Failed to fetch success:", err);
+          setError("Failed to load data. Please try again later.");
+        }
+      };
+  
+      fetchSuccessStory();
+    }, []);
+    // console.log(success, "success");
+
 
   const autoScroll = () => {
     if (scrollContainerRef.current) {
@@ -64,7 +91,7 @@ const OurSuccessStory = () => {
 
       <div className="flex items-center justify-center py-8">
         <div className="hidden w-full h-full p-4 space-x-4 overflow-x-auto lg:flex">
-          {sections.map((section, index) => {
+          {success.map((section, index) => {
             return (
               <motion.div
                 key={index}
