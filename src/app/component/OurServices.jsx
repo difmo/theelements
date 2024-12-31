@@ -170,7 +170,7 @@ const OurServices2 = () => {
     setExpandedTab(expandedTab === tabIndex ? null : tabIndex);
   };
 
-  console.log(success, "success");
+  // console.log(success, "success");
 
   return (
     <div id="services" className="bg-[#E8F6FC] font-lato"> 
@@ -260,8 +260,8 @@ const OurServices2 = () => {
             objectFit="cover"
           />
         </div>
-        <span className="px-4 text-sm text-center text-gray-800">
-          {card.subtitle}
+        <span className="px-4  text-sm text-center text-gray-800">
+           {card.subtitle}
         </span>
       </div>
     )}
@@ -393,13 +393,13 @@ const OurServices2 = () => {
                 {expandedTab === tabIndex && (
   <div className="px-4 bg-white">
     <h3 className="font-semibold">
-      <span className="text-lg font-semibold text-[#CF7B41] md:flex">
+      <span className="text-lg pr-[4px] font-semibold text-[#CF7B41] md:flex">
         {/* {leftContainerContent[tabIndex].title} */}
         {content.name}
       </span>
       <span>
         {/* {leftContainerContent[tabIndex].subtitle} */}
-{content.subName}
+      {content.subName}
         </span>
     </h3>
     <p>{leftContainerContent[tabIndex].description}</p>
@@ -417,15 +417,7 @@ const OurServices2 = () => {
           key={index}
                     className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]"
         >
-          <div className="flex items-center justify-center h-[72px] w-[72px]">
-          <Image
-            src={icon.image}
-            alt={icon.subtitle}
-            width={60} // Width in pixels
-            height={60} // Height in pixels
-            objectFit="cover"
-          />
-          </div>
+          
           <span className="px-4 text-sm text-center text-gray-800">
              {icon.subtitle} 
           </span>
@@ -439,91 +431,7 @@ const OurServices2 = () => {
             ))}
           </div>
 
-          {/* <div className="w-full lg:hidden">
-            {tabOrder.map((tabIndex) => (
-              <div key={tabIndex} className="mb-4">
-                <div
-                  onClick={() => handleExpandTab(tabIndex)}
-                  className="flex items-center justify-between w-full p-4 bg-white cursor-pointer"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div> {leftContainerContent[tabIndex].icon}</div>
-
-                    <span
-                      className={`text-lg font-semibold text-[#CF7B41] md:flex ${
-                        expandedTab === tabIndex ? "hidden" : "flex"
-                      }`}
-                    >
-                      {leftContainerContent[tabIndex].title}
-                    </span>
-                  </div>
-                  <span className="text-xl">
-                    {expandedTab === tabIndex ? " " : "+"}
-                  </span>
                 </div>
-
-                {expandedTab === tabIndex && (
-                  <div className="px-4 bg-white">
-                    <h3 className="font-semibold">
-                      <span className="text-lg font-semibold text-[#CF7B41] md:flex">
-                        {leftContainerContent[tabIndex].title}
-                      </span>
-                      <span> {leftContainerContent[tabIndex].subtitle}</span>
-                    </h3>
-                    <p>{leftContainerContent[tabIndex].description}</p>
-                    <button className="flex items-center mt-4 space-x-2 text-white rounded-md">
-                      <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
-                        <span>Learn More</span>
-                        <MdNorthEast size={20} />
-                        </div>
-                    </button>
-
-                    <div className="grid grid-cols-2 gap-4 pb-10 mt-8">
-                      <div className="flex flex-col gap-3 md:mt-8">
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
-                        <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
-                            {leftContainerContent[activeTab].leftIcon[0]}
-                          </div>
-                          <span className="px-4 text-sm text-center text-gray-800">
-                            {leftContainerContent[activeTab].leftIconTitle[0]}
-                          </span>
-                        </div>
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
-                        <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
-                            {leftContainerContent[activeTab].leftIcon[1]}
-                          </div>
-                          <span className="px-4 text-sm text-center text-gray-800">
-                            {leftContainerContent[activeTab].leftIconTitle[1]}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="flex flex-col gap-3 ">
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
-                        <div className="flex items-center h-[72px] w-[72px]   justify-center  ">
-                            {leftContainerContent[activeTab].leftIcon[2]}
-                          </div>
-                          <span className="px-4 text-sm text-center text-gray-800">
-                            {leftContainerContent[activeTab].leftIconTitle[2]}
-                          </span>
-                        </div>
-
-
-                        <div className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]">
-                        <div className="flex items-center h-[72px] w-[72px]  justify-center  ">
-                            {leftContainerContent[activeTab].leftIcon[3]}
-                          </div>
-                          <span className="px-4 text-sm text-center text-gray-800">
-                            {leftContainerContent[activeTab].leftIconTitle[3]}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div> */}
-        </div>
       </div>
     </div>
   );
