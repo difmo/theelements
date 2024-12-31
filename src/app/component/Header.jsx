@@ -356,24 +356,18 @@ const Header = () => {
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
              >
-              <Link
-                href="/"
-                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
-              >
-                Solutions 
-              </Link>
-               {/* <button className="flex items-center   hover:cursor-pointer">
-                 Solutions 
-                 <FiChevronDown className="ml-2" />
-               </button> */}
-               {/* {dropdownOpen && (
+               <button className="flex items-center   hover:cursor-pointer">
+                 Solutions <FiChevronDown className="ml-2" />
+               </button>
+               {dropdownOpen && (
                  <ul className="font-lato  absolute left-0 z-50 mt-0 w-max bg-white border border-gray-300 rounded shadow-lg">
                    {solutions.map((solution, index) => (
                      <li key={index}>
                        <Link
-                         href={`/solutions/${solution.title
-                           .toLowerCase()
-                           .replace(/\s+/g, "-")}`}
+                        //  href={`/solutions/${solution.title
+                        //    .toLowerCase()
+                        //    .replace(/\s+/g, "-")}`}
+                        href="/"
                          className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#e8f6fc]  "
                        >
                          {solution.title}
@@ -381,13 +375,13 @@ const Header = () => {
                      </li>
                    ))}
                  </ul>
-               )} */}
+               )}
              </li>
-{/*             
-            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span> */}
+            
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link
-                href="/"
+                href="/services"
                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
               >
                 Services
