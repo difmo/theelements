@@ -38,7 +38,7 @@ const cardData = [
 
 const Whoweserve = () => {
   return (
-    <div id="solutions">
+    <div id="Whoweserve">
       <Heading title={"WHO WE SERVE"} />
 
       <div className="relative w-full max-w-[1440px] my-14 mx-auto">

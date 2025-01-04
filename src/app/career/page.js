@@ -159,7 +159,7 @@ const Page = () => {
  
   return (
     <div
-      className="flex items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
+      className="flex font-lato items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
       style={{
         backgroundImage: `url('ring.svg')`,
         backgroundSize: "cover",

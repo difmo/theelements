@@ -83,34 +83,38 @@ const Footer = () => {
 
             {/* Fourth Section */}
             <div className="w-full sm:w-[25%] mb-6 text-center sm:text-left">
-  <div className="mb-6">
-    {/* <h2 className="mb-4 text-lg font-bold">Follow Us</h2> */}
-    <ul className="space-y-2">
-    <li>
-  <p className="flex items-center justify-center sm:justify-start space-x-2">
-    <IoLocationOutline className="inline-block w-5 h-5 mb-2 mr-2 " />
-    <span className="text-sm text-white">20 Eliott Dr, Monroe, NJ 08831</span>
-  </p>
-</li>
+              <div className="mb-6">
+                {/* <h2 className="mb-4 text-lg font-bold">Follow Us</h2> */}
+                <ul className="space-y-2">
+                  <li>
+                    <p className="flex items-center justify-center sm:justify-start space-x-2">
+                      <IoLocationOutline className="inline-block w-5 h-5 mb-2 mr-2 " />
+                      <span className="text-sm text-white">
+                        20 Eliott Dr, Monroe, NJ 08831
+                      </span>
+                    </p>
+                  </li>
 
-<li>
-  <p className="flex items-center justify-center sm:justify-start space-x-2">
-    <FiPhone className="inline-block w-5 h-5 mb-2 mr-2 " />
-    <span className="text-sm text-white">+1 (470) 286-5319, +91 98481 26864</span>
-  </p>
-</li>
+                  <li>
+                    <p className="flex items-center justify-center sm:justify-start space-x-2">
+                      <FiPhone className="inline-block w-5 h-5 mb-2 mr-2 " />
+                      <span className="text-sm text-white">
+                        +1 (470) 286-5319, +91 98481 26864
+                      </span>
+                    </p>
+                  </li>
 
-<li>
-  <p className="flex items-center justify-center sm:justify-start space-x-2">
-    <MdEmail className="inline-block w-5 h-5 mb-2 mr-2 " />
-    <span className="text-sm text-white">info@8thelement.ai</span>
-  </p>
-</li>
-
-    </ul>
-  </div>
-</div>
-
+                  <li>
+                    <p className="flex items-center justify-center sm:justify-start space-x-2">
+                      <MdEmail className="inline-block w-5 h-5 mb-2 mr-2 " />
+                      <span className="text-sm text-white">
+                        info@8thelement.ai
+                      </span>
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
@@ -122,4 +126,3 @@ const Footer = () => {
 };
 
 export default Footer;
- 

@@ -334,23 +334,7 @@ const Header = () => {
           </div>
 
           <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
-            {/* <li>
-              <Link
-                href="/solutions"
-                className="hover:text-blue-500 hover:cursor-pointer"
-              >
-                Solutions
-              </Link>
-            </li> */}
-
-                {/* {/* <li>
-              <Link
-                href="/solutions"
-                className="hover:text-blue-500 hover:cursor-pointer"
-              >
-                Solutions
-              </Link>
-            </li> */}
+            
                          <li
                className="relative"
                onMouseEnter={handleMouseEnter}
@@ -364,10 +348,18 @@ const Header = () => {
                    {solutions.map((solution, index) => (
                      <li key={index}>
                        <Link
-                        //  href={`/solutions/${solution.title
-                        //    .toLowerCase()
-                        //    .replace(/\s+/g, "-")}`}
+                        
                         href="/"
+                        onClick={(e) => {
+                          const currentPath = window.location.pathname;
+                          if (currentPath === "/") {
+                            e.preventDefault(); // Prevent navigation
+                            const servicesSection = document.getElementById("solutions");
+                            if (servicesSection) {
+                              servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                            }
+                          }
+                        }}
                          className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#e8f6fc]  "
                        >
                          {solution.title}
@@ -380,13 +372,25 @@ const Header = () => {
             
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
-              <Link
-                href="/services"
-                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
-              >
-                Services
-              </Link>
-            </li>
+            <Link
+  href="/" 
+  onClick={(e) => {
+    const currentPath = window.location.pathname;
+    if (currentPath === "/") {
+      e.preventDefault(); // Prevent navigation
+      const servicesSection = document.getElementById("services");
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }}
+  className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+>
+  Services
+</Link>
+
+</li>
+
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link

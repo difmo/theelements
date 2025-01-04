@@ -53,7 +53,7 @@ const WhyPartners = () => {
 
   return (
     <>
-    <Heading title={"WHY PARTNERS WITH US"} />
+    <Heading title={"WHY PARTNER WITH US"} />
     <div className="relative px-2 w-full max-w-[1440px] mt-14 mx-auto py-8">
      
       <div className="grid justify-center grid-cols-1 gap-3 px-2 md:px-10 md:gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2">

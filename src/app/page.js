@@ -7,6 +7,8 @@ import WhyPartners from './component/WhyPartners'
 import OurSuccessStory from './component/OurSuccessStory'
 import OurServices from './component/OurServices'
 import OurLeadership from './component/OurLeadership'
+import Whoweserve2 from './component/Whoweserve2'
+import OurLeadership2 from './component/OurLeadership2'
 
  
 const page = () => {
@@ -18,10 +20,12 @@ const page = () => {
       <OurSuccessStory  className="font-lato"/>
       <OurSolutions  className="font-lato"/>
       <OurServices  className="font-lato"/>
-      <Whoweserve  className="font-lato"/>
+      {/* <Whoweserve  className="font-lato"/> */}
+      <Whoweserve2  className="font-lato"/>
       <Ourcustomervoice  className="font-lato"/>
-      <WhyPartners  className="font-lato"/>
-      <OurLeadership  className="font-lato"/>
+      <WhyPartners  className="font-lato"/> 
+      {/* <OurLeadership  className="font-lato"/> */}
+      <OurLeadership2  className="font-lato"/>
       </div>
 
        
