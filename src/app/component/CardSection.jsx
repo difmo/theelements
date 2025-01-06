@@ -14,11 +14,15 @@ const CardsSection = () => {
 
   return (
     <div className="w-full md:w-[90%] mx-4 sm:mx-0 translate-y-1/2">
-  <div className="bg-white sm:mt-16 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg">
+  <div 
+  className=" sm:mt-8 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 "
+    // className="bg-white sm:mt-8 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg"
+  >
     {cards.map((card) => (
       <div
         key={card.id}
-        className="bg-[#E8F6FC] p-6 sm:min-h-[200px] rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl text-center"
+        className="bg-white p-6 sm:min-h-[200px] rounded-xl shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:shadow-black text-center"
+
       >
         {/* Image Section */}
         <div className="flex justify-center mb-4">
@@ -27,8 +31,8 @@ const CardsSection = () => {
             alt={`Image for card ${card.id}`}
             width={80}
             height={80}
-            objectFit="fit"
-            className="rounded-full shadow-md"
+            // objectFit="fit"
+            // className="rounded-full shadow-md"
           />
         </div>
         {/* Content Section */}
