@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ourimage from "../assets/image2.jpg";
@@ -12,13 +12,13 @@ const cardData = [
   {
     title: "Prospective HEDIS Analysis",
     description:
-    "Boost your HEDIS performance with forward-looking analytics that identify improvement areas and drive higher scores.",
+      "Boost your HEDIS performance with forward-looking analytics that identify improvement areas and drive higher scores.",
     image: ourimage2,
   },
   {
     title: "360° View of your Customer Data",
     description:
-    "Gain a comprehensive, unified view of your customer data to better understand patient needs and improve engagement.",
+      "Gain a comprehensive, unified view of your customer data to better understand patient needs and improve engagement.",
     image: ourimage3,
   },
   {
@@ -56,25 +56,23 @@ const OurSolutions = () => {
   // console.log(solutions, "solutions");
   return (
     <div id="solutions">
-
       {/* <Heading title={"OUR SOLUTIONS"}/> */}
-      <div className='bg-[#E8F6FC] font-lato'>
-
-  <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
-    <div
-      className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
-      style={{
-        fontFamily: "Lato",
-        fontSize: "1.25rem",
-        fontWeight: 500,
-        lineHeight: "1.5rem",
-      }}
-    >
-      {/* {title} */}
-      OUR SOLUTIONS
-    </div>
-  </div>
-  </div>
+      <div className="bg-[#E8F6FC] font-lato">
+        <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
+          <div
+            className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
+            style={{
+              fontFamily: "Lato",
+              fontSize: "1.25rem",
+              fontWeight: 500,
+              lineHeight: "1.5rem",
+            }}
+          >
+            {/* {title} */}
+            OUR SOLUTIONS
+          </div>
+        </div>
+      </div>
 
       <div className="relative w-full max-w-[1440px] mt-14 mx-auto">
         <div className="relative z-10 flex flex-col items-center px-4 sm:px-8 lg:px-16">
@@ -98,54 +96,51 @@ const OurSolutions = () => {
                   />
                 </div>
 
-                <div
-  className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
->
-  {/* Background Overlay */}
-  <div
-    className="absolute inset-0"
-    style={{
-      background:
-        "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
-    }}
-  ></div>
+                <div className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white">
+                  {/* Background Overlay */}
+                  <div
+                    className="absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
+                    }}
+                  ></div>
 
-  {/* Content */}
-  <div className="relative z-10">
-    <h3
-      className="text-[24px] font-bold mb-2 text-[#E99F6C]"
-      style={{
-        fontFamily: "Lato",
-        fontWeight: 700,
-        lineHeight: "26.59px",
-        textAlign: "left",
-      }}
-    >
-      {card.title}
-    </h3>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h3
+                      className="text-[24px] font-bold mb-2 text-[#E99F6C]"
+                      style={{
+                        fontFamily: "Lato",
+                        fontWeight: 700,
+                        lineHeight: "26.59px",
+                        textAlign: "left",
+                      }}
+                    >
+                      {card.title}
+                    </h3>
 
-    <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
+                    <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
 
-    <p
-      className="text-lg mb-6 mt-2 text-[#F3F4F6]"
-      style={{
-        fontFamily: "Lato",
-        fontSize: "16px",
-        fontWeight: 400,
-        lineHeight: "20.08px",
-        textAlign: "left",
-      }}
-    >
-      {card.description}
-    </p>
+                    <p
+                      className="text-lg mb-6 mt-2 text-[#F3F4F6]"
+                      style={{
+                        fontFamily: "Lato",
+                        fontSize: "16px",
+                        fontWeight: 400,
+                        lineHeight: "20.08px",
+                        textAlign: "left",
+                      }}
+                    >
+                      {card.description}
+                    </p>
 
-    <button className="px-6 py-2 text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
-      <span>Learn More</span>
-      <MdNorthEast />
-    </button>
-  </div>
-</div>
-
+                    <button className="px-6 py-2 text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
+                      <span>Learn More</span>
+                      <MdNorthEast />
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

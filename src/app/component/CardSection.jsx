@@ -13,33 +13,33 @@ const CardsSection = () => {
   ];
 
   return (
-    <div className="  w-full md:w-[60%] mx-4 sm:mx-0    translate-y-1/2">
-      <div className=" bg-[#8dc3da] grid grid-cols-1 rounded-lg  py-6 md:grid-cols-3 gap-4 mx-auto px-6">
-        {cards.map((card) => (
-          <div
-            key={card.id}
-            className="bg-white p-6 sm:min-h-[180px] rounded-lg shadow-md text-center"
-          >
-            <div className="flex justify-center mb-4">
-              <Image
-                src={card.img}
-                alt={`Image for card ${card.id}`}
-                width={50}
-                height={50}
-                objectFit="cover"
-              />
-            </div>
-            <p className="   font-lato font-semibold text-center text-[#CF7B41] md:text-2xl"
-                // style={{
-                //   textUnderlinePosition: 'from-font',
-                //   textDecorationSkipInk: 'none',
-                // }}
-                
-                >{card.content}</p>
-          </div>
-        ))}
+    <div className="w-full md:w-[90%] mx-4 sm:mx-0 translate-y-1/2">
+  <div className="bg-white sm:mt-16 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg">
+    {cards.map((card) => (
+      <div
+        key={card.id}
+        className="bg-[#E8F6FC] p-6 sm:min-h-[200px] rounded-xl shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl text-center"
+      >
+        {/* Image Section */}
+        <div className="flex justify-center mb-4">
+          <Image
+            src={card.img}
+            alt={`Image for card ${card.id}`}
+            width={80}
+            height={80}
+            objectFit="fit"
+            className="rounded-full shadow-md"
+          />
+        </div>
+        {/* Content Section */}
+        <p className="font-lato font-bold text-center text-[#CF7B41] text-xl md:text-2xl transition-colors duration-300 hover:text-[#a14e24]">
+          {card.content}
+        </p>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
+
   );
 };
 
