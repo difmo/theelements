@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+// import weserve2 from "../assets/young-handsome-physician-medical-robe-with-stethoscope.jpg";
 import weserve2 from "../assets/weserve2.jpg"; // Ensure the correct import path
 import CardsSection from "./CardSection";
 import Heading from "./Heading";

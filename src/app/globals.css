@@ -78,10 +78,4 @@ body {
   background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
 }
-/* @font-face {
-  font-family: 'Quattrocento';
-  src: url('/fonts/Quattrocento-Regular.woff2') format('woff2'),
-       url('/fonts/Quattrocento-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-} */
+ 

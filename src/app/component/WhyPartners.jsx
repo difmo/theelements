@@ -88,7 +88,7 @@ const WhyPartners = () => {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-medium font-quattrocento text-[#CF7B41] ">{card.title}</h3>
+                <h3 className="text-lg font-medium font-lato text-[#CF7B41] ">{card.title}</h3>
               </div>
               <div className="text-xl text-gray-400">
                 {expandedIndex === index ? "" : <FaPlus />}
@@ -120,7 +120,7 @@ const WhyPartners = () => {
                 />
               </div>
               <div className="mb-4">
-                <h3 className="font-quattrocento text-[#CF7B41] text-2xl font-bold leading-[26.59px] text-left opacity-100">
+                <h3 className="font-lato text-[#CF7B41] text-2xl font-bold leading-[26.59px] text-left opacity-100">
                   {card.title}
                 </h3>
               </div>

@@ -99,49 +99,53 @@ const OurSolutions = () => {
                 </div>
 
                 <div
-                  className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
-                  style={{
-                    background:
-                      "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
-                  }}
-                >
-                  <h3
-                    className="text-[24px] font-bold mb-2 text-[#E99F6C]"
-                    style={{
-                      fontFamily: "Lato",
-                      fontWeight: 700,  
-                      lineHeight: "26.59px",  
-                      textAlign: "left",  
-                      textUnderlinePosition: "from-font",  
-                      textDecorationSkipInk: "none", 
-                    }}
-                  >
-                  {card.title}  
-                  </h3>
+  className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
+>
+  {/* Background Overlay */}
+  <div
+    className="absolute inset-0"
+    style={{
+      background:
+        "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
+    }}
+  ></div>
 
-                  <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
+  {/* Content */}
+  <div className="relative z-10">
+    <h3
+      className="text-[24px] font-bold mb-2 text-[#E99F6C]"
+      style={{
+        fontFamily: "Lato",
+        fontWeight: 700,
+        lineHeight: "26.59px",
+        textAlign: "left",
+      }}
+    >
+      {card.title}
+    </h3>
 
-                  
-                  <p
-                    className="text-lg mb-6 mt-2 text-[#F3F4F6]"
-                    style={{
-                      fontFamily: "Lato",  
-                      fontSize: "16px",  
-                      fontWeight: 400, 
-                      lineHeight: "20.08px",  
-                      textAlign: "left", 
-                      textUnderlinePosition: "from-font", 
-                      textDecorationSkipInk: "none", 
-                    }}
-                  >
-                    {card.description}  
-                  </p>
- 
-                  <button className="px-6 py-2 text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
-                    <span>Learn More</span>  
-                    <MdNorthEast /> 
-                  </button>
-                </div>
+    <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
+
+    <p
+      className="text-lg mb-6 mt-2 text-[#F3F4F6]"
+      style={{
+        fontFamily: "Lato",
+        fontSize: "16px",
+        fontWeight: 400,
+        lineHeight: "20.08px",
+        textAlign: "left",
+      }}
+    >
+      {card.description}
+    </p>
+
+    <button className="px-6 py-2 text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
+      <span>Learn More</span>
+      <MdNorthEast />
+    </button>
+  </div>
+</div>
+
               </div>
             ))}
           </div>

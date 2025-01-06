@@ -22,10 +22,10 @@ const OurLeadership2 = () => {
     <div>
       <Heading title={"OUR LEADERSHIP"} />
 
-      <div className="px-5 py-10 bg-gradient-to-b">
+      <div className="px-5 py-5 bg-gradient-to-b">
         {/* Header */}
         <div
-          className="flex flex-col items-center justify-center py-12"
+          className="sm:flex sm:flex-col items-center  justify-center sm:py-12"
           style={{
             backgroundImage: `url('bgvector.svg')`,
             backgroundSize: "cover",
@@ -39,7 +39,7 @@ const OurLeadership2 = () => {
                 className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-lg"
               >
                 <div className="relative bg-white p-2">
-                  <div className="h-[100px] w-[100px] sm:h-[160px] sm:w-[160px] md:h-[240px] md:w-[240px] bg-gray-200 overflow-hidden rounded-full">
+                  <div className="h-[160px] w-[160px] sm:h-[160px] sm:w-[160px] md:h-[240px] md:w-[240px] bg-gray-200 overflow-hidden rounded-full">
                     <Image
                       src={leader.image}
                       alt={leader.name}

@@ -84,7 +84,7 @@ const MainFrame = () => {
                 animateText ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
               }`}
             >
-              <div className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento capitalize">
+              <div className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-lato capitalize">
                 {data.heading}
               </div>
               <div className="text-[16px] sm:text-[20px] md:text-[28px] lg:text-[36px] leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[50px] text-[#F3F4F6] font-medium capitalize mt-2">
@@ -196,7 +196,7 @@ export default MainFrame;
 
 //             {/* Text Content */}
 //             <div className="absolute inset-0 flex flex-col items-center justify-center w-full px-4 sm:px-16 md:px-16 text-center">
-//               <div className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-quattrocento capitalize">
+//               <div className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-lato capitalize">
 //                 {data.heading}
 //               </div>
 //               <div className="text-[16px] sm:text-[20px] md:text-[28px] lg:text-[36px] leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[50px] text-[#F3F4F6] font-medium capitalize mt-2">

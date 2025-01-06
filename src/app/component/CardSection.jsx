@@ -1,13 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import u2 from "../assets/un3.png"; // Ensure correct import path
+import u3 from "../assets/u2.png"; // Ensure correct import path
+import e3 from "../assets/e3.png"; // Ensure correct import path
 
 const CardsSection = () => {
   // Data for cards
   const cards = [
-    { id: 1, img: u2, content: "Medical Services" },
-    { id: 2, img: u2, content: "Dental Services" },
-    { id: 3, img: u2, content: "Behavioral Health" },
+    { id: 1, img: u2, content: "Payers" },
+    { id: 2, img: u3, content: "Providers" },
+    { id: 3, img: e3, content: "Patients" },
   ];
 
   return (
@@ -27,7 +29,13 @@ const CardsSection = () => {
                 objectFit="cover"
               />
             </div>
-            <p>{card.content}</p>
+            <p className="   font-lato font-semibold text-center text-[#CF7B41] md:text-2xl"
+                // style={{
+                //   textUnderlinePosition: 'from-font',
+                //   textDecorationSkipInk: 'none',
+                // }}
+                
+                >{card.content}</p>
           </div>
         ))}
       </div>
