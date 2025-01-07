@@ -55,7 +55,7 @@ const OurSolutions = () => {
   }, []);
   // console.log(solutions, "solutions");
   return (
-    <div id="solutions">
+    <div id="solutions" className="pt-6">
       {/* <Heading title={"OUR SOLUTIONS"}/> */}
       <div className="bg-[#E8F6FC] font-lato">
         <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
