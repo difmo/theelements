@@ -9,7 +9,7 @@ const CardsSection = () => {
   const cards = [
     { id: 1, img: u2, content: "Payers" },
     { id: 2, img: u3, content: "Providers" },
-    { id: 3, img: e3, content: "Patients" },
+    { id: 3, img: e3, content: "Health Tech" },
   ];
 
   return (
