@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import u2 from "../assets/un3.png"; // Ensure correct import path
-import u3 from "../assets/u2.png"; // Ensure correct import path
-import e3 from "../assets/e3.png"; // Ensure correct import path
+import u2 from "../assets/img3.jpeg"; // Ensure correct import path
+import u3 from "../assets/img2.jpeg"; // Ensure correct import path
+import e3 from "../assets/img1.jpeg"; // Ensure correct import path
 
 const CardsSection = () => {
   // Data for cards
@@ -15,7 +15,7 @@ const CardsSection = () => {
   return (
     <div className="w-full md:w-[90%] mx-4 sm:mx-0 translate-y-1/2">
   <div 
-  className=" sm:mt-8 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 "
+  className="   grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 "
     // className="bg-white sm:mt-8 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg"
   >
     {cards.map((card) => (
