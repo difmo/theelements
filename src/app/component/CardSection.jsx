@@ -1,15 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import u2 from "../assets/img3.jpeg"; // Ensure correct import path
-import u3 from "../assets/img2.jpeg"; // Ensure correct import path
-import e3 from "../assets/img1.jpeg"; // Ensure correct import path
+import u2 from "../assets/img3.jpg"; // Ensure correct import path
+import u3 from "../assets/image1.jpg"; // Ensure correct import path
+import e3 from "../assets/img1.jpg"; // Ensure correct import path
 
 const CardsSection = () => {
   // Data for cards
   const cards = [
     { id: 1, img: u2, content: "Payers" },
-    { id: 2, img: u3, content: "Providers" },
-    { id: 3, img: e3, content: "Health Tech" },
+    { id: 2, img: e3, content: "Providers" },
+    { id: 3, img: u3, content: "Health Tech" },
   ];
 
   return (

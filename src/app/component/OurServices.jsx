@@ -33,6 +33,7 @@ import {
 import Heading from "./Heading";
 import { sanityClient } from "@/sanity";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const OurServices2 = () => {
   const [activeTab, setActiveTab] = useState(1); // Default active tab is 1
@@ -41,7 +42,7 @@ const OurServices2 = () => {
 
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState([]);
-
+  const router = useRouter();
   useEffect(() => {
     const fetchSuccessStory = async () => {
       try {
@@ -220,7 +221,9 @@ const OurServices2 = () => {
                         {item.subName}
                       </h2>
                       <p className="mt-4 text-gray-700">{item.description}</p>
-                      <button className="flex items-center mt-4 space-x-2 text-white rounded-md">
+                      <button onClick={() => {
+          router.push('/contact');
+        }} className="flex items-center mt-4 space-x-2 text-white rounded-md">
                       <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
                         <span>Learn More</span>
                         <MdNorthEast size={20} />

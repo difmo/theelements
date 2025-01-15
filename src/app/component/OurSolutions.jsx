@@ -8,6 +8,7 @@ import { MdNorthEast } from "react-icons/md"; // Import Material Design icon
 import Header from "./Header";
 import Heading from "./Heading";
 import { sanityClient } from "@/sanity";
+import { useRouter } from "next/navigation";
 const cardData = [
   {
     title: "Prospective HEDIS Analysis",
@@ -34,6 +35,7 @@ const OurSolutions = () => {
   // const [dropdownOpen, setDropdownOpen] = useState(false);
   const [solutions, setSolutions] = useState([]);
   // Fetch solutions from Sanity
+  const router = useRouter();
   useEffect(() => {
     const fetchSolutions = async () => {
       try {
@@ -96,7 +98,7 @@ const OurSolutions = () => {
                   />
                 </div>
 
-                <div className="absolute inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white">
+                <div className="absolute inset-0 flex flex-col items-start justify-end  pb-6 text-left text-white">
                   {/* Background Overlay */}
                   <div
                     className="absolute inset-0"
@@ -108,37 +110,52 @@ const OurSolutions = () => {
 
                   {/* Content */}
                   <div className="relative z-10">
-                    <h3
-                      className="text-[24px] font-bold mb-2 text-[#E99F6C]"
-                      style={{
-                        fontFamily: "Lato",
-                        fontWeight: 700,
-                        lineHeight: "26.59px",
-                        textAlign: "left",
-                      }}
-                    >
-                      {card.title}
-                    </h3>
+                  <div className="relative group">
+   
+  <div
+    className="absolute inset-0 bg-black opacity-50 group-hover:opacity-75 transition-opacity"
+  ></div>
 
-                    <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
+ 
+  <div className="relative z-10 px-6 pt-1 ">
+    <h3
+      className="text-[24px]  font-bold mb-2 text-[#E99F6C]"
+      style={{
+        fontFamily: "Lato",
+        fontWeight: 700,
+        lineHeight: "26.59px",
+        textAlign: "left",
+      }}
+    >
+      {card.title}
+    </h3>
 
-                    <p
-                      className="text-lg mb-6 mt-2 text-[#F3F4F6]"
-                      style={{
-                        fontFamily: "Lato",
-                        fontSize: "16px",
-                        fontWeight: 400,
-                        lineHeight: "20.08px",
-                        textAlign: "left",
-                      }}
-                    >
-                      {card.description}
-                    </p>
+    <div className="border-b-2 border-[#E99F6C] w-[25%]"></div>
 
-                    <button className="px-6 py-2 text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
+    <p
+      className="text-lg mb-6 pb-2 mt-2 text-[#F3F4F6]"
+      style={{
+        fontFamily: "Lato",
+        fontSize: "16px",
+        fontWeight: 400,
+        lineHeight: "20.08px",
+        textAlign: "left",
+      }}
+    >
+      {card.description}
+    </p>
+  </div>
+</div>
+
+
+                  <div className="px-6">
+                    <button onClick={() => {
+          router.push('/contact');
+        }} className="px-6 py-2  text-white hover:text-gray-500 rounded-full hover:bg-[#F3F4F6] text-lg font-medium border hover:transition-colors flex items-center space-x-2">
                       <span>Learn More</span>
                       <MdNorthEast />
                     </button>
+                    </div>  
                   </div>
                 </div>
               </div>

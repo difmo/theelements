@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image"; // Import Image from Next.js
 import logo from "../assets/8E_logo-A 1 copy.svg";
@@ -7,7 +8,9 @@ import { MdEmail, MdLocationOn } from "react-icons/md";
 import { LocationIcon } from "../assets/Icons/Icon1";
 import { FiPhone } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
 const Footer = () => {
+  const router = useRouter();
   return (
     <div>
       <footer className="bg-[#073948] text-white py-8">
@@ -68,12 +71,18 @@ const Footer = () => {
                 <h2 className="mb-4 text-lg font-bold">Contact</h2>
                 <ul className="space-y-2">
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" onClick={(e) => {
+          e.preventDefault(); // Prevent default link behavior
+          router.push('/contact'); // Navigate to the Contact Us page
+        }} className="hover:underline">
                       Contact Us
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:underline">
+                    <a href="#" onClick={(e) => {
+          e.preventDefault(); // Prevent default link behavior
+          router.push('/career'); // Navigate to the Contact Us page
+        }} className="hover:underline">
                       Careers
                     </a>
                   </li>

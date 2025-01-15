@@ -3,6 +3,7 @@ import Image from "next/image";
 import img1 from "../assets/image1.jpg";
 import img2 from "../assets/image2.jpg";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const headerdata = [
   {
@@ -24,7 +25,7 @@ const headerdata = [
 const MainFrame = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animateText, setAnimateText] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     const cycleContent = setInterval(() => {
       setAnimateText(false); // Reset animation state
@@ -91,9 +92,17 @@ const MainFrame = () => {
                 {data.description}
               </div>
               <div className="mt-6 sm:mt-8">
-                <button className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3">
+                {/* <button className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3">
                   Contact Us
-                </button>
+                </button> */}
+                <button
+        className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3"
+        onClick={() => {
+          router.push('/contact');
+        }}
+      >
+        Contact Us
+      </button>
               </div>
             </div>
           </div>
