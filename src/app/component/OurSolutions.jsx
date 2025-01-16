@@ -110,9 +110,9 @@ const OurSolutions = () => {
                   {/* Content */}
                   <div className="relative z-10 ">
                     <div className="relative group">
-                      <div className="absolute inset-0 bg-black opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                      <div className="absolute inset-0 bg-[#333F50] opacity-50 group-hover:opacity-75 transition-opacity"></div>
 
-                      <div className="relative z-10 px-6 pb-6  pt-1 ">
+                      <div className="relative z-10 px-6 pb-6  pt-2 ">
                         <h3
                           className="text-[24px]  font-bold mb-2 text-[#E99F6C]"
                           style={{
