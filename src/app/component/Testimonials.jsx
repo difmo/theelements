@@ -1,113 +1,84 @@
 "use client";
-
-import React, { useState, useEffect } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
-
-// Import images
-import our1 from "../assets/leader1.png";
-import our2 from "../assets/leader2.png";
-import our3 from "../assets/leader3.png";
-import our4 from "../assets/leader4.png";
-import our5 from "../assets/leader5.png";
+import img1 from "../assets/leader1.png";
+import img2 from "../assets/leader2.png";
+import img3 from "../assets/leader3.png";
+import { FaLinkedin } from "react-icons/fa"; // Make sure to install react-icons
 
 const Testimonials = () => {
-  const testimonials = [
+  const leaders = [
     {
-      image: our1,
-      title: "Project One",
-      description: "Description for project one.",
+      name: "Rama Evani",
+      image: img3,
+      linkedin: "https://www.linkedin.com/in/ramaevani",
     },
     {
-      image: our2,
-      title: "Project Two",
-      description: "Description for project two.",
+      name: "Prashanth Kasturi",
+      image: img1,
+      linkedin: "https://www.linkedin.com/in/prashanthkasturi",
     },
     {
-      image: our3,
-      title: "Project Three",
-      description: "Description for project three.",
-    },
-    {
-      image: our4,
-      title: "Project Four",
-      description: "Description for project four.",
-    },
-    {
-      image: our5,
-      title: "Project Five",
-      description: "Description for project five.",
+      name: "Matt Whitnack",
+      image: img2,
+      linkedin: "https://www.linkedin.com/in/mattwhitnack",
     },
   ];
-
-  const [centerSlidePercentage, setCenterSlidePercentage] = useState(33.33);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setCenterSlidePercentage(100); // 1 slide on small screens
-      } else if (window.innerWidth < 1024) {
-        setCenterSlidePercentage(50); // 2 slides on medium screens
-      } else {
-        setCenterSlidePercentage(33.33); // 3 slides on large screens
-      }
-    };
-
-    handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <div
-      className=" mx-auto px-4  bg-[#E8F6FC]"
-      style={{
-        backgroundImage: `url('ring.svg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "bottom",
-        backgroundSize: "1800px",
-      }}
-    >
-      <h2 className="text-3xl font-bold text-left mb-6 text-gray-700">
-        Employee Testimonials
-      </h2>
-      <p className="text-gray-600 text-lg mb-10">
-        Discover the Hexaware journey through the eyes of our exceptional team,
-        sharing brief yet impactful tales of growth, innovation, and success.
-      </p>
+    <>
+      <div className="bg-[#E8F6FC]">
+        <div>
+          <h1 className="text-4xl md:px-14 py-4">Employee Testimonials</h1>
+          <p className="text-lg md:px-14 py-2">
+            Discover the Hexaware journey through the eyes of our exceptional
+            team, sharing brief yet impactful tales of growth, innovation, and
+            success.
+          </p>
+        </div>
+        <div className="px-5 py-5 bg-gradient-to-b">
+          <div
+            className="sm:flex sm:flex-col items-center  justify-center sm:py-12"
+            style={{
+              backgroundImage: `url('bgvector.svg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {leaders.map((leader, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-lg"
+                >
+                  <div className="relative bg-white p-2">
+                    <div className="h-[160px] w-[160px] sm:h-[160px] sm:w-[160px] md:h-[240px] md:w-[240px] bg-gray-200 overflow-hidden rounded-full">
+                      <Image
+                        src={leader.image}
+                        alt={leader.name}
+                        layout="intrinsic"
+                        objectFit="cover"
+                        className="rounded-full"
+                      />
+                    </div>
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-center text-[#CF7B41]">
+                    {leader.name}
+                  </h3>
 
-      <Carousel
-        showArrows={true}
-        showStatus={false}
-        showIndicators={true}
-        infiniteLoop={true}
-        autoPlay={false}
-        interval={3000}
-        stopOnHover={true}
-        swipeable={true}
-        emulateTouch={true}
-        dynamicHeight={false}
-        centerMode={true}
-        centerSlidePercentage={centerSlidePercentage}
-      >
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="px-4 py-10">
-            <div className="bg-white rounded-lg shadow-2xl overflow-hidden h-[450px] flex flex-col border border-gray-400 items-center text-center p-6">
-              <Image
-                src={testimonial.image}
-                alt={testimonial.title}
-                className=" h-64 bg-cover "
-              />
-              <h3 className="text-xl font-semibold">{testimonial.title}</h3>
-              <p className="text-gray-600 text-sm mt-3">
-                {testimonial.description}
-              </p>
+                  <a
+                    href={leader.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 text-[#0077B5] hover:text-[#004C8C] transition duration-300"
+                  >
+                    <FaLinkedin className="w-6 h-6" />
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
-        ))}
-      </Carousel>
-    </div>
+        </div>
+      </div>
+    </>
   );
 };
 

@@ -44,13 +44,13 @@ const benefits = [
 export default function Benefits() {
   return (
     <div
-      className="bg-[#E8F6FC] py-12 px-14 sm:px-16 lg:px-18 text-left"
-      style={{
-        backgroundImage: `url('ring.svg')`,
-        backgroundSize: "cover",
-        backgroundPosition: "bottom",
-        backgroundSize: "1800px",
-      }}
+      className="bg-[#E8F6FC] py-12 px-6 sm:px-16 lg:px-18 text-left"
+      // style={{
+      //   backgroundImage: `url('ring.svg')`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "bottom",
+      //   backgroundSize: "1800px",
+      // }}
     >
       <h2 className="text-4xl  text-gray-900 my-4">
         The Hexaware Advantage: Your Workplace Benefits

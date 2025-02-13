@@ -20,7 +20,6 @@ const generateCaptcha = () => {
 
 export default function ContactForm() {
   const [captcha, setCaptcha] = useState("");
-
   useEffect(() => {
     setCaptcha(generateCaptcha());
   }, []);
@@ -87,14 +86,21 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // console.log("DSJNC DS ");
+      let fileUrl = "";
+      if (formData.file) {
+        const resumeFile = formData.file;
+        const fileAsset = await sanityClient.assets.upload("file", resumeFile, {
+          filename: resumeFile.name,
+        });
+        fileUrl = fileAsset.url; // URL of the uploaded file
+      }
       await sanityClient.create({
         _type: "contact",
         ...formData,
+        file: fileUrl,
       });
 
       alert("Thank you for contacting us! We will get back to you soon.");
-      // console.log("DSJNC DS AAA");
       setFormData({
         name: "",
         email: "",
@@ -108,14 +114,12 @@ export default function ContactForm() {
         captcha: "",
         termsAccepted: true,
       });
-      console.log("object");
       setErrors({});
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
     } catch (error) {
-      // console.log("PRITAM");
       console.error("Error submitting contact form: ", error);
       toast.error(
         "There was an error submitting your message. Please try again."
@@ -124,23 +128,38 @@ export default function ContactForm() {
       setIsSubmitting(false);
     }
   };
+
+  const handleFileChange = (e) => {
+    const { files } = e.target;
+    const file = files[0];
+
+    // File validation
+    if (file) {
+      const fileSizeInMB = file.size / 1024 / 1024;
+      const allowedExtensions =
+        /(\.pdf|\.doc|\.docx|\.xlsx|\.xls|\.zip|\.rar)$/i;
+
+      if (fileSizeInMB > 10) {
+        setErrors((prev) => ({
+          ...prev,
+          file: "File size should be less than 10MB",
+        }));
+      } else if (!allowedExtensions.exec(file.name)) {
+        setErrors((prev) => ({
+          ...prev,
+          file: "Invalid file type. Accepted formats: .pdf, .doc, .docx, .xlsx, .xls, .zip, .rar",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, file: "" }));
+        setFormData((prev) => ({ ...prev, file }));
+      }
+    }
+  };
+
   return (
-    <div
-      //       className="flex font-lato items-center justify-center min-h-screen py-5 bg-[#E8F6FC]"
-      className="bg-[#E8F6FC] mx-auto px-4 md:px-10 lg:px-16 flex flex-col lg:flex-row p-10 lg:pt-24"
-      style={{
-        backgroundImage: `url('ring.svg')`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "fill",
-        backgroundPosition: "bottom",
-        // backgroundSize: "1000px",
-      }}
-    >
+    <div className="bg-[#E8F6FC] mx-auto px-4 md:px-10 lg:px-16 flex flex-col lg:flex-row p-10 lg:pt-24">
       <div className="text-left mb-8 lg:mb-0 lg:w-1/2">
-        <p className="text-gray-600 text-lg md:text-xl px-4 py-2">
-          {" "}
-          Contact Us
-        </p>
+        <p className="text-gray-600 text-lg md:text-xl px-4 py-2">Contact Us</p>
         <h2 className="text-3xl  text-gray-700 md:text-5xl lg:text-6xl px-4">
           Let’s Talk
         </h2>
@@ -156,8 +175,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-4
-             w-full"
+            className="bg-white px-5 py-4 w-full"
           />
           {errors.name && <p className="text-red-500">{errors.name}</p>}
 
@@ -168,7 +186,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-4 w-full"
+            className="bg-white px-5 py-4 w-full"
           />
           {errors.email && <p className="text-red-500">{errors.email}</p>}
 
@@ -178,7 +196,7 @@ export default function ContactForm() {
               required
               value={formData.countryCode}
               onChange={handleChange}
-              className="bg-gray-200 px-2 md:px-5 py-4 w-[30%]"
+              className="bg-white px-2 md:px-5 py-4 w-[30%]"
             >
               <option value="">Select</option>
               <option value="+1">+1</option>
@@ -190,7 +208,7 @@ export default function ContactForm() {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="bg-gray-200 px-5 py-4 w-[70%]"
+              className="bg-white px-5 py-4 w-[70%]"
             />
           </div>
           {errors.phone && <p className="text-red-500">{errors.phone}</p>}
@@ -200,7 +218,7 @@ export default function ContactForm() {
             placeholder="Company"
             value={formData.company}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-4 w-full"
+            className="bg-white px-5 py-4 w-full"
           />
           {errors.company && <p className="text-red-500">{errors.company}</p>}
 
@@ -208,18 +226,26 @@ export default function ContactForm() {
             name="hearAbout"
             value={formData.hearAbout}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-4 w-full text-gray-400"
+            className="bg-white px-5 py-4 w-full text-gray-500"
           >
-            <option className="text-gray-200" value="">
+            <option className=" bg-white" value="">
               How did you hear about us?*
             </option>
-            <option value="Analyst/Sourcing Advisory">
+            <option className="text-black" value="Analyst/Sourcing Advisory">
               Analyst/Sourcing Advisory
             </option>
-            <option value="Search Engine">Search Engine</option>
-            <option value="Social Media">Social Media</option>
-            <option value="Webinar">Webinar</option>
-            <option value="Other">Other</option>
+            <option className="text-black" value="Search Engine">
+              Search Engine
+            </option>
+            <option className="text-black" value="Social Media">
+              Social Media
+            </option>
+            <option className="text-black" value="Webinar">
+              Webinar
+            </option>
+            <option className="text-black" value="Other">
+              Other
+            </option>
           </select>
           {errors.hearAbout && (
             <p className="text-red-500">{errors.hearAbout}</p>
@@ -229,9 +255,9 @@ export default function ContactForm() {
             name="division"
             value={formData.division}
             onChange={handleChange}
-            className="bg-gray-200 text-gray-400 px-5 py-4 w-full"
+            className="bg-white text-gray-400 px-5 py-4 w-full"
           >
-            <option className="text-gray-200" value="">
+            <option className="text-whbg-white" value="">
               Which division should we connect you to?*
             </option>
             <option value="Our Services">Our Services</option>
@@ -249,7 +275,7 @@ export default function ContactForm() {
             required
             value={formData.opportunity}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-4 w-full"
+            className="bg-white px-5 py-4 w-full"
           ></textarea>
           {errors.opportunity && (
             <p className="text-red-500">{errors.opportunity}</p>
@@ -259,18 +285,16 @@ export default function ContactForm() {
             <p className="text-sm">
               Upload your RFP/RFI document (maximum file size: 10 MB)
             </p>
-            <div className="flex items-center justify-between bg-gray-200 p-3 rounded mt-2">
-              <p className="text-sm text-gray-500">
-                Accepted file formats: .xlsx, .xls, .doc, .docx, .pdf, .rtf,
-                .zip, .rar
-              </p>
-              <label className="cursor-pointer text-blue-600">
+            <div className="flex items-center  bg-white p-3 rounded mt-2">
+              <p className="text-sm text-gray-500"></p>
+              <label className="cursor-pointer flex  space-x-3 text-blue-600">
                 <FiUpload size={20} />
                 <input
                   type="file"
                   name="file"
-                  onChange={handleChange}
-                  className="hidden"
+                  onChange={handleFileChange}
+                  accept=".pdf,.doc,.docx,.xlsx,.xls,.zip,.rar"
+                  required
                 />
               </label>
             </div>
@@ -278,7 +302,7 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-            <div className="bg-blue-200 px-6 py-4 text-2xl font-bold rounded-md text-center">
+            <div className="bg-blue-200 px-4 py-4 text-2xl font-bold rounded-md text-center">
               {captcha}
             </div>
             <input
@@ -287,7 +311,7 @@ export default function ContactForm() {
               required
               value={formData.captcha}
               onChange={handleChange}
-              className="border p-3 rounded w-full"
+              className="border p-4 rounded w-full"
             />
             {errors.captcha && <p className="text-red-500">{errors.captcha}</p>}
             <button
@@ -329,11 +353,14 @@ export default function ContactForm() {
             Submit
           </button>
         </form>
-        {/* ::contentReference[oaicite:0]{index=0} */}
       </div>
     </div>
   );
 }
+
+
+
+
 
 // "use client";
 

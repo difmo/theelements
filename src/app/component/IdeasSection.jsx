@@ -23,8 +23,8 @@ export default function IdeasSection() {
   }, []);
 
   return (
-    <section className="bg-gray-100 px-6 md:px-12 lg:px-12 py-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+    <section className="bg-[#E8F6FC] px-6 md:px-14 lg:px-14 py-12">
+      <div className=" mx-auto flex flex-col md:flex-row items-center justify-between">
         {/* Left Content */}
         <div className="max-w-xl">
           <h2 className="text-2xl md:text-4xl  text-gray-900 py-10">
@@ -38,8 +38,8 @@ export default function IdeasSection() {
         </div>
 
         {/* Right Counter */}
-        <div className="mt-8 md:mt-0 flex flex-col items-center text-center">
-          <span className="text-6xl font-bold text-blue-900">
+        <div className="mt-8 md:mt-0 flex flex-col ">
+          <span className="text-xl md:text-6xl font-bold text-blue-900">
             {count.toLocaleString()}
           </span>
           <span className="text-lg text-gray-600">Ideas Implemented</span>

@@ -7,12 +7,12 @@ import VisionSection from "../component/VisionSection";
 import Benefits from "../component/Benefits";
 import IdeasSection from "../component/IdeasSection";
 import Testimonials from "../component/Testimonials";
-// import TestimonialSlider from "../component/Testimonials";
+import Link from "next/link";
 
 export default function page() {
   return (
     <>
-      <section className="relative h-screen flex justify-center items-center text-white overflow-hidden">
+      <section className="relative px-14 h-screen flex justify-center items-center text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -24,7 +24,7 @@ export default function page() {
           />
         </div>
 
-        <div className="relative z-10 px-6 text-center md:text-left">
+        <div className="relative z-10  text-left">
           <p className="text-sm md:text-lg font-light top-4">Join Hexaware</p>
           <h1 className="text-4xl md:text-6xl font-bold mt-6 md:mt-10">
             Be One Step Ahead
@@ -38,18 +38,11 @@ export default function page() {
       </section>
 
       <VisionSection />
-      <div className="bg-[#03032B] text-white py-16 px-6 sm:px-10 md:px-20 flex flex-col md:flex-row items-center min-h-screen">
+      <div className="bg-[#03032B] text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col md:flex-row items-center min-h-screen">
         {/* Image Section */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <Image
-            src={img2}
-            alt="Community Illustration"
-            className="w-full max-w-md md:max-w-lg lg:max-w-xl"
-          />
-        </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
+        <div className="w-full md:w-1/2 mt-8 md:mt-0 text-left">
           <h3 className="text-blue-400 text-lg py-2 font-semibold">
             Community Culture
           </h3>
@@ -64,13 +57,23 @@ export default function page() {
           </p>
 
           {/* Button */}
-          <button className="mt-6 flex justify-center md:justify-start items-center gap-3 bg-white text-black py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition">
-            View Open Roles <span className="text-lg">➜</span>
-          </button>
+          <Link href="/contactcareer">
+            <button className="mt-6 flex justify-center md:justify-start items-center gap-3 text-white py-2  rounded-full font-semibold transition">
+              View Open Roles <span className="text-lg">➜</span>
+            </button>
+          </Link>
+        </div>
+        <div className="w-full md:w-1/2 flex justify-center">
+          <Image
+            src={img2}
+            alt="Community Illustration"
+            className="w-full max-w-md md:max-w-lg lg:max-w-xl"
+          />
         </div>
       </div>
       <Benefits />
       <IdeasSection />
+      {/* <OurLeadership2 /> */}
       <Testimonials />
     </>
   );
