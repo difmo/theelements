@@ -156,7 +156,8 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-6 w-full"
+            className="bg-gray-200 px-5 py-4
+             w-full"
           />
           {errors.name && <p className="text-red-500">{errors.name}</p>}
 
@@ -167,7 +168,7 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-6 w-full"
+            className="bg-gray-200 px-5 py-4 w-full"
           />
           {errors.email && <p className="text-red-500">{errors.email}</p>}
 
@@ -177,7 +178,7 @@ export default function ContactForm() {
               required
               value={formData.countryCode}
               onChange={handleChange}
-              className="bg-gray-200 px-2 md:px-5 py-6 w-[30%]"
+              className="bg-gray-200 px-2 md:px-5 py-4 w-[30%]"
             >
               <option value="">Select</option>
               <option value="+1">+1</option>
@@ -189,7 +190,7 @@ export default function ContactForm() {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="bg-gray-200 px-5 py-6 w-[70%]"
+              className="bg-gray-200 px-5 py-4 w-[70%]"
             />
           </div>
           {errors.phone && <p className="text-red-500">{errors.phone}</p>}
@@ -199,7 +200,7 @@ export default function ContactForm() {
             placeholder="Company"
             value={formData.company}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-6 w-full"
+            className="bg-gray-200 px-5 py-4 w-full"
           />
           {errors.company && <p className="text-red-500">{errors.company}</p>}
 
@@ -207,7 +208,7 @@ export default function ContactForm() {
             name="hearAbout"
             value={formData.hearAbout}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-6 w-full text-gray-400"
+            className="bg-gray-200 px-5 py-4 w-full text-gray-400"
           >
             <option className="text-gray-200" value="">
               How did you hear about us?*
@@ -228,7 +229,7 @@ export default function ContactForm() {
             name="division"
             value={formData.division}
             onChange={handleChange}
-            className="bg-gray-200 text-gray-400 px-5 py-6 w-full"
+            className="bg-gray-200 text-gray-400 px-5 py-4 w-full"
           >
             <option className="text-gray-200" value="">
               Which division should we connect you to?*
@@ -248,7 +249,7 @@ export default function ContactForm() {
             required
             value={formData.opportunity}
             onChange={handleChange}
-            className="bg-gray-200 px-5 py-6 w-full"
+            className="bg-gray-200 px-5 py-4 w-full"
           ></textarea>
           {errors.opportunity && (
             <p className="text-red-500">{errors.opportunity}</p>
