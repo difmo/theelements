@@ -8,7 +8,7 @@ import Benefits from "../component/Benefits";
 import IdeasSection from "../component/IdeasSection";
 import Testimonials from "../component/Testimonials";
 import Link from "next/link";
-
+// fjgytjg
 export default function page() {
   return (
     <>
@@ -18,7 +18,7 @@ export default function page() {
           <Image
             src={img}
             layout="fill"
-            // objectFit="cover"
+            // objectFit="
             className="brightness-75 bg-cover"
           />
         </div>
