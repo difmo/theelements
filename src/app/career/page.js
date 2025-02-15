@@ -8,7 +8,8 @@ import Benefits from "../component/Benefits";
 import IdeasSection from "../component/IdeasSection";
 import Testimonials from "../component/Testimonials";
 import Link from "next/link";
-// fjgydsodsj
+// fjgydso
+
 export default function page() {
   return (
     <>
