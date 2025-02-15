@@ -281,7 +281,7 @@ export default function ContactForm() {
             <p className="text-red-500">{errors.opportunity}</p>
           )}
 
-          <div className="bg-gray-100 p-4 rounded-lg text-gray-600">
+          <div className="bg-white p-4 rounded-lg text-gray-600">
             <p className="text-sm">
               Upload your RFP/RFI document (maximum file size: 10 MB)
             </p>
@@ -323,7 +323,7 @@ export default function ContactForm() {
             </button>
           </div>
 
-          <label className="flex items-center text-sm text-gray-700">
+          <label className="flex text-sm text-gray-700">
             <input
               type="checkbox"
               name="termsAccepted"
@@ -357,10 +357,6 @@ export default function ContactForm() {
     </div>
   );
 }
-
-
-
-
 
 // "use client";
 

@@ -1,5 +1,5 @@
 "use client";
-import img from "../assets/career/career.jpg";
+import img from "../../../public/career/element.jpg";
 import img2 from "../assets/career/a1.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -12,12 +12,11 @@ import Link from "next/link";
 export default function page() {
   return (
     <>
-      <section className="relative px-14 h-screen flex justify-center items-center text-white overflow-hidden">
+      <section className="relative px-14 h-screen flex justify-center  text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
-            alt="Hexaware Team"
             layout="fill"
             // objectFit="cover"
             className="brightness-75 bg-cover"
@@ -25,11 +24,13 @@ export default function page() {
         </div>
 
         <div className="relative z-10  text-left">
-          <p className="text-sm md:text-lg font-light top-4">Join Hexaware</p>
-          <h1 className="text-4xl md:text-6xl font-bold mt-6 md:mt-10">
+          <p className="text-sm md:text-lg font-light flex mt-3 md:mt-20">
+            Join 8th Element
+          </p>
+          <h1 className="text-4xl md:text-6xl font-bold mt-6 md:mt-56">
             Be One Step Ahead
           </h1>
-          <p className="mt-4 text-lg md:text-xl font-light leading-relaxed">
+          <p className="mt-14 text-lg md:text-xl font-light  leading-relaxed">
             We’re a team of tech enthusiasts who thrive on pushing boundaries,
             challenging norms, and driving change to bring future-forward
             thinking into the present.

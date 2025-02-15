@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import img from "../assets/career/career.jpg";
+import img from "../../../public/career/our-purpose.jpg";
+import img2 from "../../../public/career/our-vision.jpg";
+import img3 from "../../../public/career/our-values.jpg";
 
 export default function VisionSection() {
   const categories = ["Our Purpose", "Our Vision", "Our Values"];
@@ -13,18 +15,18 @@ export default function VisionSection() {
   // Dynamic Content Mapping
   const content = {
     "Our Purpose": {
-      text: "Hexawarians wake up every day with a singular purpose: to create smiles through great people and technology. Our collective mission is about more than the bottom line: it’s about the impact we have in the world and the opportunity to inspire delight every day and uncover new possibilities. We believe technology should be used for more than just making something digital for digital’s sake, it should solve problems that were previously not solvable. It should encourage us to dream big and find new answers. Let’s dream together.",
+      text: "8th Element wake up every day with a singular purpose: to create smiles through great people and technology. Our collective mission is about more than the bottom line: it’s about the impact we have in the world and the opportunity to inspire delight every day and uncover new possibilities. We believe technology should be used for more than just making something digital for digital’s sake, it should solve problems that were previously not solvable. It should encourage us to dream big and find new answers. Let’s dream together.",
       image: img,
       video: "https://www.youtube.com/embed/MnKsxnP2IVk?si=zWuxodcQ8ie3UU_U",
     },
     "Our Vision": {
       text: "Our vision is to be the world’s most loved digital transformation partner. When something makes a positive impact, you tend to remember it – it occupies a special place in your heart and mind. That’s the place we aim to live. Our vision is to become your number one partner, your most trusted advisor, and a strategic resource in getting your business to a more prosperous tomorrow.",
-      image: img,
+      image: img2,
       video: "https://www.youtube.com/embed/MnKsxnP2IVk?si=zWuxodcQ8ie3UU_U",
     },
     "Our Values": {
-      text: "Our values are more than just words on a page. They guide the decisions and behaviors that shape our culture. At Hexaware, 5 key principles guide everything we do.\n1. Put people first.\n2. Create customer value.\n3. Innovate relentlessly.\n4. Be sustainable.\n5. Come on in!",
-      image: img,
+      text: "Our values are more than just words on a page. They guide the decisions and behaviors that shape our culture. At 8th Element, 5 key principles guide everything we do.\n1. Put people first.\n2. Create customer value.\n3. Innovate relentlessly.\n4. Be sustainable.\n5. Come on in!",
+      image: img3,
       video: "https://www.youtube.com/embed/MnKsxnP2IVk?si=zWuxodcQ8ie3UU_U",
     },
   };
