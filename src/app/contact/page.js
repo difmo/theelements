@@ -27,7 +27,6 @@ export default function ContactForm() {
   const refreshCaptcha = () => {
     setCaptcha(generateCaptcha());
   };
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,10 +40,8 @@ export default function ContactForm() {
     captcha: "",
     termsAccepted: false,
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -55,7 +52,6 @@ export default function ContactForm() {
 
   const validateForm = () => {
     let newErrors = {};
-
     if (!formData.name.trim()) newErrors.name = "Name is required*";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required*";
@@ -128,7 +124,6 @@ export default function ContactForm() {
       setIsSubmitting(false);
     }
   };
-
   const handleFileChange = (e) => {
     const { files } = e.target;
     const file = files[0];
@@ -161,10 +156,10 @@ export default function ContactForm() {
       <div className="text-left mb-8 lg:mb-0 lg:w-1/2">
         <p className="text-gray-600 text-lg md:text-xl px-4 py-2">Contact Us</p>
         <h2 className="text-3xl  text-gray-700 md:text-5xl lg:text-6xl px-4">
-          Let’s Talk
+          Let&#39;s Talk
         </h2>
         <p className="text-gray-600 text-lg md:text-xl px-4 py-2">
-          Whatever your question, we'd love to hear from you.
+          Whatever your question, we&#39;d love to hear from you.
         </p>
       </div>
       <div className="w-full lg:w-1/2 px-4 mb-24">

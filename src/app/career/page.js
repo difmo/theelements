@@ -31,9 +31,9 @@ export default function page() {
             Be One Step Ahead
           </h1>
           <p className="mt-14 text-lg md:text-xl font-light  leading-relaxed">
-            We’re a team of tech enthusiasts who thrive on pushing boundaries,
-            challenging norms, and driving change to bring future-forward
-            thinking into the present.
+            We&apos;re a team of tech enthusiasts who thrive on pushing
+            boundaries, challenging norms, and driving change to bring
+            future-forward thinking into the present.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function page() {
             Diversity, Equity, and Inclusion.
           </h2>
           <p className="text-lg text-gray-300 mt-4 leading-relaxed">
-            Explore how we’re working to build a more inclusive future that
+            Explore how we&apos;re working to build a more inclusive future that
             reflects the richness of human diversity and ensures equal
             opportunities for all.
           </p>

@@ -32,30 +32,6 @@ const Testimonials = () => {
         "“I have met wonderful people that make Hexaware a great workplace.”",
       post: "DA Competency Manager",
     },
-    {
-      name: "John Doe",
-      image: img1,
-      linkedin: "https://www.linkedin.com/in/johndoe",
-      title:
-        "“I have met wonderful people that make Hexaware a great workplace.”",
-      post: "DA Competency Manager",
-    },
-    {
-      name: "Jane Smith",
-      image: img2,
-      linkedin: "https://www.linkedin.com/in/janesmith",
-      title:
-        "“I have met wonderful people that make Hexaware a great workplace.”",
-      post: "DA Competency Manager",
-    },
-    {
-      name: "Alex Johnson",
-      image: img3,
-      linkedin: "https://www.linkedin.com/in/alexjohnson",
-      title:
-        "“I have met wonderful people that make Hexaware a great workplace.”",
-      post: "DA Competency Manager",
-    },
   ];
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
