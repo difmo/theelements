@@ -30,7 +30,7 @@ export default function page() {
           <h1 className="text-2xl md:text-4xl lg:text-6xl md:font-bold mt-32 md:mt-56">
             Be One Step Ahead
           </h1>
-          <p className="mt-14 text-lg md:text-xl font-light  leading-relaxed">
+          <p className="mt-14 text-lg md:text-xl font-light  leading-relaxed pb-6">
             We&apos;re a team of tech enthusiasts who thrive on pushing
             boundaries, challenging norms, and driving change to bring
             future-forward thinking into the present.

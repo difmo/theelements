@@ -11,7 +11,7 @@ const generateCaptcha = () => {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
   let captcha = "";
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 6; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
     captcha += characters[randomIndex];
   }
@@ -297,7 +297,7 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
-            <div className="bg-blue-200 px-4 py-4 text-2xl font-bold rounded-md text-center">
+            <div className="bg-blue-200 px-4 py-4 text-xl font-bold rounded-md text-center w-full md:w-1/2">
               {captcha}
             </div>
             <input
@@ -311,7 +311,7 @@ export default function ContactForm() {
             {errors.captcha && <p className="text-red-500">{errors.captcha}</p>}
             <button
               type="button"
-              className="text-blue-600 flex items-center"
+              className="text-blue-600 flex items-center "
               onClick={refreshCaptcha}
             >
               <AiOutlineReload size={24} />
@@ -346,7 +346,7 @@ export default function ContactForm() {
             className={`w-full p-3 rounded text-white ${
               formData.termsAccepted
                 ? "bg-blue-600 hover:bg-blue-700"
-                : "bg-gray-400 cursor-not-allowed"
+                : "bg-gray-400 cursor -not-allowed"
             }`}
             disabled={!formData.termsAccepted}
           >

@@ -3,7 +3,7 @@ import Image from "next/image";
 import img1 from "../assets/leader1.png";
 import img2 from "../assets/leader2.png";
 import img3 from "../assets/leader3.png";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 // import { ChevronLeft, ChevronRight } from "react-icons/fa"; // Import missing icons
@@ -76,7 +76,7 @@ const Testimonials = () => {
   return (
     <div className="bg-[#E8F6FC]">
       <div>
-        <h1 className="text-4xl md:px-14 py-4">Employee Testimonials</h1>
+        <h1 className="text-4xl md:px-14  py-4">Employee Testimonials</h1>
         <p className="text-lg md:px-14 py-2">
           Discover the 8th Element journey through the eyes of our exceptional
           team, sharing brief yet impactful tales of growth, innovation, and
@@ -123,9 +123,14 @@ const Testimonials = () => {
                   <h3 className="mt-4 text-lg font-semibold text-center text-[#CF7B41]">
                     {leader.name}
                   </h3>
-                  <p className="mt-4 px-4 text-lg text-center text-gray-600">
-                    {leader.post}
-                  </p>
+                  <a
+                    href={leader.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 px-4 text-lg text-center text-blue-600 flex justify-center"
+                  >
+                    <FaLinkedin className="w-8 h-8" />
+                  </a>
                 </div>
               ))}
             </div>
