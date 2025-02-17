@@ -300,6 +300,13 @@ export default function ContactForm() {
             <div className="bg-blue-200 px-4 py-4 text-xl font-bold rounded-md text-center w-full md:w-1/2">
               {captcha}
             </div>
+            <button
+              type="button"
+              className="text-blue-600 flex items-center "
+              onClick={refreshCaptcha}
+            >
+              <AiOutlineReload size={24} />
+            </button>
             <input
               name="captcha"
               placeholder="Type the characters to the left"
@@ -309,13 +316,6 @@ export default function ContactForm() {
               className="border p-4 rounded w-full"
             />
             {errors.captcha && <p className="text-red-500">{errors.captcha}</p>}
-            <button
-              type="button"
-              className="text-blue-600 flex items-center "
-              onClick={refreshCaptcha}
-            >
-              <AiOutlineReload size={24} />
-            </button>
           </div>
 
           <label className="flex items-center text-sm text-gray-700">
