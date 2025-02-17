@@ -12,14 +12,14 @@ import Link from "next/link";
 export default function page() {
   return (
     <>
-      <section className="relative px-14 h-screen flex justify-center  text-white overflow-hidden">
+      <section className="relative px-8 md:px-14 md:h-screen flex justify-center  text-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
             layout="fill"
             // objectFit="
-            className="brightness-75 bg-cover"
+            className="brightness-75 object-cover md:bg-cover"
           />
         </div>
 
@@ -27,7 +27,7 @@ export default function page() {
           <p className="text-sm md:text-lg font-light flex mt-3 md:mt-20">
             Join 8th Element
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold mt-6 md:mt-56">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl md:font-bold mt-32 md:mt-56">
             Be One Step Ahead
           </h1>
           <p className="mt-14 text-lg md:text-xl font-light  leading-relaxed">
@@ -64,7 +64,7 @@ export default function page() {
             </button>
           </Link>
         </div>
-        <div className="w-full md:w-1/2 flex justify-center">
+        <div className="w-full pt-4 md:w-1/2 flex justify-center">
           <Image
             src={img2}
             alt="Community Illustration"
