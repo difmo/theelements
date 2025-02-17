@@ -13,7 +13,7 @@ export default function page() {
   return (
     <>
       <section className="relative px-14 h-screen flex justify-center  text-white overflow-hidden">
-        {/* Background Image */}
+        {/* Background Ima*/}
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
