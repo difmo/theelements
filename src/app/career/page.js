@@ -12,8 +12,13 @@ import Link from "next/link";
 export default function page() {
   return (
     <>
+<<<<<<< HEAD
       <section className="relative px-8 md:px-14 md:h-screen flex justify-center  text-white overflow-hidden">
         {/* Background Image */}
+=======
+      <section className="relative px-14 h-screen flex justify-center  text-white overflow-hidden">
+        {/* Background Ima*/}
+>>>>>>> 4239e47ff2f362c9b46c34b370f7a4d4269c5861
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
