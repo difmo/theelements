@@ -37,12 +37,12 @@ const Testimonials = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % (leaders.length - 2));
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % leaders.length);
   };
 
   const prevSlide = () => {
     setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + leaders.length - 2) % (leaders.length - 2)
+      (prevSlide) => (prevSlide - 2 + leaders.length) % leaders.length
     );
   };
 
@@ -63,7 +63,7 @@ const Testimonials = () => {
         </div>
         <div className="py-5 bg-gradient-to-b md:px-14 px-4">
           <div
-            className="sm:flex sm:flex-col items-center justify-center sm:py-12 relative"
+            className="sm:flex sm:flex-col items-center justify-between sm:py-12 relative"
             style={{
               backgroundImage: `url('bgvector.svg')`,
               backgroundSize: "cover",
@@ -72,9 +72,9 @@ const Testimonials = () => {
           >
             <div className="w-full overflow-hidden relative">
               <div
-                className="flex transition-transform duration-500 ease-in-out gap-4 sm:gap-6 md:gap-14"
+                className="flex transition-transform duration-500 ease-in-out gap-4 sm:gap-6 md:gap-10"
                 style={{
-                  transform: `translateX(-${currentSlide * 100}%)`,
+                  transform: `translateX(-${currentSlide * 33.33}%)`,
                 }}
               >
                 {leaders.map((leader, index) => (
@@ -108,13 +108,13 @@ const Testimonials = () => {
 
               <button
                 onClick={prevSlide}
-                className="absolute left-5 top-1/2 transform -translate-y-1/2 text-[#0077B5] bg-white rounded-full shadow-lg p-2 hover:bg-[#0077B5] hover:text-white transition duration-300"
+                className="absolute left-2 top-1/2 font-bold transform -translate-y-1/2 text-[#0077B5] bg-white rounded-full shadow-lg p-4 hover:bg-[#0077B5] hover:text-white transition duration-300"
               >
                 &lt;
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute right-5 top-1/2 transform -translate-y-1/2 text-[#0077B5] bg-white rounded-full shadow-lg p-2 hover:bg-[#0077B5] hover:text-white transition duration-300"
+                className="absolute right-2 top-1/2 font-bold transform -translate-y-1/2 text-[#0077B5] bg-white rounded-full shadow-lg p-4 hover:bg-[#0077B5] hover:text-white transition duration-300"
               >
                 &gt;
               </button>
@@ -125,7 +125,7 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-12 h-3 mx-1 rounded-full ${
+                  className={`w-2 h-2 mx-1 rounded-full ${
                     index === currentSlide ? "bg-[#CF7B41]" : "bg-gray-300"
                   } transition duration-300`}
                 ></button>

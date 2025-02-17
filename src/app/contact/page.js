@@ -318,7 +318,7 @@ export default function ContactForm() {
             </button>
           </div>
 
-          <label className="flex text-sm text-gray-700">
+          <label className="flex items-center text-sm text-gray-700">
             <input
               type="checkbox"
               name="termsAccepted"
@@ -326,12 +326,17 @@ export default function ContactForm() {
               onChange={handleChange}
               className="mr-2"
             />
-            By clicking submit, you are granting us permission to store and
-            process the information provided in accordance with the terms of our
-            <a href="#" className="text-blue-600 ml-1">
-              Privacy Policy.
-            </a>
+            <span>
+              By clicking submit, you are granting us permission to store and
+              process the information provided in accordance with the terms of
+              our
+              <a href="#" className="text-blue-600">
+                {" "}
+                Privacy Policy.
+              </a>
+            </span>
           </label>
+
           {errors.termsAccepted && (
             <p className="text-red-500">{errors.termsAccepted}</p>
           )}
