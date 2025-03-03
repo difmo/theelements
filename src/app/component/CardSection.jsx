@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import u2 from "../assets/img3.jpg"; // Ensure correct import path
 import u3 from "../assets/image1.jpg"; // Ensure correct import path
-import e3 from "../assets/img1.jpg"; // Ensure correct import path
+import e3 from "../assets/img1.jpg"; // Ensure correct 
 
 const CardsSection = () => {
 
