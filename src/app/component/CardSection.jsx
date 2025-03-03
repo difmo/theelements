@@ -16,7 +16,7 @@ const CardsSection = () => {
     <div className="w-full md:w-[90%] mx-4 sm:mx-0 translate-y-1/2">
   <div 
   className="   grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 "
-    // className="bg-white sm:mt-8 grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg"
+    // className="bg-white sm:mt-8 grid grid-cols-1 rounded-lg  md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg"
   >
     {cards.map((card) => (
       <div
