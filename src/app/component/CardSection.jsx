@@ -5,7 +5,7 @@ import u3 from "../assets/image1.jpg"; // Ensure correct import path
 import e3 from "../assets/img1.jpg"; // Ensure correct import path
 
 const CardsSection = () => {
-  // Data for cards
+
   const cards = [
     { id: 1, img: u2, content: "Payers" },
     { id: 2, img: e3, content: "Providers" },
