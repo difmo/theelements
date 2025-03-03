@@ -28,7 +28,7 @@ const page = () => {
         {/* <ContactCareer className="font-lato" /> */}
       </div>
 
-      {/* <ContactCareer /> */}
+      {/* <ContactCareer /> */} 
     </div>
   );
 };
