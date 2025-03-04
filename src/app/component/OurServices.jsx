@@ -174,25 +174,25 @@ const OurServices2 = () => {
   // console.log(success, "success");
 
   return (
-    <div id="services" className="bg-[#E8F6FC] font-lato"> 
-      <div className='bg-[#E8F6FC] font-lato'>
+    <div id="services" className="bg-[#E8F6FC] font-lato container ">
+      <div className='bg-[#E8F6FC] font-lato '>
 
-  <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
-    <div
-      className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
-      style={{
-        fontFamily: "Lato",
-        fontSize: "1.25rem",
-        fontWeight: 500,
-        lineHeight: "1.5rem",
-      }}
-    >
-      OUR SERVICES
-    </div>
-  </div>
-  </div>
+        <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
+          <div
+            className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
+            style={{
+              fontFamily: "Lato",
+              fontSize: "1.25rem",
+              fontWeight: 500,
+              lineHeight: "1.5rem",
+            }}
+          >
+            OUR SERVICES
+          </div>
+        </div>
+      </div>
       <div className="flex flex-col items-center justify-between gap-10 p-8 lg:flex-row">
-        
+
         <div
           className="relative hidden md:flex w-full p-8 bg-white rounded-[60px] bg-gradient-to-r from-blue-100 via-white to-blue-50"
           style={{
@@ -203,7 +203,7 @@ const OurServices2 = () => {
         >
           <div className="z-10 flex flex-col md:flex-row gap-36">
             <div className="flex flex-col md:flex-row md:w-full">
-            <div className="w-3/4 pr-10">
+              <div className="w-3/4 pr-10">
                 {success.map((item, index) =>
                   index === activeTab ? (
                     <div key={index}>
@@ -222,94 +222,94 @@ const OurServices2 = () => {
                       </h2>
                       <p className="mt-4 text-gray-700">{item.description}</p>
                       <button onClick={() => {
-          router.push('/contact');
-        }} className="flex items-center mt-4 space-x-2 text-white rounded-md">
-                      <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
-                        <span>Learn More</span>
-                        <MdNorthEast size={20} />
+                        router.push('/contact');
+                      }} className="flex items-center mt-4 space-x-2 text-white rounded-md">
+                        <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
+                          <span>Learn More</span>
+                          <MdNorthEast size={20} />
                         </div>
-                    </button>
+                      </button>
                     </div>
                   ) : null
                 )}
               </div>
               <div>
-              <div className="flex flex-col gap-4 mt-8 md:flex-row">
- 
-  <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
-    {success[activeTab]?.card.slice(0, 2).map((card, rowIndex) => (
-      <div  key={rowIndex} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
-        {Array.isArray(card.icons) ? (
-      card.icons.map((icon, colIndex) => (
-        <div
-          key={`leftIcon-${activeTab}-${rowIndex}-${colIndex}`} // Ensure unique key
-          className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]"
-        >
-          <div className="flex items-center h-[72px] w-[72px] justify-center">{icon}</div>
-          <span className="px-4 text-sm text-center text-gray-800">
-            {leftContainerContent[activeTab].leftIconTitle[rowIndex * 2 + colIndex]}
-          </span>
-        </div>
-      ))
-    ) : (
-      <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
-        <div className="flex items-center h-[72px] w-[72px] justify-center">
-          {/* Render card image or icon */}
-          <Image
-            src={card.image}
-            alt={card.subtitle}
-            width={50} // Width in pixels
-            height={50} // Height in pixels
-            objectFit="cover"
-          />
-        </div>
-        <span className="px-4  text-sm text-center text-gray-800">
-           {card.subtitle}
-        </span>
-      </div>
-    )}
-         
-      </div>
-    ))}
-  </div>
+                <div className="flex flex-col gap-4 mt-8 md:flex-row">
 
-  {/* Right Column (Next 2 Icons) */}
-  <div className="flex flex-col items-center justify-center w-full gap-3">
-  {success[activeTab]?.card.slice(2, 4).map((card, rowIndex) => (
-      <div key={rowIndex} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
-         {Array.isArray(card.icons) ? (
-      card.icons.map((icon, colIndex) => (
-        <div
-          key={`leftIcon-${activeTab}-${rowIndex}-${colIndex}`} // Ensure unique key
-          className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]"
-        >
-          <div className="flex items-center h-[72px] w-[72px] justify-center">{icon}</div>
-          <span className="px-4 text-sm text-center text-gray-800">
-            {leftContainerContent[activeTab].leftIconTitle[rowIndex * 2 + colIndex]}
-          </span>
-        </div>
-      ))
-    ) : (
-      <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
-        <div className="flex items-center h-[72px] w-[72px] justify-center">
-          {/* Render card image or icon */}
-          <Image
-            src={card.image}
-            alt={card.subtitle}
-            width={50} // Width in pixels
-            height={50} // Height in pixels
-            objectFit="cover"
-          />
-        </div>
-        <span className="px-4 text-sm text-center text-gray-800">
-          {card.subtitle}
-        </span>
-      </div>
-    )}
-      </div>
-    ))}
-  </div>
-</div>
+                  <div className="flex flex-col items-center justify-center w-full gap-3 mt-12">
+                    {success[activeTab]?.card.slice(0, 2).map((card, rowIndex) => (
+                      <div key={rowIndex} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                        {Array.isArray(card.icons) ? (
+                          card.icons.map((icon, colIndex) => (
+                            <div
+                              key={`leftIcon-${activeTab}-${rowIndex}-${colIndex}`} // Ensure unique key
+                              className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]"
+                            >
+                              <div className="flex items-center h-[72px] w-[72px] justify-center">{icon}</div>
+                              <span className="px-4 text-sm text-center text-gray-800">
+                                {leftContainerContent[activeTab].leftIconTitle[rowIndex * 2 + colIndex]}
+                              </span>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                            <div className="flex items-center h-[72px] w-[72px] justify-center">
+                              {/* Render card image or icon */}
+                              <Image
+                                src={card.image}
+                                alt={card.subtitle}
+                                width={50} // Width in pixels
+                                height={50} // Height in pixels
+                                objectFit="cover"
+                              />
+                            </div>
+                            <span className="px-4  text-sm text-center text-gray-800">
+                              {card.subtitle}
+                            </span>
+                          </div>
+                        )}
+
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Right Column (Next 2 Icons) */}
+                  <div className="flex flex-col items-center justify-center w-full gap-3">
+                    {success[activeTab]?.card.slice(2, 4).map((card, rowIndex) => (
+                      <div key={rowIndex} className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                        {Array.isArray(card.icons) ? (
+                          card.icons.map((icon, colIndex) => (
+                            <div
+                              key={`leftIcon-${activeTab}-${rowIndex}-${colIndex}`} // Ensure unique key
+                              className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]"
+                            >
+                              <div className="flex items-center h-[72px] w-[72px] justify-center">{icon}</div>
+                              <span className="px-4 text-sm text-center text-gray-800">
+                                {leftContainerContent[activeTab].leftIconTitle[rowIndex * 2 + colIndex]}
+                              </span>
+                            </div>
+                          ))
+                        ) : (
+                          <div className="flex flex-col items-center justify-center space-y-2 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-[180px] h-[180px]">
+                            <div className="flex items-center h-[72px] w-[72px] justify-center">
+                              {/* Render card image or icon */}
+                              <Image
+                                src={card.image}
+                                alt={card.subtitle}
+                                width={50} // Width in pixels
+                                height={50} // Height in pixels
+                                objectFit="cover"
+                              />
+                            </div>
+                            <span className="px-4 text-sm text-center text-gray-800">
+                              {card.subtitle}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -319,37 +319,36 @@ const OurServices2 = () => {
         {/* Right Menu */}
         <div className="flex flex-col items-center w-full gap-4 lg:w-1/3">
           <div className="hidden lg:block">
-          {success.map((content, tabIndex) => (
-  <div
-    key={tabIndex}
-    className={`flex items-center mb-2 gap-2 px-10 md:w-[380px] md:h-[124px] rounded-full cursor-pointer 
+            {success.map((content, tabIndex) => (
+              <div
+                key={tabIndex}
+                className={`flex items-center mb-2 gap-2 px-10 md:w-[380px] md:h-[124px] rounded-full cursor-pointer 
       ${activeTab === tabIndex ? "bg-[#dbeafe] text-white" : "bg-white text-black"}`}
-    onClick={() => handleTabClick(tabIndex)}
-  >
-    {/* Icon Section */}
-    <div>
+                onClick={() => handleTabClick(tabIndex)}
+              >
+                {/* Icon Section */}
+                <div>
                   {/* {content.icon} */}
                   <Image
-                          src={content.image}
-                          alt={content.name}
-                          width={60} // Width in pixels
-                          height={60} // Height in pixels
-                          objectFit="cover"
-                        />
-                  </div>
+                    src={content.image}
+                    alt={content.name}
+                    width={60} // Width in pixels
+                    height={60} // Height in pixels
+                    objectFit="cover"
+                  />
+                </div>
 
-    {/* Title Section */}
-    <span
-      className={`text-lg font-bold ${
-        activeTab === tabIndex ? "text-[#cf7b41]" : "text-[#CF7B41]"
-      }`}
-    >
-      {content.name}
-    </span>
-    {/* <div className="text-lg">{activeTab === tabIndex ? <MdOutlineScore size={24} /> : null}</div> */}
+                {/* Title Section */}
+                <span
+                  className={`text-lg font-bold ${activeTab === tabIndex ? "text-[#cf7b41]" : "text-[#CF7B41]"
+                    }`}
+                >
+                  {content.name}
+                </span>
+                {/* <div className="text-lg">{activeTab === tabIndex ? <MdOutlineScore size={24} /> : null}</div> */}
 
-  </div>
-))}
+              </div>
+            ))}
 
           </div>
 
@@ -370,19 +369,18 @@ const OurServices2 = () => {
                   <div className="flex items-center space-x-4">
                     {/* <div> {leftContainerContent[tabIndex].icon}</div> */}
                     <div>
-                  {/* {content.icon} */}
-                  <Image
-                          src={content.image}
-                          alt={content.name}
-                          width={40} // Width in pixels
-                          height={40} // Height in pixels
-                          objectFit="cover"
-                        />
-                  </div>
+                      {/* {content.icon} */}
+                      <Image
+                        src={content.image}
+                        alt={content.name}
+                        width={40} // Width in pixels
+                        height={40} // Height in pixels
+                        objectFit="cover"
+                      />
+                    </div>
                     <span
-                      className={`text-lg font-semibold text-[#CF7B41] md:flex ${
-                        expandedTab === tabIndex ? "hidden" : "flex"
-                      }`}
+                      className={`text-lg font-semibold text-[#CF7B41] md:flex ${expandedTab === tabIndex ? "hidden" : "flex"
+                        }`}
                     >
                       {/* {leftContainerContent[tabIndex].title} */}
                       {content.name}
@@ -394,47 +392,47 @@ const OurServices2 = () => {
                 </div>
 
                 {expandedTab === tabIndex && (
-  <div className="px-4 bg-white">
-    <h3 className="font-semibold">
-      <span className="text-lg pr-[4px] font-semibold text-[#CF7B41] md:flex">
-        {/* {leftContainerContent[tabIndex].title} */}
-        {content.name}
-      </span>
-      <span>
-        {/* {leftContainerContent[tabIndex].subtitle} */}
-      {content.subName}
-        </span>
-    </h3>
-    <p>{leftContainerContent[tabIndex].description}</p>
-    <button className="flex items-center mt-4 space-x-2 text-white rounded-md">
-      <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
-        <span>Learn More</span>
-        <MdNorthEast size={20} />
-      </div>
-    </button>
+                  <div className="px-4 bg-white">
+                    <h3 className="font-semibold">
+                      <span className="text-lg pr-[4px] font-semibold text-[#CF7B41] md:flex">
+                        {/* {leftContainerContent[tabIndex].title} */}
+                        {content.name}
+                      </span>
+                      <span>
+                        {/* {leftContainerContent[tabIndex].subtitle} */}
+                        {content.subName}
+                      </span>
+                    </h3>
+                    <p>{leftContainerContent[tabIndex].description}</p>
+                    <button className="flex items-center mt-4 space-x-2 text-white rounded-md">
+                      <div className="flex gap-6 px-4 py-2 text-black border rounded-full">
+                        <span>Learn More</span>
+                        <MdNorthEast size={20} />
+                      </div>
+                    </button>
 
-    <div className="grid grid-cols-2 gap-4 pb-10 mt-8">
-      {/* Map for Left Icons and Titles */}
-      {success[tabIndex].card.map((icon, index) => (
-        <div
-          key={index}
-                    className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]"
-        >
-          
-          <span className="px-4 text-sm text-center text-gray-800">
-             {icon.subtitle} 
-          </span>
-        </div>
-      ))}
-    </div>
-  </div>
-)}
+                    <div className="grid grid-cols-2 gap-4 pb-10 mt-8">
+                      {/* Map for Left Icons and Titles */}
+                      {success[tabIndex].card.map((icon, index) => (
+                        <div
+                          key={index}
+                          className="flex flex-col items-center justify-center space-x-4 bg-blue-100 rounded-[10px] sm:rounded-[40px] pr-5 sm:pr-0 w-180px h-[180px]"
+                        >
+
+                          <span className="px-4 text-sm text-center text-gray-800">
+                            {icon.subtitle}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
               </div>
             ))}
           </div>
 
-                </div>
+        </div>
       </div>
     </div>
   );

@@ -86,10 +86,10 @@ const OurSuccessStory = () => {
   }, []);
 
   return (
-    <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16">
+    <div className="mx-4 sm:mx-8 md:mx-12 lg:mx-16 flex flex-col justify-center items-center ">
       <Heading title={" OUR SUCCESS STORIES"} />
 
-      <div className="flex items-center justify-center py-8">
+      <div className="flex items-center justify-center py-8 container">
         <div className="hidden w-full h-full p-4 space-x-4 overflow-x-auto lg:flex">
           {success.map((section, index) => {
             return (

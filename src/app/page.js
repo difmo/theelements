@@ -16,9 +16,11 @@ const page = () => {
     <div className="bg-[#E8F6FC] font-lato">
       <div className="">
         <MainFrame className="font-lato" />
+        {/* <div className="flex justify-center items-center"></div> */}
         <OurSuccessStory className="font-lato" />
         <OurSolutions className="font-lato" />
-        <OurServices className="font-lato" />
+        <div className="flex justify-center items-center">     <OurServices className="font-lato" /></div>
+   
         {/* <Whoweserve  className="font-lato"/> */}
         <Whoweserve2 className="font-lato" />
         <Ourcustomervoice className="font-lato" />
