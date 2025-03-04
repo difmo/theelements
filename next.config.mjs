@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     domains: ['cdn.sanity.io'],
   },
-  distDir: '.next',  
+  distDir: 'dist',  
   reactStrictMode: true, 
   webpack: (config, { isServer }) => {
     if (!isServer) {
