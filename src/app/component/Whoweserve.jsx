@@ -51,51 +51,51 @@ const Whoweserve = () => {
               >
                 <div className="relative w-full h-full overflow-hidden transition-shadow duration-300 md:rounded-lg group-hover:shadow-lg group-hover:shadow-black">
                   <Image
-                    src={card.image} // Dynamic card image
-                    alt={card.title} // Dynamic alt text
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 ease-in-out rounded-lg group-hover:scale-105"
+                    src={card.image}
+                    alt={card.title}
+                   fill
+                    className="transition-transform duration-500 ease-in-out rounded-lg object-cover group-hover:scale-105"
                   />
                 </div>
+
                 <div className="bg-red-600">
 
-                <div
-                  className="absolute bg-red-600 inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
-                  style={{
-                    background:
-                      "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
-                  }}
-                >
-                  <h3
-                    className="text-[24px] font-bold mb-2 text-[#E99F6C]"
+                  <div
+                    className="absolute bg-red-600 inset-0 flex flex-col items-start justify-end px-6 pb-6 text-left text-white"
                     style={{
-                      fontFamily: "Lato", // Custom font family
-                      fontWeight: 700, // Custom font weight
-                      lineHeight: "26.59px", // Custom line height
-                      textAlign: "left", // Custom text alignment
-                      textUnderlinePosition: "from-font", // Custom text underline position
-                      textDecorationSkipInk: "none", // Custom text decoration skip ink
+                      background:
+                        "radial-gradient(100% 100% at 0% 100%, #0C455E 30.5%, rgba(12, 69, 94, 0) 100%)",
                     }}
                   >
-                    {card.title} {/* Dynamic title */}
-                  </h3>
+                    <h3
+                      className="text-[24px] font-bold mb-2 text-[#E99F6C]"
+                      style={{
+                        fontFamily: "Lato", // Custom font family
+                        fontWeight: 700, // Custom font weight
+                        lineHeight: "26.59px", // Custom line height
+                        textAlign: "left", // Custom text alignment
+                        textUnderlinePosition: "from-font", // Custom text underline position
+                        textDecorationSkipInk: "none", // Custom text decoration skip ink
+                      }}
+                    >
+                      {card.title} {/* Dynamic title */}
+                    </h3>
 
-                  <div className="border-b-2 mb-6 border-[#E99F6C] w-[25%]"></div>
+                    <div className="border-b-2 mb-6 border-[#E99F6C] w-[25%]"></div>
 
-                  <div className="w-full   pr-5 sm:px-0">
-                    <ul className="pl-0 space-y-2 list-none  ">
-                      {card.listItems.map((item, i) => (
-                        <li key={i} className="flex items-start text-sm sm:text-base">
-                          <MdNorthEast className="mr-2 text-white font-bold text-xl" />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="w-full   pr-5 sm:px-0">
+                      <ul className="pl-0 space-y-2 list-none  ">
+                        {card.listItems.map((item, i) => (
+                          <li key={i} className="flex items-start text-sm sm:text-base">
+                            <MdNorthEast className="mr-2 text-white font-bold text-xl" />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+
                   </div>
-
-                   
-                </div>
                 </div>
               </div>
             ))}

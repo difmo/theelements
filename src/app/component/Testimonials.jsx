@@ -112,8 +112,7 @@ const Testimonials = () => {
                         src={leader.image}
                         alt={leader.name}
                         layout="intrinsic"
-                        objectFit="cover"
-                        className="rounded-full"
+                        className="rounded-full object-cover"
                       />
                     </div>
                   </div>

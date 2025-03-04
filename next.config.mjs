@@ -1,17 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['cdn.sanity.io'], // Add Sanity's domain here
-      },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
+  distDir: '.next',  
+  reactStrictMode: true, 
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        fs: false, 
+      };
+    }
+    return config;
+  },
+  env: {
+    SANITY_PROJECT_ID: process.env.SANITY_PROJECT_ID,
+    SANITY_DATASET: process.env.SANITY_DATASET,
+  },
+  i18n: {
+    locales: ['en', 'fr', 'de'],  
+    defaultLocale: 'en',  
+  },
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx'],
 };
 
 export default nextConfig;
-// next.config.js
-// const nextConfig = {
-//     images: {
-//       domains: ['cdn.sanity.io'], // Add Sanity's domain here
-//     },
-//   };
-  
-//   module.exports = nextConfig;
-  

@@ -91,9 +91,9 @@ const OurSolutions = () => {
                   <Image
                     src={card.icon} // Dynamic card image
                     alt={card.title} // Dynamic alt text
-                    layout="fill"
-                    objectFit="cover"
-                    className="transition-transform duration-500 ease-in-out rounded-lg group-hover:scale-105"
+                    fill
+            
+                    className="transition-transform object-cover duration-500 ease-in-out rounded-lg group-hover:scale-105"
                   />
                 </div>
 

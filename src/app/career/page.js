@@ -17,7 +17,7 @@ export default function page() {
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
-            layout="fill"
+            fill
             // objectFit="
             className="brightness-75 object-cover md:bg-cover"
           />

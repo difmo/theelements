@@ -113,8 +113,8 @@ const OurSuccessStory = () => {
                     <Image
                       src={section.image}
                       alt={section.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
 
@@ -154,9 +154,9 @@ const OurSuccessStory = () => {
                     <Image
                       src={section.image}
                       alt={section.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="rounded-t-lg sm:rounded-l-lg sm:rounded-t-none"
+                      fill
+       
+                      className="rounded-t-lg object-cover sm:rounded-l-lg sm:rounded-t-none"
                     />
                   </div>
 

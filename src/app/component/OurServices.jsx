@@ -213,7 +213,8 @@ const OurServices2 = () => {
                           alt={item.name}
                           width={80} // Width in pixels
                           height={80} // Height in pixels
-                          objectFit="cover"
+                        
+                          className="object-cover"
                         />
                       </div>
                       <h2 className="pt-8 text-2xl font-bold">
@@ -260,7 +261,7 @@ const OurServices2 = () => {
                                 alt={card.subtitle}
                                 width={50} // Width in pixels
                                 height={50} // Height in pixels
-                                objectFit="cover"
+                       className="object-cover"
                               />
                             </div>
                             <span className="px-4  text-sm text-center text-gray-800">
@@ -298,7 +299,8 @@ const OurServices2 = () => {
                                 alt={card.subtitle}
                                 width={50} // Width in pixels
                                 height={50} // Height in pixels
-                                objectFit="cover"
+                                className="object-cover"
+                               
                               />
                             </div>
                             <span className="px-4 text-sm text-center text-gray-800">
@@ -334,7 +336,8 @@ const OurServices2 = () => {
                     alt={content.name}
                     width={60} // Width in pixels
                     height={60} // Height in pixels
-                    objectFit="cover"
+                
+                    className="object-cover"
                   />
                 </div>
 
@@ -375,7 +378,8 @@ const OurServices2 = () => {
                         alt={content.name}
                         width={40} // Width in pixels
                         height={40} // Height in pixels
-                        objectFit="cover"
+            
+                        className="object-cover"
                       />
                     </div>
                     <span
