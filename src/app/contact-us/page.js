@@ -13,9 +13,10 @@ const Contact = () => {
               Contact Us
             </h1>
             <p className="text-sm md:text-lg mb-8">
-              Have questions or need assistance? We're here to help! Reach out to
+              Have questions or need assistance? We&apos;re here to help! Reach out to
               us through any of the following channels.
             </p>
+
 
           </div>
           <OurContact />
