@@ -12,10 +12,10 @@ const Contact = () => {
             <h1 className="text-2xl md:text-4xl  text-secondary-600 font-bold mb-8">
               Contact Us
             </h1>
-            <p className="text-sm md:text-lg mb-8">
+            {/* <p className="text-sm md:text-lg mb-8">
               Have questions or need assistance? We're here to help! Reach out to
               us through any of the following channels.
-            </p>
+            </p> */}
           </div>
           <OurContact />
         </div>
