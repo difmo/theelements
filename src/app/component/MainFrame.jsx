@@ -16,7 +16,7 @@ const headerdata = [
   {
     img: img1,
     video: "video2.mp4",
-    heading: "Navigating Healthcare complexity with clear & innovative solutions",
+    heading: "Navigating Healthcare and complexity with clear & innovative solutions",
     description:
       "We provide end-to-end healthcare data solutions, enabling clients to fully harness their data for impactful and measurable improvements.",
   },
