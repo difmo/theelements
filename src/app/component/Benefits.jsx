@@ -4,7 +4,7 @@ import icon2 from "../../../public/career/Career-Track.svg";
 import icon3 from "../../../public/career/Worklife-Balance.svg";
 import icon4 from "../../../public/career/Event.svg";
 import icon5 from "../../../public/career/Rewards.svg";
-// import { Calendar, Award } from "lucide-react";gfr
+// import { Calendar, Award } from "lucide-react";gfr sdf
 const benefits = [
   {
     icon: icon1,
