@@ -23,8 +23,8 @@ export default function IdeasSection() {
   }, []);
 
   return (
-    <section className="bg-[#E8F6FC] px-6 md:px-14 lg:px-14 py-12">
-      <div className=" mx-auto flex flex-col md:flex-row items-center justify-between">
+    <section className="bg-[#E8F6FC] px-6 md:px-14 lg:px-14 py-12 ">
+      <div className=" mx-auto flex flex-col md:flex-row items-center container justify-between">
         {/* Left Content */}
         <div className="max-w-xl">
           <h2 className="text-2xl md:text-4xl  text-gray-900 py-10">

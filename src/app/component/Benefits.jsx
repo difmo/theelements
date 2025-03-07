@@ -4,37 +4,39 @@ import icon2 from "../../../public/career/Career-Track.svg";
 import icon3 from "../../../public/career/Worklife-Balance.svg";
 import icon4 from "../../../public/career/Event.svg";
 import icon5 from "../../../public/career/Rewards.svg";
-// import { Calendar, Award } from "lucide-react";gfr sdf
+import { Heading2 } from "lucide-react";
+import Heading from "./Heading";
+
 const benefits = [
   {
     icon: icon1,
-    title: "Learning & Development",
+    title: "Be part of Impactful Projects ",
     description:
-      "We offer a wide array of programs to help you expand your skills and supercharge your career.",
+      "Be part of projects that improve patient care and deliver smarter solutions for payers and providers, creating real change in healthcare.",
   },
   {
     icon: icon2,
-    title: "Career Track",
+    title: "Grow Your Career",
     description:
-      "Discover your passion—the driving force that makes you smile and innovate, create, and make a difference every day.",
+      "We offer opportunities to learn, tackle challenges, and advance your skills through mentorship, certifications, and hands-on work.",
   },
   {
     icon: icon3,
-    title: "Work Life Balance",
+    title: "Inclusive Team Culture",
     description:
-      "8th Element is all about open doors, open minds, and open opportunities. We ensure a flexible work environment that respects your work-life balance and your growth.",
+      "We value diverse ideas and foster a collaborative, supportive environment where everyone contributes.",
   },
   {
-    title: "Events & Activities",
+    title: "Innovate with the Best Tools",
     description:
-      "We take pride in our close-knit community. Our awesome events and activities unite our diverse teams for some good times.",
+      "Work with cutting-edge technologies like AI, automation, and data analytics to solve real-world healthcare challenges.",
     icon: icon4,
     bgColor: "bg-blue-100",
   },
   {
-    title: "Awards & Recognition",
+    title: "Flexible Work Environment",
     description:
-      "We don’t just welcome your voice; we celebrate it! Acknowledging your unique perspective and recognizing your individual talent is fundamental.",
+      "Enjoy work-life balance with flexible policies, remote options, and a focus on your well-being.",
     icon: icon5,
     bgColor: "bg-yellow-100",
   },
@@ -42,38 +44,35 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <div
-      className="bg-[#E8F6FC] py-12 px-6 sm:px-16 lg:px-18 text-left"
-      // style={{
-      //   backgroundImage: `url('ring.svg')`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "bottom",
-      //   backgroundSize: "1800px",
-      // }}
-    >
-      <h2 className="text-4xl  text-gray-900 my-4">
-        The 8th Elemente Advantage: Your Workplace Benefits
-      </h2>
-      <p className="text-gray-600 my-4">
-        We are interested in, and want to support, the professional and personal
-        you.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-        {benefits.map((benefit, index) => (
-          <div key={index} className="py-6 ">
-            <Image
-              src={benefit.icon}
-              alt={benefit.title}
-              width={90}
-              height={90}
-              className="mb-4"
-            />
-            <h3 className="text-xl font-semibold text-gray-900">
-              {benefit.title}
-            </h3>
-            <p className="text-gray-600 mt-2">{benefit.description}</p>
+    <div>
+
+      <div className="bg-[#E8F6FC] py-24 px-6 sm:px-16 lg:px-18 text-center">
+        <Heading title="Why Join 8th Element?" />
+        <div className="container mx-auto px-4">
+          <p className="text-gray-600 my-4 text-lg pb-10">
+            We are interested in, and want to support, the professional and personal you.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="py-6 px-4 bg-white rounded-lg    transition-shadow duration-300 ease-in-out"
+              >
+                <div className="mb-4 flex justify-center">
+                  <Image
+                    src={benefit.icon}
+                    alt={benefit.title}
+                    width={90}
+                    height={90}
+                    className="text-red-500"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">{benefit.title}</h3>
+                <p className="text-gray-600 mt-2">{benefit.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

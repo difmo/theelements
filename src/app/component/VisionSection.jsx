@@ -37,8 +37,8 @@ export default function VisionSection() {
   };
 
   return (
-    <section className="relative flex flex-col lg:flex-row  justify-between px-4 md:px-14 lg:px-14 py-10 lg:py-20 bg-white text-gray-800">
-      {/* Text Content */}
+    <section className="relative flex flex-col  lg:flex-row  justify-between px-4 md:px-14 lg:px-14 py-10 lg:py-36 bg-primarybg text-gray-800">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
       <motion.div
         className="w-full lg:w-1/2 space-y-6"
         initial={{ opacity: 0, x: -50 }}
@@ -97,6 +97,9 @@ export default function VisionSection() {
           )}
         </div>
       </motion.div>
+      </div>
+      {/* Text Content */}
+     
     </section>
   );
 }
