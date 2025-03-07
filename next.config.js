@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: 'dist', 
+  // distDir: 'dist', 
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.resolve.fallback = {
