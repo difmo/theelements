@@ -126,7 +126,7 @@
 //             <li>
 //               <Link
 //                 href="/services"
-//                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+//                 className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
 //               >
 //                 Services
 //               </Link>
@@ -135,7 +135,7 @@
 //             <li>
 //               <Link
 //                 href="/"
-//                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+//                 className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
 //               >
 //                 About Us
 //               </Link>
@@ -144,7 +144,7 @@
 //             <li>
 //               <Link
 //                 href="/career"
-//                 className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+//                 className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
 //               >
 //                 Careers
 //               </Link>
@@ -183,7 +183,7 @@
 //           <li>
 //             <Link
 //               href="/solutions"
-//               className="block hover:text-blue-500"
+//               className="block hover:text-newprimary"
 //               onClick={() => setMenuOpen(false)}
 //             >
 //               Solutions
@@ -192,7 +192,7 @@
 //           <li>
 //             <Link
 //               href="/services"
-//               className="block hover:text-blue-500"
+//               className="block hover:text-newprimary"
 //               onClick={() => setMenuOpen(false)}
 //             >
 //               Services
@@ -201,7 +201,7 @@
 //           <li>
 //             <Link
 //               href="/"
-//               className="block hover:text-blue-500"
+//               className="block hover:text-newprimary"
 //               onClick={() => setMenuOpen(false)}
 //             >
 //               About Us
@@ -210,7 +210,7 @@
 //           <li>
 //             <Link
 //               href="/career"
-//               className="block hover:text-blue-500"
+//               className="block hover:text-newprimary"
 //               onClick={() => setMenuOpen(false)}
 //             >
 //               Careers
@@ -236,7 +236,7 @@
 
 
 
- "use client";
+"use client";
 import React, { useEffect, useState } from "react";
 import { FiChevronDown, FiPlus } from "react-icons/fi";
 import Image from "next/image";
@@ -247,7 +247,7 @@ import { sanityClient } from "@/sanity";
 import DropdownMenu from "./DropdownMenu";
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
   const [solutions, setSolutions] = useState([]);
   const [error, setError] = useState(null); // Error state to display an error message if data fails to load
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -280,7 +280,7 @@ const Header = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-// console.log(solutions, "solu");
+  // console.log(solutions, "solu");
   return (
     <header className="sticky top-0 left-0 w-full bg-[#E8F6FC] z-50">
       <nav className="flex justify-between items-center h-[60px] px-6 sm:px-8">
@@ -334,21 +334,21 @@ const Header = () => {
           </div>
 
           <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
-            
-                         <li
-               className="relative"
-               onMouseEnter={handleMouseEnter}
-               onMouseLeave={handleMouseLeave}
-             >
-               <button className="flex items-center   hover:cursor-pointer">
-                 Solutions <FiChevronDown className="ml-2" />
-               </button>
-               {dropdownOpen && (
-                 <ul className="font-lato  absolute left-0 z-50 mt-0 w-max bg-white border border-gray-300 rounded shadow-lg">
-                   {solutions.map((solution, index) => (
-                     <li key={index}>
-                       <Link
-                        
+
+            <li
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="flex items-center   hover:cursor-pointer">
+                Solutions <FiChevronDown className="ml-2" />
+              </button>
+              {dropdownOpen && (
+                <ul className="font-lato  absolute left-0 z-50 mt-0 w-max bg-white border border-gray-300 rounded shadow-lg">
+                  {solutions.map((solution, index) => (
+                    <li key={index}>
+                      <Link
+
                         href="/"
                         onClick={(e) => {
                           const currentPath = window.location.pathname;
@@ -360,42 +360,42 @@ const Header = () => {
                             }
                           }
                         }}
-                         className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#e8f6fc]  "
-                       >
-                         {solution.title}
-                       </Link>
-                     </li>
-                   ))}
-                 </ul>
-               )}
-             </li>
-            
-            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
-            <li>
-            <Link
-  href="/" 
-  onClick={(e) => {
-    const currentPath = window.location.pathname;
-    if (currentPath === "/") {
-      e.preventDefault(); // Prevent navigation
-      const servicesSection = document.getElementById("services");
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  }}
-  className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
->
-  Services
-</Link>
-
-</li>
+                        className="block px-4 py-2 text-sm text-gray-800 hover:bg-[#e8f6fc]  "
+                      >
+                        {solution.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
 
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
             <li>
               <Link
                 href="/"
-                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+                onClick={(e) => {
+                  const currentPath = window.location.pathname;
+                  if (currentPath === "/") {
+                    e.preventDefault(); // Prevent navigation
+                    const servicesSection = document.getElementById("services");
+                    if (servicesSection) {
+                      servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }
+                }}
+                className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
+              >
+                Services
+              </Link>
+
+            </li>
+
+            <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
+            <li>
+              <Link
+                href="/"
+                className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
               >
                 About Us
               </Link>
@@ -404,7 +404,7 @@ const Header = () => {
             <li>
               <Link
                 href="/career"
-                className="transition-all duration-300 hover:text-blue-500 hover:cursor-pointer"
+                className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
               >
                 Careers
               </Link>
@@ -413,8 +413,8 @@ const Header = () => {
             {/* Link to contact page */}
             <li>
               <Link
-                href="/contact"
-                className="px-4 py-2 text-sm text-gray-800 transition-all duration-300 border border-gray-400 rounded-full hover:cursor-pointer hover:bg-blue-500 hover:border-none hover:text-white"
+                href="/contact-us"
+                className="px-4 py-2 text-sm text-gray-800 transition-all duration-300 border border-gray-400 rounded-full hover:cursor-pointer hover:bg-newprimary/80 hover:border-newprimary/80 hover:text-white"
               >
                 Contact Us
               </Link>
@@ -443,31 +443,31 @@ const Header = () => {
           {/* <li className="flex items-center justify-between">
             <Link
               href="/solutions"
-              className="block hover:cursor-pointer hover:text-blue-500"
+              className="block hover:cursor-pointer hover:text-newprimary"
               onClick={() => setMenuOpen(false)}
             >
               Solutions
             </Link>
                      
-            <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
+            <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-newprimary" />
           </li> */}
-         <DropdownMenu solutions={solutions} />
+          <DropdownMenu solutions={solutions} />
 
           <li className="flex items-center justify-between">
             <Link
               href="/services"
-              className="block hover:text-blue-500"
+              className="block hover:text-newprimary"
               onClick={() => setMenuOpen(false)}
             >
               Services
             </Link>
-            <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-blue-500" />
+            <FiPlus className="text-lg text-gray-800 cursor-pointer hover:text-newprimary" />
           </li>
 
           <li>
             <Link
               href="/"
-              className="block hover:text-blue-500"
+              className="block hover:text-newprimary"
               onClick={() => setMenuOpen(false)}
             >
               About Us
@@ -477,7 +477,7 @@ const Header = () => {
           <li>
             <Link
               href="/career"
-              className="block hover:text-blue-500"
+              className="block hover:text-newprimary"
               onClick={() => setMenuOpen(false)}
             >
               Careers
@@ -486,7 +486,7 @@ const Header = () => {
 
           <li>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="block p-3 text-sm font-semibold text-gray-800 border border-gray-400 rounded-full hover:border-none hover:bg-blue-500 hover:text-white"
               onClick={() => setMenuOpen(false)}
             >

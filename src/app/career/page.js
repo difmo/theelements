@@ -18,6 +18,7 @@ export default function page() {
           <Image
             src={img}
             fill
+            alt="Element Image"
             // objectFit="
             className="brightness-75 object-cover md:bg-cover"
           />

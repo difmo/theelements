@@ -2,7 +2,7 @@ import React from 'react'
 
 const Heading2 = ({title}) => {
   return (
-  <div className='bg-[#E8F6FC] font-lato'>
+  <div className='font-lato'>
 
   <div className="flex items-center justify-center w-full  ">
     <div

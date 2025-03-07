@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import img1 from "../assets/image1.jpg";
-import img2 from "../assets/image2.jpg";
+import img1 from "../assets/images/headerimage1.png";
+import img2 from "../assets/images/headerimage2.png";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
