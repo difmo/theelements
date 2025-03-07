@@ -10,12 +10,14 @@ import Testimonials from "../component/Testimonials";
 import Link from "next/link";
 import ImageGallery from "../component/Gallary";
 import Heading2 from "../component/Headding2";
+import JobApplicationForm from "../component/JobApplicationForm";
+import OurPartners from "../component/OurPartners";
+import ExpertiseSection from "../component/OurExperties";
 
 export default function page() {
   return (
     <>
-      <section className="relative px-8 md:px-14 md:h-screen flex justify-center  text-white overflow-hidden">
-        {/* Background Image */}
+      <section className="relative px-8 md:px-14 md:h-screen flex justify-center  text-white  bg-primarybg overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
@@ -31,7 +33,7 @@ export default function page() {
             Join 8th Element
           </p>
           <h1 className="text-2xl md:text-5xl lg:text-7xl md:font-bold mt-32 md:mt-56">
-                Build the future of healthcare tech with us!
+            Build the future of healthcare tech with us!
           </h1>
           <p className="mt-14 text-lg md:text-xl font-light  leading-relaxed pb-6">
             Be part of our journey to revolutionize healthcare with advanced technology, enhancing patient care and making a lasting impact.
@@ -40,7 +42,7 @@ export default function page() {
       </section>
 
       <VisionSection />
-      <div className="bg-[#03032B] text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center min-h-screen">
+      <div className="bg-[#2b0303] text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center min-h-screen">
         {/* Image Section */}
 
         {/* Text Section */}
@@ -61,6 +63,11 @@ export default function page() {
       </div>
 
       <Benefits />
+     
+
+      <JobApplicationForm />
+      {/* <OurPartners/> */}
+      <ExpertiseSection/>
     </>
   );
 }
