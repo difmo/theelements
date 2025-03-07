@@ -1,1 +1,14 @@
-{}
+{
+  "../node_modules/@sanity/client/dist/index.browser.js -> ./_chunks-es/stegaEncodeSourceMap.js": {
+    "id": 4195,
+    "files": [
+      "static/chunks/195.0ce658e815a3e8e0.js"
+    ]
+  },
+  "../node_modules/@sanity/client/dist/index.browser.js -> @sanity/eventsource": {
+    "id": 4406,
+    "files": [
+      "static/chunks/406.4cc45b09aefe83fc.js"
+    ]
+  }
+}
