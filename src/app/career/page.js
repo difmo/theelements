@@ -13,6 +13,7 @@ import Heading2 from "../component/Headding2";
 import JobApplicationForm from "../component/JobApplicationForm";
 import OurPartners from "../component/OurPartners";
 import ExpertiseSection from "../component/OurExperties";
+import SwiperGallary from "../component/SwiperGallary";
 
 export default function page() {
   return (
@@ -41,11 +42,18 @@ export default function page() {
         </div>
       </section>
 
-      <VisionSection />
-      <div className="bg-[#2b0303] text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center min-h-screen">
-        {/* Image Section */}
+      {/* <VisionSection /> */}
 
-        {/* Text Section */}
+
+      <Benefits />
+
+
+      <JobApplicationForm />
+      {/* <OurPartners/> */}
+      <ExpertiseSection />
+      {/* <SwiperGallary/> */}
+      <div className="bg-[#383C44]  text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center min-h-screen">
+
         <div className="w-full md:w-1/2 mt-8 md:mt-0 text-left">
           <Heading2 title="Life at 8th Element" />
 
@@ -58,16 +66,8 @@ export default function page() {
 
 
         </div>
-
-        <ImageGallery />
+        <SwiperGallary />
       </div>
-
-      <Benefits />
-     
-
-      <JobApplicationForm />
-      {/* <OurPartners/> */}
-      <ExpertiseSection/>
     </>
   );
 }

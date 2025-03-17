@@ -3,25 +3,27 @@ import Image from "next/image";
 import u2 from "../assets/img3.jpg"; // Ensure correct import path
 import u3 from "../assets/image1.jpg"; // Ensure correct import path
 import e3 from "../assets/img1.jpg"; // Ensure correct 
+import HealthTech from "../assets/Icons/whoweserve/helthtech.svg";
+import Provider from "../assets/Icons/whoweserve/provider.svg";
+import Payers from "../assets/Icons/whoweserve/payers.svg";
 
 const CardsSection = () => {
 
   const cards = [
-    { id: 1, img: u2, content: "Payers" },
-    { id: 2, img: e3, content: "Providers" },
-    { id: 3, img: u3, content: "Health Tech" },
+    { id: 1, img: Payers, content: "Payers" },
+    { id: 2, img: Provider, content: "Providers" },
+    { id: 3, img: HealthTech, content: "Health Tech" },
   ];
 
   return (
     <div className="w-full md:w-[90%] mx-4 sm:mx-0 translate-y-1/2">
   <div 
   className="   grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 "
-    // className="bg-white sm:mt-8 grid grid-cols-1 rounded-lg  md:grid-cols-3 gap-6 mx-auto px-6 shadow-lg"
   >
     {cards.map((card) => (
       <div
         key={card.id}
-        className="bg-white p-6 sm:min-h-[200px] rounded-xl shadow-lg border border-gray-200 transition-transform transform hover:scale-105 hover:shadow-2xl hover:shadow-black text-center"
+        className="bg-white p-6 sm:min-h-[200px] rounded-xl border transition-transform transform hover:scale-105  hover:shadow-black text-center"
 
       >
         {/* Image Section */}
@@ -36,7 +38,7 @@ const CardsSection = () => {
           />
         </div>
         {/* Content Section */}
-        <p className="font-lato font-bold text-center text-[#CF7B41] text-xl md:text-2xl transition-colors duration-300 hover:text-[#a14e24]">
+        <p className="font-lato font-bold text-center text-[#e3965e] text-xl md:text-2xl transition-colors duration-300 ">
           {card.content}
         </p>
       </div>

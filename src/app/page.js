@@ -26,7 +26,7 @@ const page = () => {
         <Ourcustomervoice className="font-lato" />
         <WhyPartners className="font-lato" />
         {/* <OurLeadership  className="font-lato"/> */}
-        <OurLeadership2 className="font-lato" />
+        {/* <OurLeadership2 className="font-lato" /> */}
         {/* <ContactCareer className="font-lato" /> */}
       </div>
 

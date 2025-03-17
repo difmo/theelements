@@ -16,43 +16,43 @@ const OurContact = () => {
         {/* Left section with contact info */}
         <div className="w-full">
           <div className="rounded-lg  border-gray-500 py-6 md:p-8">
-            <h2 className="font-extrabold text-2xl md:text-3xl text-black mb-6">
+            <h2 className="font-extrabold text-2xl md:text-3xl text-primary-900 mb-6">
               Get in Touch
             </h2>
             {/* Phone Number */}
             <div className="mb-4">
-              <div className="flex items-center text-black">
+              <div className="flex items-center text-primary-900">
                 <FontAwesomeIcon
                   icon={faPhone}
                   className="w-5 h-5 mr-2 text-primary-orange"
                 />
-                <span className="font-semibold">Phone Number</span>
+                <span className="font-semibold text-primary-900">Phone Number</span>
               </div>
               <a
                 href="tel:+919455791624"
-                className="block px-8 text-black hover:text-primary-orange hover:underline mt-1"
+                className="block px-8 text-primary-900 hover:text-primary-orange hover:underline mt-1"
               >
                 +91 98481 26864
               </a>
               <a
                 href="tel:+918172848306"
-                className="block px-8 text-black hover:text-primary-orange hover:underline mt-1"
+                className="block px-8 text-primary-900 hover:text-primary-orange hover:underline mt-1"
               >
                 +1 (470) 286-5319
               </a>
             </div>
             {/* Email Address */}
             <div className="mb-4">
-              <div className="flex items-center text-black">
+              <div className="flex items-center text-primary-900">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                   className="w-5 h-5 mr-2 text-primary-orange"
                 />
-                <span className="font-semibold">Email Address</span>
+                <span className="font-semibold text-primary-900">Email Address</span>
               </div>
               <a
                 href="info@8thelement.ai"
-                className="block px-8 text-black hover:text-primary-orange hover:underline mt-1"
+                className="block px-8 text-primary-900hover:text-primary-orange hover:underline mt-1"
               >
                 info@8thelement.ai
               </a>
@@ -65,14 +65,14 @@ const OurContact = () => {
             </div>
             {/* Address */}
             <div className=" border-gray-200 ">
-              <div className="flex items-center text-black">
+              <div className="flex items-center text-primary-900">
                 <FontAwesomeIcon
                   icon={faMapMarkerAlt}
                   className="w-5 h-5 mr-2 text-primary-orange"
                 />
-                <span className="font-semibold">Address</span>
+                <span className="font-semibold text-primary-900">Address</span>
               </div>
-              <p className="text-black px-8">
+              <p className=" px-8 text-primary-900">
                 11th Floor, Sri Harsha Icon, Nanakramguda
                 Service Rd, Financial District,
                 Hyderabad - 500032, India
@@ -80,7 +80,7 @@ const OurContact = () => {
             </div>
             {/* Business Hours */}
           </div>
-          <div className="mt-6 rounded-xl text-black  md:p-4">
+          {/* <div className="mt-6 rounded-xl text-black  md:p-4">
             <h2 className="text-xl font-semibold mb-4">Business Hours</h2>
             <div className="space-y-2">
               <div className="flex justify-between border-b pb-2">
@@ -96,10 +96,10 @@ const OurContact = () => {
                 <span className="font-medium">Closed</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* Right section with contact form */}
-        <div className="w-full">
+        <div className="w-full px-10">
           <Formcontect />
         </div>
       </div>
@@ -127,7 +127,7 @@ const OurContact = () => {
         </div>
       </div>
       {/* FAQ Section */}
-      <FAQSection />
+      {/* <FAQSection /> */}
     </div>
   );
 };

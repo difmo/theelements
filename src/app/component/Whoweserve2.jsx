@@ -3,6 +3,7 @@ import Image from "next/image";
 import weserve2 from "../assets/pexels-photo-305565.webp"; // Ensure the correct import path
 import CardsSection from "./CardSection";
 import Heading from "./Heading";
+import HealthTech from "../assets/Icons/whoweserve/helthtech.svg";
 
 const Whoweserve2 = () => {
   return (

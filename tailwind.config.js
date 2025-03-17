@@ -26,8 +26,13 @@ module.exports = {
       },
       fontFamily: {
         lato: ['Lato', 'sans-serif'],
+        mulish: ['Mulish', 'sans-serif'],
+        quattrocento: ['Quattrocento', 'sans-serif'],
+        kaushan: ['Kaushan Script', 'cursive'],
       },
     },
   },
   plugins: [],
 };
+
+
