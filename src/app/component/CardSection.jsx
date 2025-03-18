@@ -38,7 +38,7 @@ const CardsSection = () => {
           />
         </div>
         {/* Content Section */}
-        <p className="font-lato font-bold text-center text-[#e3965e] text-xl md:text-2xl transition-colors duration-300 ">
+        <p className="font-lato font-bold text-center text-[#cf7b41] text-xl md:text-2xl transition-colors duration-300 ">
           {card.content}
         </p>
       </div>
