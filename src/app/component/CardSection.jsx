@@ -10,42 +10,54 @@ import Payers from "../assets/Icons/whoweserve/payers.svg";
 const CardsSection = () => {
 
   const cards = [
-    { id: 1, img: Payers, content: "Payers" },
-    { id: 2, img: Provider, content: "Providers" },
-    { id: 3, img: HealthTech, content: "Health Tech" },
+    { id: 1, img: Payers, content: "Payers", description: ["⁠Boost HEDIS & Star ratings with real-time insights.", "⁠⁠Enhance Medicare & Medicaid outcomes using SDOH.", "Drive engagement with a 360° member view."] },
+    { id: 2, img: Provider, content: "Providers", description: ["Tools for value-based care and clinical interventions.", "Predictive models for care and risk management.", "Boost engagement with personalized care."] },
+    { id: 3, img: HealthTech, content: "Health Tech", description: ["Enhance insights with AI in existing solutions.", "Platform modernization with next Gen tools", "Seamless Integration with Health-Tech ecosystem"] },
   ];
 
   return (
     <div className="w-full md:w-[90%] mx-4 sm:mx-0 translate-y-1/2">
-  <div 
-  className="   grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6 "
-  >
-    {cards.map((card) => (
-      <div
-        key={card.id}
-        className="bg-white p-6 sm:min-h-[200px] rounded-xl border transition-transform transform hover:scale-105  hover:shadow-black text-center"
+      <div className="grid grid-cols-1 rounded-lg py-6 md:grid-cols-3 gap-6 mx-auto px-6">
 
-      >
-        {/* Image Section */}
-        <div className="flex justify-center mb-4">
-          <Image
-            src={card.img}
-            alt={`Image for card ${card.id}`}
-            width={80}
-            height={80}
-            // objectFit="fit"
-            // className="rounded-full shadow-md"
-          />
-        </div>
-        {/* Content Section */}
-        <p className="font-lato font-bold text-center text-[#cf7b41] text-xl md:text-2xl transition-colors duration-300 ">
-          {card.content}
-        </p>
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            className="bg-white p-6 sm:min-h-[200px] group rounded-xl transition-transform transform hover:scale-105 hover:shadow-black text-center relative overflow-hidden"
+          >
+            <div className="flex justify-center mb-4">
+              <Image
+                src={card.img}
+                alt={`Image for card ${card.id}`}
+                width={80}
+                height={80}
+              />
+            </div>
+            <p className="font-lato font-semi-bold text-center text-[#cf7b41] text-xl md:text-2xl transition-colors duration-300 ">
+              {card.content}
+            </p>
+
+            {/* Sliding Description */}
+            <div className="absolute gap-5 flex-col inset-0 bg-primary-900 rounded-lg flex items-center justify-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <p className="font-lato font-semi-bold w-full text-center px-5 text-[#ffffff] text-xl md:text-2xl transition-colors duration-300 ">
+                {card.content}
+              </p>
+              <ul className="font-mulish  font-semibold text-[#fff] ">
+                {card.description.map((desc, index) => (
+                  <li className="text-sm" key={index}>{desc}</li>
+                ))}
+              </ul>
+            </div>
+            {/* <div className="absolute inset-0 bg-gradient-to-tr from-primary-900 to-transparent rounded-lg flex items-center justify-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+              <ul className="font-mulish font-semibold text-[#fff] ">
+                {card.description.map((desc, index) => (
+                  <li key={index}>{desc}</li>
+                ))}
+              </ul>
+            </div> */}
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
-
+    </div>
   );
 };
 

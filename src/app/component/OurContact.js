@@ -99,7 +99,7 @@ const OurContact = () => {
           </div> */}
         </div>
         {/* Right section with contact form */}
-        <div className="w-full px-10">
+        <div className="w-full px-0">
           <Formcontect />
         </div>
       </div>

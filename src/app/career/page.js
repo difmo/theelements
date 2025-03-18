@@ -2,17 +2,9 @@
 import img from "../assets/images/careerheader.jpg";
 import img2 from "../assets/career/a1.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import VisionSection from "../component/VisionSection";
 import Benefits from "../component/Benefits";
-import IdeasSection from "../component/IdeasSection";
-import Testimonials from "../component/Testimonials";
-import Link from "next/link";
-import ImageGallery from "../component/Gallary";
 import Heading2 from "../component/Headding2";
 import JobApplicationForm from "../component/JobApplicationForm";
-import OurPartners from "../component/OurPartners";
-import ExpertiseSection from "../component/OurExperties";
 import SwiperGallary from "../component/SwiperGallary";
 
 export default function page() {
@@ -24,7 +16,6 @@ export default function page() {
             src={img}
             fill
             alt="Element Image"
-            // objectFit="
             className="brightness-75 object-cover md:bg-cover"
           />
         </div>
@@ -41,30 +32,16 @@ export default function page() {
           </p>
         </div>
       </section>
-
-      {/* <VisionSection /> */}
-
-
       <Benefits />
-
-
       <JobApplicationForm />
-      {/* <OurPartners/> */}
-      <ExpertiseSection />
-      {/* <SwiperGallary/> */}
-      <div className="bg-[#383C44]  text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center min-h-screen">
-
+      <div className="bg-[#383C44]  text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center">
         <div className="w-full md:w-1/2 mt-8 md:mt-0 text-left">
           <Heading2 title="Life at 8th Element" />
-
-
           <p className="text-lg pb-10 text-gray-300 mt-4 leading-relaxed text-center">
             Explore how we&apos;re working to build a more inclusive future that
             reflects the richness of human diversity and ensures equal
             opportunities for all.
           </p>
-
-
         </div>
         <SwiperGallary />
       </div>

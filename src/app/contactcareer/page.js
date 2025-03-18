@@ -1,12 +1,12 @@
-import React from "react";
-import ContCareer from "../component/ContCareer";
+// import React from "react";
+// import ContCareer from "../component/ContCareer";
 
-function page() {
-  return (
-    <>
-      <ContCareer />
-    </>
-  );
-}
+// function page() {
+//   return (
+//     <>
+//       <ContCareer />
+//     </>
+//   );
+// }
 
-export default page;
+// export default page;

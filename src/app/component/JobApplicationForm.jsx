@@ -1,15 +1,25 @@
 import React from "react";
 import Heading2 from "./Headding2";
+import img from '../assets/Icons/logo.svg'
+import Image from "next/image";
 
 const JobApplicationForm = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-primarybg">
-         <Heading2 title="Job Application Form" />
-      <div className="w-full max-w-lg p-8">
+    <div className="flex relative flex-col justify-center items-center min-h-screen bg-primarybg">
+      <Heading2 title="Job Application Form" />
+      {/* <div className="absolute  inset-0 z-0 ">
+        <Image
+          src={img}
+          fill
+          alt="Element Image"
+        />
+      </div> */}
+
+      <div className="w-full max-w-lg p-8 relative z-10">
         <div className="flex flex-col items-center mb-6">
-        
+
         </div>
-      
+
         <form className="space-y-4">
           <div>
             <label className="block text-gray-700 font-medium">Name</label>
@@ -52,7 +62,7 @@ const JobApplicationForm = () => {
           <div className="flex justify-center mt-6">
             <button
               type="submit"
-             className="px-4 py-3 my-4  w-full text-sm  transition-all duration-300 rounded-full hover:cursor-pointer bg-newprimary/80 hover:border-secondary-600 text-white hover:bg-secondary-600 "
+              className="px-4 py-3 my-4  w-full text-sm  transition-all duration-300 rounded-full hover:cursor-pointer bg-newprimary/80 hover:border-secondary-600 text-white hover:bg-secondary-600 "
             >
               Submit
             </button>

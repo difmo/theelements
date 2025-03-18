@@ -1,60 +1,116 @@
-
-import React from "react";
-import img1 from '../assets/ourexperties/python.svg';
+'use client'
 import img2 from '../assets/ourexperties/azure.svg';
-import img3 from '../assets/ourexperties/informatica.svg';
-import img4 from '../assets/ourexperties/oracle.svg';
 import img5 from '../assets/ourexperties/sharepoint.svg';
 import img6 from '../assets/ourexperties/databricks.svg';
 import img7 from '../assets/ourexperties/salesforce.svg';
 import img8 from '../assets/ourexperties/qlik.svg';
-import img9 from '../assets/ourexperties/azure.svg';
 import img10 from '../assets/ourexperties/purview.svg';
 import img11 from '../assets/ourexperties/ms360.svg';
 import img12 from '../assets/ourexperties/profisee.svg';
 import img13 from '../assets/ourexperties/spark.svg';
 import img14 from '../assets/ourexperties/powerbi.svg';
 import Image from "next/image";
-import Heading2 from "./Headding2";
+import React, { useState, useEffect } from 'react';
 
-const expertiseData = [
-  { name: "Python", src: img1 },
-  { name: "Azure Synapse Analytics", src: img2 },
-  { name: "Informatica", src: img3 },
-  { name: "Oracle", src: img4 },
-  { name: "SharePoint", src: img5 },
-  { name: "Databricks", src: img6 },
-  { name: "Salesforce", src: img7 },
-  { name: "Qlik Sense", src: img8 },
-  // { name: "Microsoft Azure", src: img9 },
-  { name: "Purview", src: img10 },
-  { name: "Microsoft 365", src: img11 },
-  { name: "Profisee", src: img12 },
-  { name: "PySpark", src: img13 },
-  { name: "Power BI", src: img14 }
-];
+const OurExperties = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [slidesPerView, setSlidesPerView] = useState(3); 
 
-const ExpertiseSection = () => {
+  const expertiseData = [
+    { name: "Azure Synapse Analytics", src: img2 },
+    { name: "SharePoint", src: img5 },
+    { name: "Databricks", src: img6 },
+    { name: "Salesforce", src: img7 },
+    { name: "Qlik Sense", src: img8 },
+    { name: "Purview", src: img10 },
+    { name: "Microsoft 365", src: img11 },
+    { name: "Profisee", src: img12 },
+    { name: "PySpark", src: img13 },
+    { name: "Power BI", src: img14 }
+  ];
+
+  // Autoplay effect
+  useEffect(() => {
+    const autoplayInterval = setInterval(() => {
+      if (!isTransitioning) {
+        goToNext();
+      }
+    }, 3000);
+
+    return () => clearInterval(autoplayInterval); 
+  }, [isTransitioning]);
+
+  useEffect(() => {
+    const updateSlidesPerView = () => {
+      if (window.innerWidth <= 640) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth <= 1024) {
+        setSlidesPerView(2); 
+      } else {
+        setSlidesPerView(3); 
+      }
+    };
+
+    updateSlidesPerView(); 
+    window.addEventListener('resize', updateSlidesPerView); 
+
+    return () => window.removeEventListener('resize', updateSlidesPerView);
+  }, []);
+
+  const goToPrevious = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? expertiseData.length - slidesPerView : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setIsTransitioning(true);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === expertiseData.length - slidesPerView ? 0 : prevIndex + 1
+    );
+  };
+
+  const handleTransitionEnd = () => {
+    setIsTransitioning(false);
+  };
+
   return (
-    <div className="flex items-center justify-center pb-12 bg-white ">
-      <section className="text-center w-full max-w-7xl px-4 sm:px-6 pt-28 lg:px-8">
-        <Heading2 title="Our Expertise" />
-        <div className="mt-8 bg-white py-10 sm:py-20 px-4 sm:px-6 lg:px-28 rounded-lg  flex justify-center w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-6">
-            {expertiseData.map((partner, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="w-28 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
-                  <Image
-                    src={partner.src}
-                    alt={partner.name}
-                    width={60}
-                    height={60}
-                    className="bg-cover cursor-pointer"
-                  />
+    <div>
+      <section className="py-12">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 ">
+          <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
+            <div className="w-full flex justify-center items-center">
+              <div className="swiper w-[600px] overflow-hidden relative">
+                <div
+                  className="swiper-wrapper flex transition-transform ease-in-out"
+                  style={{
+                    transform: `translateX(-${(currentIndex * 100) / slidesPerView}%)`,
+                    transition: 'transform 1s ease-in-out',
+                  }}
+                  onTransitionEnd={handleTransitionEnd}
+                >
+                  {expertiseData.map((testimonial, index) => (
+                    <div
+                      key={index}
+                      className={`swiper-slide flex-none ${slidesPerView === 1 ? 'p-4' : 'border w-[200px] p-6'}`}
+                    >
+                      <div className="group text-center flex justify-center align-middle   rounded-2xl transition-all duration-1000 hover:border-indigo-600">
+                        <div className='w-[80px]'>
+                          <Image
+                            src={testimonial.src}
+                            alt={testimonial.name}
+                            className="rounded-2xl"
+                            layout="responsive"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <p className="mt-2 font-mulish text-gray-700 text-sm sm:text-base">{partner.name}</p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -62,4 +118,4 @@ const ExpertiseSection = () => {
   );
 };
 
-export default ExpertiseSection;
+export default OurExperties;

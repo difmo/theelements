@@ -51,7 +51,7 @@ const WhyPartners = () => {
     setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
   };
 
-  return (
+  return (  
     <>
     <Heading title={"WHY PARTNER WITH US"} />
     <div className="relative px-2 w-full max-w-[1440px] mt-14 mx-auto py-8">

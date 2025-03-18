@@ -18,7 +18,7 @@ const SwiperGallery = () => {
   // Dummy data
   const testimonials = [
     { id: 1, name: 'img1', img: img1 },
-    { id: 2, name: 'img2', img: img2 },
+    // { id: 2, name: 'img2', img: img2 },
     { id: 3, name: 'img3', img: img3 },
     { id: 5, name: 'img5', img: img5 },
     { id: 6, name: 'img6', img: img6 },

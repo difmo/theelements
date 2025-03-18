@@ -76,6 +76,14 @@ function Formcontect() {
           error={errors.number}
         />
         <CustomInput
+          id="number"
+          label="Company Name"
+          type="text"
+          value={formData.number}
+          onChange={handleChange}
+          error={errors.number}
+        />
+        <CustomInput
           id="message"
           label="Message"
           type="textarea"
