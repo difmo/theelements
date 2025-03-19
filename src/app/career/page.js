@@ -6,6 +6,7 @@ import Benefits from "../component/Benefits";
 import Heading2 from "../component/Headding2";
 import JobApplicationForm from "../component/JobApplicationForm";
 import SwiperGallary from "../component/SwiperGallary";
+import Heading from "../component/Heading";
 
 export default function page() {
   return (
@@ -36,8 +37,8 @@ export default function page() {
       <JobApplicationForm />
       <div className="bg-[#383C44]  text-white py-16 px-6 sm:px-10 md:px-14 flex flex-col items-center">
         <div className="w-full md:w-1/2 mt-8 md:mt-0 text-left">
-          <Heading2 title="Life at 8th Element" />
-          <p className="text-lg pb-10 text-gray-300 mt-4 leading-relaxed text-center">
+          <Heading title="Life at 8th Element" />
+          <p className="text-lg py-10 text-gray-300 mt-4 leading-relaxed text-center">
             Explore how we&apos;re working to build a more inclusive future that
             reflects the richness of human diversity and ensures equal
             opportunities for all.

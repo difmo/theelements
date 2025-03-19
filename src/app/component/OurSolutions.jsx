@@ -8,6 +8,7 @@ import { MdNorthEast } from "react-icons/md"; // Import Material Design icon
 
 import { sanityClient } from "@/sanity";
 import { useRouter } from "next/navigation";
+import Heading from "./Heading";
 const cardData = [
   {
     title: "Prospective HEDIS Analysis",
@@ -57,21 +58,10 @@ const OurSolutions = () => {
   // console.log(solutions, "solutions");
   return (
     <div id="solutions" className="pt-6">
-      {/* <Heading title={"OUR SOLUTIONS"}/> */}
       <div className="bg-[#E8F6FC] font-lato">
         <div className="flex items-center justify-center w-full  pt-8 sm:pt-12">
-          <div
-            className="flex items-center capitalize bg-[#F3F4F6] justify-center gap-3 px-4  text-center border-[1px] rounded-full text-[#0C455E] border-[#1DA4DF]"
-            style={{
-              fontFamily: "Lato",
-              fontSize: "1.25rem",
-              fontWeight: 500,
-              lineHeight: "1.5rem",
-            }}
-          >
-            {/* {title} */}
-            OUR SOLUTIONS
-          </div>
+      <Heading title={"OUR SOLUTIONS"}/>
+         
         </div>
       </div>
 

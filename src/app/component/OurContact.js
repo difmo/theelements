@@ -10,6 +10,7 @@ import FAQSection from "./FAQSection";
 import Heading2 from "./Headding2";
 import Image from "next/image";
 import img from '../assets/Icons/contactleft.svg'
+import Heading from "./Heading";
 
 const OurContact = () => {
   return (
@@ -83,7 +84,7 @@ const OurContact = () => {
         </div>
       </div>
       <div className="w-full mt-10 text-center">
-        <Heading2 title="Our Location" />
+        <Heading title="Our Location" />
 
         <p className="max-w-3xl py-6 md:mx-auto text-lg text-gray-700 mb-6">
           Visit us at our office to see how we innovate and bring your ideas to

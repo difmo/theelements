@@ -8,9 +8,9 @@ import logo from '../assets/Icons/horizontallogo.svg'
 const Contact = () => {
   return (
     <>
-      <div className=" relative py-8 pt-12 md:py-12 px-4 md:px-8">
+      <div className="bg-primarybg/70 relative py-8 pt-12 md:py-12 px-4 md:px-8">
         <div className="container mx-auto text-gray-700">
-          <div className="w-full bg-white/40 rounded-sm p-5 lg:p-20 text-center relative z-10">
+          <div className="w-full bg-white/40 rounded-3xl p-5 lg:p-20 text-center relative z-10">
             {/* Background image container */}
             <div className="absolute left-[800px] inset-0  overflow-hidden z-0">
               <Image

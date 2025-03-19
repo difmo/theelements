@@ -3,11 +3,12 @@ import Heading2 from "./Headding2";
 import Image from "next/image";
 import img2 from '../assets/Icons/contactleft.svg'
 import img3 from '../assets/Icons/contactright.svg'
+import Heading from "./Heading";
 
 const JobApplicationForm = () => {
   return (
     <div className="flex relative flex-col justify-center items-center min-h-screen bg-primarybg">
-      <Heading2 title="Job Application Form" />
+      <Heading title="Job Application Form" />
       <div className="absolute  right-0 bottom-0">
         <Image
           src={img2}

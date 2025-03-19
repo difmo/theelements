@@ -32,16 +32,16 @@ const CardsSection = () => {
                 height={80}
               />
             </div>
-            <p className="font-lato font-semi-bold text-center text-[#cf7b41] text-xl md:text-2xl transition-colors duration-300 ">
+            <p className="font-lato font-bold text-center text-[#cf7b41] text-xl md:text-xl transition-colors duration-300 ">
               {card.content}
             </p>
 
             {/* Sliding Description */}
             <div className="absolute gap-5 p-4 flex-col inset-0 bg-primary-900 rounded-lg flex items-center justify-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-              <p className="font-lato font-semi-bold w-full text-center px-5 text-[#ffffff] text-xl md:text-2xl transition-colors duration-300 ">
+              <p className="font-lato font-extrabold w-full text-center px-5 text-[#ffffff] text-xl md:text-2xl transition-colors duration-300 ">
                 {card.content}
               </p>
-              <ul className="font-mulish  font-semibold text-[#fff] ">
+              <ul className="font-mulish text-left text-[#fff] list-disc list-inside">
                 {card.description.map((desc, index) => (
                   <li className="text-sm" key={index}>{desc}</li>
                 ))}
