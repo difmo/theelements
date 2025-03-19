@@ -74,35 +74,55 @@ const OurExperties2 = () => {
     nextArrow: <CustomNextButton />,
     autoplay: true, 
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet and up
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768, // Mobile landscape and up
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480, // Mobile portrait
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   return (
-    <div className=" py-16">
+    <div className="py-16 mx-10">
       <div className="container mx-auto px-4">
         <div className="title_section text-center mb-12">
           <Heading title={"Our Capabilities"}/>
         </div>
-        <div className='flex justify-center items-center'>
-        <div className="client-slider flex flex-col justify-center  max-w-3xl ">
-          <Slider {...settings}>
-            {clients.map((client, index) => (
-              <div key={index} className="slick-slide  flex justify-center items-center">
-                <div className="client-box px-8 border  m-1 h-[100px] flex justify-center items-center   rounded-lg">
-                  <Image
-                    src={client.src} 
-                    alt={client.name} 
-                    className="rounded-2xl"
-                    layout="responsive"
-              
-                  />
+        <div className="flex justify-center items-center">
+          <div className="client-slider flex flex-col justify-center max-w-3xl w-full">
+            <Slider {...settings}>
+              {clients.map((client, index) => (
+                <div key={index} className="slick-slide flex justify-center items-center">
+                  <div className="client-box px-8 border m-1 h-[100px] flex justify-center items-center rounded-lg">
+                    <Image
+                      src={client.src}
+                      alt={client.name}
+                      className="rounded-2xl object-contain w-full h-full"
+                      layout="intrinsic" // Ensures responsive image
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
-
-        </div>
-
       </div>
     </div>
   );
