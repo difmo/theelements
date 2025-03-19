@@ -37,7 +37,7 @@ const CardsSection = () => {
             </p>
 
             {/* Sliding Description */}
-            <div className="absolute gap-5 flex-col inset-0 bg-primary-900 rounded-lg flex items-center justify-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+            <div className="absolute gap-5 p-4 flex-col inset-0 bg-primary-900 rounded-lg flex items-center justify-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
               <p className="font-lato font-semi-bold w-full text-center px-5 text-[#ffffff] text-xl md:text-2xl transition-colors duration-300 ">
                 {card.content}
               </p>
@@ -47,13 +47,7 @@ const CardsSection = () => {
                 ))}
               </ul>
             </div>
-            {/* <div className="absolute inset-0 bg-gradient-to-tr from-primary-900 to-transparent rounded-lg flex items-center justify-center opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-              <ul className="font-mulish font-semibold text-[#fff] ">
-                {card.description.map((desc, index) => (
-                  <li key={index}>{desc}</li>
-                ))}
-              </ul>
-            </div> */}
+         
           </div>
         ))}
       </div>

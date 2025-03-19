@@ -1,19 +1,25 @@
 import React from "react";
 import Heading2 from "./Headding2";
-import img from '../assets/Icons/logo.svg'
 import Image from "next/image";
+import img2 from '../assets/Icons/contactleft.svg'
+import img3 from '../assets/Icons/contactright.svg'
 
 const JobApplicationForm = () => {
   return (
     <div className="flex relative flex-col justify-center items-center min-h-screen bg-primarybg">
       <Heading2 title="Job Application Form" />
-      {/* <div className="absolute  inset-0 z-0 ">
+      <div className="absolute  right-0 bottom-0">
         <Image
-          src={img}
-          fill
+          src={img2}
           alt="Element Image"
         />
-      </div> */}
+      </div>
+      <div className="absolute  left-0 top-0">
+        <Image
+          src={img3}
+          alt="Element Image"
+        />
+      </div>
 
       <div className="w-full max-w-lg p-8 relative z-10">
         <div className="flex flex-col items-center mb-6">

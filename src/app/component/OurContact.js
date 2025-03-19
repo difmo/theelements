@@ -8,6 +8,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import FAQSection from "./FAQSection";
 import Heading2 from "./Headding2";
+import Image from "next/image";
+import img from '../assets/Icons/contactleft.svg'
 
 const OurContact = () => {
   return (
@@ -56,14 +58,8 @@ const OurContact = () => {
               >
                 info@8thelement.ai
               </a>
-              {/* <a
-                href="mailto:difmotech@gmail.com"
-                className="block px-8 text-black hover:text-primary-orange hover:underline mt-1"
-              >
-                difmotech@gmail.com
-              </a> */}
+
             </div>
-            {/* Address */}
             <div className=" border-gray-200 ">
               <div className="flex items-center text-primary-900">
                 <FontAwesomeIcon
@@ -78,32 +74,14 @@ const OurContact = () => {
                 Hyderabad - 500032, India
               </p>
             </div>
-            {/* Business Hours */}
           </div>
-          {/* <div className="mt-6 rounded-xl text-black  md:p-4">
-            <h2 className="text-xl font-semibold mb-4">Business Hours</h2>
-            <div className="space-y-2">
-              <div className="flex justify-between border-b pb-2">
-                <span>Monday - Friday</span>
-                <span className="font-medium">10:00 AM - 7:00 PM</span>
-              </div>
-              <div className="flex justify-between border-b pb-2">
-                <span>Saturday</span>
-                <span className="font-medium">10:00 AM - 4:00 PM</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Sunday</span>
-                <span className="font-medium">Closed</span>
-              </div>
-            </div>
-          </div> */}
+
         </div>
-        {/* Right section with contact form */}
         <div className="w-full px-0">
+         
           <Formcontect />
         </div>
       </div>
-      {/* Map Section */}
       <div className="w-full mt-10 text-center">
         <Heading2 title="Our Location" />
 

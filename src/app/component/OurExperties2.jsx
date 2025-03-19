@@ -80,10 +80,10 @@ const OurExperties2 = () => {
     <div className=" py-16">
       <div className="container mx-auto px-4">
         <div className="title_section text-center mb-12">
-          <Heading title={"Our Clients"}/>
+          <Heading title={"Our Capabilities"}/>
         </div>
         <div className='flex justify-center items-center'>
-        <div className="client-slider flex flex-col justify-center  max-w-2xl ">
+        <div className="client-slider flex flex-col justify-center  max-w-3xl ">
           <Slider {...settings}>
             {clients.map((client, index) => (
               <div key={index} className="slick-slide  flex justify-center items-center">
