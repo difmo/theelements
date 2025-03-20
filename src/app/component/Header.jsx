@@ -12,10 +12,9 @@ import DropdownMenu from "./DropdownMenu";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [solutions, setSolutions] = useState([]);
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Fetch solutions from Sanity
   useEffect(() => {
     const fetchSolutions = async () => {
       try {
@@ -60,7 +59,6 @@ const Header = () => {
         </div>
 
         <div className="flex items-center justify-center">
-          {/* Mobile Menu Toggle */}
           <div className="flex items-center justify-center h-full md:hidden">
             <button onClick={toggleMenu} className="text-gray-800">
               {menuOpen ? (
@@ -98,26 +96,13 @@ const Header = () => {
 
           <ul className="items-center hidden space-x-6 text-gray-800 md:flex">
 
-            {/* <li
-              className="relative"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button onClick={(e) => {
-                          const currentPath = window.location.pathname;
-                          if (currentPath === "/") {
-                            e.preventDefault(); // Prevent navigation
-                            const servicesSection = document.getElementById("solutions");
-                            if (servicesSection) {
-                              servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
-                            }
-                          }
-                        }} className="flex items-center   hover:cursor-pointer">
-                Solutions
-              </button>
-           
-            </li> */}
-            <li>
+            <li onClick={() => {
+              const servicesSection = document.getElementById("solutions");
+              if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+
+            }}>
               <Link
                 href="/"
                 onClick={(e) => {
@@ -128,16 +113,24 @@ const Header = () => {
                     if (servicesSection) {
                       servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
+                  } else {
+                    e.preventDefault();
+                    window.location.href = "/#solutions";
                   }
                 }}
                 className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
               >
-               Solutions
+                Solutions
               </Link>
-
             </li>
             <span className="hidden w-px h-5 transition-all duration-300 bg-gray-400 md:block"></span>
-            <li>
+            <li onClick={() => {
+              const servicesSection = document.getElementById("services");
+              if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+
+            }}>
               <Link
                 href="/"
                 onClick={(e) => {
@@ -148,6 +141,10 @@ const Header = () => {
                     if (servicesSection) {
                       servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
+                  }
+                  else {
+                    e.preventDefault();
+                    window.location.href = "/#services";
                   }
                 }}
                 className="transition-all duration-300 hover:text-newprimary hover:cursor-pointer"
@@ -206,7 +203,7 @@ const Header = () => {
         transition={{ duration: 0.4 }}
       >
         <ul className="p-4 space-y-4">
-      
+
           <DropdownMenu solutions={solutions} />
 
           <li className="flex items-center justify-between">

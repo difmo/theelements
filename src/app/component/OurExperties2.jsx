@@ -92,30 +92,30 @@ const OurExperties2 = () => {
       {
         breakpoint: 480, // Mobile portrait
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 2
         }
       }
     ]
   };
 
   return (
-    <div className="py-16 mx-10">
+    <div className="py-16 mx-4 sm:mx-6 md:mx-10">
       <div className="container mx-auto px-4">
         <div className="title_section text-center mb-12">
-          <Heading title={"Our Capabilities"}/>
+          <Heading title={"Our Capabilities"} />
         </div>
         <div className="flex justify-center items-center">
-          <div className="client-slider flex flex-col justify-center max-w-3xl w-full">
+          <div className="client-slider flex flex-col justify-center w-full max-w-7xl">
             <Slider {...settings}>
               {clients.map((client, index) => (
                 <div key={index} className="slick-slide flex justify-center items-center">
-                  <div className="client-box px-8 border m-1 h-[100px] flex justify-center items-center rounded-lg">
+                  <div className="client-box py-2 px-4 sm:px-6 md:px-8 border m-1 h-[80px] sm:h-[100px] flex justify-center items-center rounded-lg">
                     <Image
                       src={client.src}
                       alt={client.name}
-                      className="rounded-2xl object-contain w-full h-full"
-                      layout="intrinsic" // Ensures responsive image
+                      className="rounded-2xl w-auto h-auto max-h-full max-w-full"
+                      layout="intrinsic" 
                     />
                   </div>
                 </div>
