@@ -73,7 +73,7 @@ const Footer = () => {
                   <li>
                     <a href="#" onClick={(e) => {
           e.preventDefault(); // Prevent default link behavior
-          router.push('/contact'); // Navigate to the Contact Us page
+          router.push('/contact-us'); // Navigate to the Contact Us page
         }} className="hover:underline">
                       Contact Us
                     </a>

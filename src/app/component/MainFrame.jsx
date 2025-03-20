@@ -81,9 +81,8 @@ const MainFrame = () => {
 
             {/* Text Content */}
             <div
-              className={`absolute inset-0 flex flex-col items-center justify-center w-full px-4 sm:px-16 md:px-16 text-center transition-all duration-1000 ease-in-out ${
-                animateText ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-              }`}
+              className={`absolute inset-0 flex flex-col items-center justify-center w-full px-4 sm:px-16 md:px-16 text-center transition-all duration-1000 ease-in-out ${animateText ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
+                }`}
             >
               <div className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] leading-[36px] sm:leading-[45px] md:leading-[55px] lg:leading-[66.48px] text-[#F3F4F6] font-lato capitalize">
                 {data.heading}
@@ -95,14 +94,21 @@ const MainFrame = () => {
                 {/* <button className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3">
                   Contact Us
                 </button> */}
-                <button
-        className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3"
-        onClick={() => {
-          router.push('/contact');
-        }}
-      >
-        Contact Us
-      </button>
+                <a href="#" onClick={(e) => {
+                  e.preventDefault(); // Prevent default link behavior
+                  router.push('/contact-us'); // Navigate to the Contact Us page
+                }} className="hover:underline">
+                  <button
+                    className="text-[#F3F4F6] text-lg font-medium bg-[#1A95CB] rounded-[30px] px-8 py-3"
+                    onClick={() => {
+                      router.push('/contact-us');
+                    }}
+                  >
+                    Contact Us
+                  </button>
+                </a>
+
+
               </div>
             </div>
           </div>
@@ -115,9 +121,8 @@ const MainFrame = () => {
           <div
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`cursor-pointer w-3 h-3 rounded-full ${
-              currentIndex === index ? "bg-blue-500" : "bg-gray-300"
-            }`}
+            className={`cursor-pointer w-3 h-3 rounded-full ${currentIndex === index ? "bg-blue-500" : "bg-gray-300"
+              }`}
           />
         ))}
       </div>
