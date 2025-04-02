@@ -1,121 +1,131 @@
-// 'use client'
-// import img2 from '../assets/ourexperties/azure.svg';
-// import img5 from '../assets/ourexperties/sharepoint.svg';
-// import img6 from '../assets/ourexperties/databricks.svg';
-// import img7 from '../assets/ourexperties/salesforce.svg';
-// import img8 from '../assets/ourexperties/qlik.svg';
-// import img10 from '../assets/ourexperties/purview.svg';
-// import img11 from '../assets/ourexperties/ms360.svg';
-// import img12 from '../assets/ourexperties/profisee.svg';
-// import img13 from '../assets/ourexperties/spark.svg';
-// import img14 from '../assets/ourexperties/powerbi.svg';
-// import Image from "next/image";
-// import React, { useState, useEffect } from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 
-// const OurExperties = () => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [isTransitioning, setIsTransitioning] = useState(false);
-//   const [slidesPerView, setSlidesPerView] = useState(3); 
+import img2 from '../assets/ourexperties/azure.svg';
+import img5 from '../assets/ourexperties/sharepoint.svg';
+import img6 from '../assets/ourexperties/databricks.svg';
+import img7 from '../assets/ourexperties/salesforce.svg';
+import img8 from '../assets/ourexperties/qlik.svg';
+import img10 from '../assets/ourexperties/purview.svg';
+import img11 from '../assets/ourexperties/ms360.svg';
+import img12 from '../assets/ourexperties/profisee.svg';
+import img13 from '../assets/ourexperties/spark.svg';
+import img14 from '../assets/ourexperties/powerbi.svg';
+import Image from "next/image";
+const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
-//   const expertiseData = [
-//     { name: "Azure Synapse Analytics", src: img2 },
-//     { name: "SharePoint", src: img5 },
-//     { name: "Databricks", src: img6 },
-//     { name: "Salesforce", src: img7 },
-//     { name: "Qlik Sense", src: img8 },
-//     { name: "Purview", src: img10 },
-//     { name: "Microsoft 365", src: img11 },
-//     { name: "Profisee", src: img12 },
-//     { name: "PySpark", src: img13 },
-//     { name: "Power BI", src: img14 }
-//   ];
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Heading from './Heading';
 
-//   // Autoplay effect
-//   useEffect(() => {
-//     const autoplayInterval = setInterval(() => {
-//       if (!isTransitioning) {
-//         goToNext();
-//       }
-//     }, 3000);
+const expertiseData = [
+  { name: "Azure Synapse Analytics", src: img2 },
+  { name: "SharePoint", src: img5 },
+  { name: "Databricks", src: img6 },
+  { name: "Salesforce", src: img7 },
+  { name: "Qlik Sense", src: img8 },
+  { name: "Purview", src: img10 },
+  { name: "Microsoft 365", src: img11 },
+  { name: "Profisee", src: img12 },
+  { name: "PySpark", src: img13 },
+  { name: "Power BI", src: img14 }
+];
 
-//     return () => clearInterval(autoplayInterval); 
-//   }, [isTransitioning]);
+const OurExperties = () => {
+  const [clients, setClients] = useState([]);
 
-//   useEffect(() => {
-//     const updateSlidesPerView = () => {
-//       if (window.innerWidth <= 640) {
-//         setSlidesPerView(1);
-//       } else if (window.innerWidth <= 1024) {
-//         setSlidesPerView(2); 
-//       } else {
-//         setSlidesPerView(3); 
-//       }
-//     };
+  useEffect(() => {
+    setClients(expertiseData);  
+  }, []);
 
-//     updateSlidesPerView(); 
-//     window.addEventListener('resize', updateSlidesPerView); 
+  const CustomPrevButton = (props) => {
+    const { onClick } = props;
+    return (
+      <button
+        type="button"
+        className="slick-arrow slick-prev p-2 rounded-full bg-blue-500 text-white"
+        onClick={onClick}
+      >
+        Previous
+      </button>
+    );
+  };
 
-//     return () => window.removeEventListener('resize', updateSlidesPerView);
-//   }, []);
+  const CustomNextButton = (props) => {
+    const { onClick } = props;
+    return (
+      <button
+        type="button"
+        className="slick-arrow slick-next p-2 rounded-full bg-blue-500 text-white"
+        onClick={onClick}
+      >
+        Next
+      </button>
+    );
+  };
 
-//   const goToPrevious = () => {
-//     setIsTransitioning(true);
-//     setCurrentIndex((prevIndex) =>
-//       prevIndex === 0 ? expertiseData.length - slidesPerView : prevIndex - 1
-//     );
-//   };
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    prevArrow: <CustomPrevButton />,
+    nextArrow: <CustomNextButton />,
+    autoplay: true, 
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet and up
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768, // Mobile landscape and up
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480, // Mobile portrait
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      }
+    ]
+  };
 
-//   const goToNext = () => {
-//     setIsTransitioning(true);
-//     setCurrentIndex((prevIndex) =>
-//       prevIndex === expertiseData.length - slidesPerView ? 0 : prevIndex + 1
-//     );
-//   };
+  return (
+    <div className="py-16 mx-4 sm:mx-6 md:mx-10">
+      <div className="container mx-auto px-4">
+        <div className="title_section text-center mb-12">
+          <Heading title={"Our Capabilities"} />
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="client-slider flex flex-col justify-center w-full max-w-7xl">
+            <Slider {...settings}>
+              {clients.map((client, index) => (
+                <div key={index} className="slick-slide flex justify-center items-center">
+                  <div className="client-box py-2 px-4 sm:px-6 md:px-8 border m-1 h-[80px] sm:h-[100px] flex justify-center items-center rounded-lg">
+                    <Image
+                      src={client.src}
+                      alt={client.name}
+                      className="rounded-2xl w-auto h-auto max-h-full max-w-full"
+                      layout="intrinsic" 
+                    />
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-//   const handleTransitionEnd = () => {
-//     setIsTransitioning(false);
-//   };
-
-//   return (
-//     <div>
-//       <section className="py-12">
-//         <div className="mx-auto max-w-7xl px-4 sm:px-6 ">
-//           <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
-//             <div className="w-full flex justify-center items-center">
-//               <div className="swiper w-[600px] overflow-hidden relative">
-//                 <div
-//                   className="swiper-wrapper flex transition-transform ease-in-out"
-//                   style={{
-//                     transform: `translateX(-${(currentIndex * 100) / slidesPerView}%)`,
-//                     transition: 'transform 1s ease-in-out',
-//                   }}
-//                   onTransitionEnd={handleTransitionEnd}
-//                 >
-//                   {expertiseData.map((testimonial, index) => (
-//                     <div
-//                       key={index}
-//                       className={`swiper-slide flex-none ${slidesPerView === 1 ? 'p-4' : 'border w-[200px] p-6'}`}
-//                     >
-//                       <div className="group text-center flex justify-center align-middle p-3  rounded-2xl transition-all duration-1000 hover:border-indigo-600">
-//                         <div className='w-[80px]'>
-//                           <Image
-//                             src={testimonial.src}
-//                             alt={testimonial.name}
-//                             className="rounded-2xl"
-//                             layout="responsive"
-//                           />
-//                         </div>
-//                       </div>
-//                     </div>
-//                   ))}
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default OurExperties;
+export default OurExperties;

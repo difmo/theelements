@@ -1,5 +1,4 @@
 import React from "react";
-import Heading2 from "./Headding2";
 import Image from "next/image";
 import img2 from '../assets/Icons/contactleft.svg'
 import img3 from '../assets/Icons/contactright.svg'

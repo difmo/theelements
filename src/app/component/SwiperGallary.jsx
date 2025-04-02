@@ -19,10 +19,10 @@ const SwiperGallery = () => {
   const testimonials = [
     { id: 1, name: 'img1', img: img1 },
     // { id: 2, name: 'img2', img: img2 },
-    { id: 3, name: 'img3', img: img3 },
+    // { id: 3, name: 'img3', img: img3 },
     { id: 5, name: 'img5', img: img5 },
-    { id: 6, name: 'img6', img: img6 },
-    { id: 4, name: 'img4', img: img4 },
+    // { id: 6, name: 'img6', img: img6 },
+    // { id: 4, name: 'img4', img: img4 },
     { id: 7, name: 'img7', img: img7 },
     { id: 8, name: 'img8', img: img8 },
   ];
@@ -77,7 +77,7 @@ const SwiperGallery = () => {
 
   return (
     <div>
-      <section className="py-12">
+      <section className="py-12 ">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center gap-y-8 lg:gap-y-0 flex-wrap md:flex-wrap lg:flex-nowrap lg:flex-row lg:justify-between lg:gap-x-8 max-w-sm sm:max-w-2xl lg:max-w-full mx-auto">
             <div className="w-full">

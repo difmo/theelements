@@ -7,7 +7,6 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import FAQSection from "./FAQSection";
-import Heading2 from "./Headding2";
 import Image from "next/image";
 import img from '../assets/Icons/contactleft.svg'
 import Heading from "./Heading";

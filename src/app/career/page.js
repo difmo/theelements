@@ -1,9 +1,7 @@
 "use client";
 import img from "../assets/images/careerheader.jpg";
-import img2 from "../assets/career/a1.png";
 import Image from "next/image";
 import Benefits from "../component/Benefits";
-import Heading2 from "../component/Headding2";
 import JobApplicationForm from "../component/JobApplicationForm";
 import SwiperGallary from "../component/SwiperGallary";
 import Heading from "../component/Heading";

@@ -1,10 +1,10 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
-import Heading2 from "./Headding2";
+import Heading from "./Heading";
 
 export default function FAQSection() {
   return (
     <div className="px-2 md:max-w-screen-2xl mx-auto text-gray-700  py-20">
-      <Heading2 title="Frequently Asked Questions" />
+      <Heading title="Frequently Asked Questions" />
   
       <div className="grid md:grid-cols-2 gap-8 md:gap-16 py-20">
         <div className="px-16 py-7   bg-white rounded-full hover:rounded-none transition-all duration-1000">
