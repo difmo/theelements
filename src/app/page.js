@@ -16,7 +16,7 @@ const page = () => {
     <div className="bg-[#E8F6FC] font-lato">
       <MainFrame className="font-lato" />
       <OurSuccessStory className="font-lato" />
-      <OurSolutions title={"OUR SOLUTIONS"} className="font-lato" />
+      <OurSolutions title={"HEALTHCARE SOLUTIONS"} className="font-lato" />
       <OurSolutions title={"Technical Solutions"} className="font-lato" />
       {/* <TechSolutions/> */}
       <div className="flex justify-center items-center">

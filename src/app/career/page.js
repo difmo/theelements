@@ -18,7 +18,6 @@ export default function page() {
             className="brightness-75 object-cover md:bg-cover"
           />
         </div>
-
         <div className="relative z-10  text-left">
           <p className="text-sm md:text-lg font-light flex mt-3 md:mt-20">
             Join 8th Element
