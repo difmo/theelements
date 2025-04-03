@@ -40,7 +40,7 @@ export default function FAQSection() {
       </div>
       {/* Social Media Links */}
       <div className="pt-14  ">
-        <Heading2 title="Contact With Our Social Media's" />
+        <Heading title="Contact With Our Social Media's" />
     
         <div className="flex py-8 space-x-6 justify-center">
           <a
