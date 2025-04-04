@@ -41,22 +41,58 @@ const Footer = () => {
               <div className="mb-6 ml-5">
                 <h2 className="mb-4 text-lg font-bold">Company</h2>
                 <ul className="space-y-2">
-                  <li>
+                  <li onClick={(e) => {
+                  const currentPath = window.location.pathname;
+                  if (currentPath === "/") {
+                    e.preventDefault();
+                    const servicesSection = document.getElementById("aboutus");
+                    if (servicesSection) {
+                      servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  } else {
+                    e.preventDefault();
+                    window.location.href = "/#solutions";
+                  }
+                }}>
                     <a href="#" className="hover:underline">
                       About Us
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="#" className="hover:underline">
                       Leadership Team
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  <li onClick={(e) => {
+                  const currentPath = window.location.pathname;
+                  if (currentPath === "/") {
+                    e.preventDefault();
+                    const servicesSection = document.getElementById("solutions");
+                    if (servicesSection) {
+                      servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  } else {
+                    e.preventDefault();
+                    window.location.href = "/#solutions";
+                  }
+                }}>
                     <a href="#" className="hover:underline">
                       Solutions
                     </a>
                   </li>
-                  <li>
+                  <li onClick={(e) => {
+                  const currentPath = window.location.pathname;
+                  if (currentPath === "/") {
+                    e.preventDefault();
+                    const servicesSection = document.getElementById("services");
+                    if (servicesSection) {
+                      servicesSection.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  } else {
+                    e.preventDefault();
+                    window.location.href = "/#solutions";
+                  }
+                }}>
                     <a href="#" className="hover:underline">
                       Services
                     </a>
@@ -72,17 +108,17 @@ const Footer = () => {
                 <ul className="space-y-2">
                   <li>
                     <a href="#" onClick={(e) => {
-          e.preventDefault(); // Prevent default link behavior
-          router.push('/contact-us'); // Navigate to the Contact Us page
-        }} className="hover:underline">
+                      e.preventDefault(); // Prevent default link behavior
+                      router.push('/contact-us'); // Navigate to the Contact Us page
+                    }} className="hover:underline">
                       Contact Us
                     </a>
                   </li>
                   <li>
                     <a href="#" onClick={(e) => {
-          e.preventDefault(); // Prevent default link behavior
-          router.push('/career'); // Navigate to the Contact Us page
-        }} className="hover:underline">
+                      e.preventDefault(); // Prevent default link behavior
+                      router.push('/career'); // Navigate to the Contact Us page
+                    }} className="hover:underline">
                       Careers
                     </a>
                   </li>
